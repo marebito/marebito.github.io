@@ -8,12 +8,12 @@ subtitle: 逆水行舟，不进则退
 description:
 keywords:
 author: Boyka·Yuri
-language: zh-Hans
+language: en
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://zhaolilong.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -60,7 +60,7 @@ tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
+## You can customize the date format as defined index
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
@@ -73,17 +73,34 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+plugin:
+- hexo-deployer-git
+- hexo-generator-feed
+- hexo-generator-sitemap
+- hexo-generator-baidu-sitemap
 theme: melody
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/marebito/marebito.github.io.git
+  branch: master
 
 search:
 path: search.xml
 field: post
 content: true
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 kramed:
   gfm: true

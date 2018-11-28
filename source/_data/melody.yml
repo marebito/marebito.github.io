@@ -51,11 +51,10 @@ code_word_wrap: true
 #social:
   #icon_name: url
 
-# social:
-#   github: https://github.com/marebito
-#   weibo: https://weibo.com/u/2386520501
-#   rss: https://Molunerfinn/atom.xml
-#   search:
+social:
+  github fa: https://github.com/marebito
+  weibo fa: https://weibo.com/u/2386520501
+  rss fa: https://zhaolilong.com/atom.xml
 
 # Algolia search
 # ---------------
