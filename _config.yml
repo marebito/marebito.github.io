@@ -86,7 +86,14 @@ live2d:
     height: 210
     position: left # Where the model is displayed on the web page
     hOffset: 0
-    vOffset: 600
+    vOffset: 550
+
+canvas_ribbon:
+  enable: false
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
