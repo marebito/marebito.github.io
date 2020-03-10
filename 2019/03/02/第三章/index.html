@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="第三章"><meta name="keywords" content=""><meta name="author" content="Boyka·Yuri"><meta name="copyright" content="Boyka·Yuri"><title>第三章 | 博伊卡の楼閣</title><link rel="shortcut icon" href="/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.7.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章"><span class="toc-number">1.</span> <span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity-ARKit"><span class="toc-number">1.1.</span> <span class="toc-text">Unity ARKit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个场景"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建一个场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#摄像机"><span class="toc-number">1.1.2.</span> <span class="toc-text">摄像机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变换"><span class="toc-number">1.1.3.</span> <span class="toc-text">变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARKit-Remote"><span class="toc-number">1.1.4.</span> <span class="toc-text">ARKit Remote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置主摄像机"><span class="toc-number">1.1.5.</span> <span class="toc-text">设置主摄像机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加一个组件"><span class="toc-number">1.1.6.</span> <span class="toc-text">添加一个组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跟踪手机运动"><span class="toc-number">1.1.7.</span> <span class="toc-text">跟踪手机运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建并运行"><span class="toc-number">1.1.8.</span> <span class="toc-text">构建并运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存场景"><span class="toc-number">1.1.9.</span> <span class="toc-text">保存场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#了解场景"><span class="toc-number">1.1.10.</span> <span class="toc-text">了解场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入视觉惯性测距法（Visual-Inertial-Odometry）"><span class="toc-number">1.1.11.</span> <span class="toc-text">引入视觉惯性测距法（Visual Inertial Odometry）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征点（Feature-Points）"><span class="toc-number">1.1.12.</span> <span class="toc-text">特征点（Feature Points）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点云（Point-Clouds）"><span class="toc-number">1.1.13.</span> <span class="toc-text">点云（Point Clouds）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试-1"><span class="toc-number">1.1.14.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-ARKitRemote"><span class="toc-number">1.1.15.</span> <span class="toc-text">Unity ARKitRemote</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">6</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">第三章</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-02</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">5.3k</span><span class="post-meta__separator">|</span><span>阅读时长: 17 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="Unity-ARKit"><a href="#Unity-ARKit" class="headerlink" title="Unity ARKit"></a>Unity ARKit</h2><p>既然您已经安装了Unity和Unity ARKit插件，现在是时候学习更多有关此工具的知识并开始我们的第一次AR体验。请注意，我称这是一种体验，而不是游戏，尽管它可能以某种方式用作游戏;从我的观点来看，游戏需要一些关键元素，我将在第4章详细介绍。</p>
+<p>如果您还没有打开我们在上一章创建的AR项目，那么现在是进行此操作的好时机。如果您查看Project文件夹（图3-1）并查看每个文件夹，您将看到Unity ARKit插件附带了许多我们将在本书中探索和使用的资源。</p>
+<h3 id="创建一个场景"><a href="#创建一个场景" class="headerlink" title="创建一个场景"></a>创建一个场景</h3><p>我们要做的第一项任务是创建GameObject并将其放入我们的场景中并在AR中查看它。从“菜单”中，选择“GameObject”➤“三维对象”➤“多维数据集”（图3-1）。我们可以选择任何3D对象，但我希望您在AR中看到Cube并在3D空间中移动它。虽然我更喜欢Spheres，但3DCube 有六个顶点（多边形的角点），这些顶点会更容易看到。但是，我们很快就会添加不同形状的GameObject。</p>
+<p><img src="/2019/03/02/第三章/1551539521.jpg" alt=""></p>
+<center>图 3-1. 创建一个3D GameObject</center>
+
+<p>完成此任务后，您将在“场景”面板中看到我们令人惊奇的Cube （图3-2）。</p>
+<p><img src="/2019/03/02/第三章/1551539615.jpg" alt=""></p>
+<center>图 3-2. 场景中的Cube GameObject</center>
+
+<p>现在让我们看看Inspector（图3-3）。如果您的变换位置与我的不同，请暂时不要担心（无论如何我们将移动GameObject）。注意比例是1,1,1。 Unity使用度量标准进行测量，因此Unity空间中的1个单位相当于1米的实际值。现在对于大多数传统游戏（不是AR），这并不是初学者需要担心的（很多）。但是，因为我们将游戏资产投射到现实世界中，所以正确地进行测量和缩放变得非常重要。因此，如果我们将Cube 的比例保持在1米宽，1米高，1米深，这将是一个非常大的Cube 。用于描述3D图形中的坐标的惯例是X，Y，Z。我会在本书中使用这个标准。我将扩大我们惊人的Cube ，所以它将适合我的小公寓。一些读者可能会感到惊讶的是，大多数教学书籍的作者并不住在价值数百万美元的豪宅中（至少这位作者没有）。</p>
+<p><img src="/2019/03/02/第三章/1551539781.jpg" alt=""></p>
+<center>图 3-3. Inspector中的Cube GameObject</center>
+
+<p>在Inspector中，设置scale为0.25, 0.25, 0.25（图 3-4）。</p>
+<p><img src="/2019/03/02/第三章/1551539890.jpg" alt=""></p>
+<center>图 3-4. 减小Cube 的Scale</center>
+
+<p>现在，如果您在场景中查看多维数据集，它将（或应该）看起来更小（图3-5）。如果您想要仔细查看GameObject，可以将场景视图中的摄像机移动到更靠近多维数据集的位置。移动场景视图相机有两种主要方式。最简单的方法是在Hierarchy面板中选择GameObject并按f键（我记得这是f作为焦点）。另一种方法是使用鼠标中键（如果你有一个3键鼠标）来移动或移出相机或双击鼠标（如果你有一个魔术鼠标）。我（非常）老了，喜欢用我的5键鼠标。</p>
+<p><img src="/2019/03/02/第三章/1551540009.jpg" alt=""></p>
+<center>图 3-5. 缩小比例的Cube GameObject的场景视图</center>
+
+<h3 id="摄像机"><a href="#摄像机" class="headerlink" title="摄像机"></a>摄像机</h3><p>现在是讨论相机的好时机。我们刚刚在Scene视图中移动了相机。使用此相机，开发人员可以查看场景中的内容。但是，如果查看“层次”面板，您将看到一个GameObjectMain Camera。这是玩家将要浏览的相机。您将在图3-5中注意到，我的场景视图中有一个摄像头图标。这是玩家的相机在场景中的位置。</p>
+<p>我希望您在“层次”面板中选择“Main Camera”。您将在Scene视图右下方的小窗口中看到一个小窗口（图3-6）。此窗口显示播放器相机的视图（相机预览）。</p>
+<p><img src="/2019/03/02/第三章/1551540191.jpg" alt=""></p>
+<center>图 3-6. 摄像机预览</center>
+
+<p>虽然Camera Preview窗口为我们提供了一个好主意 场景对玩家来说是什么样的，为了获得更好的视野，我们可以选择 游戏视图选项卡（图3-7）。</p>
+<p><img src="/2019/03/02/第三章/1551540259.jpg" alt=""></p>
+<center>图 3-7. 游戏视图</center>
+
+<p>正如我们在前一章中看到的，我们可以使用许多设置（宽高比，比例等）。我们可以在这里看到我们惊人的Cube有点远。我们将首先移动GameObject，然后我们将移动Main Camera。</p>
+<h3 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h3><p>有几种方法可以在Unity中移动（转换）GameObject。我们将使用的第一种方法（也是我使用的主要方法）是在Inspector中设置变换设置。首先，选择我们想要转换的GameObject。然后，在检查器中将变换位置设置为0,0,0（图3-8）。</p>
+<p><img src="/2019/03/02/第三章/1551540355.jpg" alt=""></p>
+<center>图 3-8. 具有更新的转换位置的GameObject</center>
+
+<p>现在让我们看一下Main Camera，看一下播放器的外观（图3-9）。</p>
+<p><img src="/2019/03/02/第三章/1551540437.jpg" alt=""></p>
+<center>图 3-9. 重置变换位置的GameObject的相机预览</center>
+
+
+<p>你会注意到GameObject距离Main Camera仍然有点太远了。在屏幕的左上角（在Hierarchy面板的正上方），有六个图标（图3-10）。</p>
+<p><img src="/2019/03/02/第三章/1551540587.jpg" alt=""></p>
+<center>图 3-10. 六个变换图标</center>
+
+<p>第一个图标是手形工具（Q快捷方式），用于在场景视图中转换（或平移）相机。选择此工具后，在“层次结构（Hierarchy）”移动鼠标中选择任何GameObject，并注意GameObject的变换设置不会更改，但GameObject的视图会发生变化。在按住alt（选项）键的同时，使用“手形”工具可以围绕其枢轴点绕相机进行环绕。通过按住控制按钮，您可以将摄像机移动（或移动）距离GameObject更近或更远。</p>
+<p>下一个图标是移动工具（W快捷方式）。您可以猜测，移动工具用于移动GameObject在场景中的位置。选择Main Camera后，选择移动工具（通过选择移动图标或按W键），您将注意到在场景视图中，Main Camera图标现在具有移动Gizmo（带箭头的红色，绿色蓝色线条）要点 - 图3-11）。首先，选择绿线（Y轴）并向下移动主摄像机。请注意，选择此行时，其他箭头线将显示为灰色，并且您选择的行将更改为黄色。现在尝试将相机移动到Y轴上的0。您会注意到这可能需要一些时间。如果无法正确显示位置，则可能需要在检查器的Y中输入零（这就是我更喜欢在检查器中键入值的原因）。</p>
+<p><img src="/2019/03/02/第三章/1551540769.jpg" alt=""></p>
+<center>图 3-11. 移动Gizmo</center>
+
+<p>下一个工具是旋转工具（E快捷方式）。正如您可能猜到的，此工具用于旋转GameObject。尝试选择多维数据集，然后按R键。您将看到旋转Gizmo（图3-12）。使用旋转Gizmo，您可以通过单击并拖动围绕它出现的线框旋转Gizmo的轴来更改GameObject的旋转。使用“旋转Gizmo”时，红色，绿色和蓝色圆圈围绕红色，绿色和蓝色轴执行旋转（红色是x轴，绿色是y轴，蓝色是z轴）。外圆用于围绕场景视图z轴旋转GameObject。</p>
+<p><img src="/2019/03/02/第三章/1551540850.jpg" alt=""></p>
+<center>图 3-12. 旋转Gizmo</center>
+
+<p>下一个工具是Scale toll（R快捷方式）。通过选择Scale Gizmo的中心然后拖动鼠标，缩放工具用于在所有轴上缩放或重新缩放GameObjects（图3-13）。您也可以使用此工具通过选择任意一个轴来在单个轴上进行缩放。</p>
+<p><img src="/2019/03/02/第三章/1551540923.jpg" alt=""></p>
+<center>图 3-13. 缩放Gizmo</center>
+
+<p>使用多维数据集缩放多维数据集选择的Cube GameObject设置位置，或者在我们使用转换工具时它已被移动; 现在是将位置设置或重置为0,0,0的好时机（图3-14）。</p>
+<p><img src="/2019/03/02/第三章/1551541076.jpg" alt=""></p>
+<center>图 3-14. Cube GameObject位置设置</center>
+
+<p>现在我们需要将Main Camera定位在原点（0,0,0）。如果你看看我的立方体的位置，这意味着我们的相机将在我们的立方体中间。所以，让我们先把立方体移开。将立方体变换位置设置为0,0,1，然后将主摄像机移动到0,0,0（图3-15）。现在，立方体看起来就像距离我们的相机1米远。</p>
+<p><img src="/2019/03/02/第三章/1551541180.jpg" alt=""></p>
+<center>图 3-15. 新的主摄像机设置</center>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>现在是时候看看我们这个惊人的立方体将如何在现实世界中展现出来。在为iOS开发时，我们需要在测试或部署游戏之前使用Xcode。要在iTunes上发布AR游戏，我们需要将游戏提交给Apple进行审批，然后当它获得批准后，我们​​可以从iTunes商店下载它，看看它在我们的设备上的样子。使用Xcode，我们可以在我们的设备上预览我们的游戏将会是什么样子，但这仍然需要我们构建和运行游戏并使用Xcode来预览游戏。正如您可能想象的那样，这是一次非常耗时（并且有点令人沮丧）的体验。 Unity拯救了我们，为我们提供了Unity Remote。 Unity Remote是一个应用程序（或应用程序），可用于iTunes应用商店中的iOS设备。此工具可帮助我们在iOS设备上测试游戏，而无需将游戏提交到iTunes商店。但是，在撰写本文时，Unity Remote（版本5）不支持AR。 Unity的优秀人员已经考虑过这一挑战，并在Unity ARKit中加入了一个名为UnityARKitRemote的小程序。 Unity ARKitRemote为我们提供了在iOS设备上测试AR项目所需的工具。</p>
+<h3 id="ARKit-Remote"><a href="#ARKit-Remote" class="headerlink" title="ARKit Remote"></a>ARKit Remote</h3><p>在项目文件夹中，输入搜索文本查找ARKit Remote预制件（图 3-16）。现在拖拽文件到Hierarchy选项卡（图 3-17）.</p>
+<p><img src="/2019/03/02/第三章/1551595928.jpg" alt=""></p>
+<center>图 3-16. 搜索ARKit Remote
+
+<p><img src="/2019/03/02/第三章/1551595975.jpg" alt=""></p>
+<center>图 3-17. 在Hierarchy中的ARKitRemote预制件
+
+<h3 id="设置主摄像机"><a href="#设置主摄像机" class="headerlink" title="设置主摄像机"></a>设置主摄像机</h3><p>现在在主摄像机设定中，设置clear flag为Depth only（图 3-18）。</p>
+<p><img src="/2019/03/02/第三章/1551596138.jpg" alt=""></p>
+<center>图 3-18. 设置相机的Clear Flags为Depth only
+
+<h3 id="添加一个组件"><a href="#添加一个组件" class="headerlink" title="添加一个组件"></a>添加一个组件</h3><p>现在我们打算添加一个组件到我们的相机。在这个例子中，我们打算添加一个Unity AR Video脚本。添加这个脚本，选中主摄像机（Main Camera），在Inspector中选择添加组件（Add Component）。</p>
+<p>在Inspector中，您将看到一列你能够添加的组件（图 3-18）。这可能花费一会功夫去找，所以我建议使用在添加组件菜单中的搜索栏来添加我们寻找的脚本。在图3-19中，在搜索栏中，我搜索video。</p>
+<p><img src="/2019/03/02/第三章/1551596538.jpg" alt=""></p>
+<center>图 3-19. 搜索Unity AR Video脚本组件</center>
+
+<p>一旦您发现了到Unity AR Video脚本，选中它（单击鼠标），现在您应当看到这个组件被添加到Main Camera上了。</p>
+<p><img src="/2019/03/02/第三章/1551596695.jpg" alt=""></p>
+<center>图 3-20. Unity AR Video脚本组件添加到主摄像机上</center>
+
+<p>在Unity AR Video脚本中，有一个属性叫做Clear Material。我们打算添加一个材质。在Unity AR Video脚本的Clear Materials属性，在属性框的右侧，有一个小齿轮（图 3-19）；如果您选中这个齿轮，您将会看到一个在这个项目文件夹下所有可用材质的列表（图 3-21）。另外，你可以手动搜索，或者使用搜索栏。搜索YUV材质。我将详细介绍这种材料的作用以及我们在后面的章节中使用它的原因。</p>
+<p><img src="/2019/03/02/第三章/1551596988.jpg" alt=""></p>
+<center>图 3-21. 为Clear Material选择YUV材质</center>
+
+<h3 id="跟踪手机运动"><a href="#跟踪手机运动" class="headerlink" title="跟踪手机运动"></a>跟踪手机运动</h3><p>为了使AR项目看起来真实，我们需要跟踪手机在现实世界中的移动，并在手机屏幕上投影虚拟对象的准确表示。 Unity的优秀人才（再次）让我们的生活更轻松，在Unity中，ARKit有一个名为Unity AR Camera Manager的脚本。按照我们添加Unity AR Video脚本的步骤，我们将添加Unity AR Camera Manager。首先选择Main Camera，然后在Inspector中选择Add Component（图 3-22）;现在搜索AR Camera Manager（图3-23），并将其添加到Main Camera。</p>
+<p><img src="/2019/03/02/第三章/1551654194.jpg" alt=""></p>
+<center>图 3-22. 添加组件</center>
+
+<p><img src="/2019/03/02/第三章/1551654227.jpg" alt=""></p>
+<center>搜索Unity AR Camera Manager</center>
+
+<p>最好将Main Camera添加到Unity AR Camera Manager的跟踪Tracked Camera属性中;这将确保AR Camera Manager使用正确的相机。但是，如果您不选择此选项，Unity AR Camera Manager将为您选择。要将Main Camera添加到Unity AR Camera Manager的Camera属性，请从Hierarchy中选择Main Camera，然后将其拖动到Unity AR Camera Manager的Camera属性（图 3-24）。</p>
+<p><img src="/2019/03/02/第三章/1551654485.jpg" alt=""></p>
+<center>图 3-24. 设置Main Camera作为Tracked Camera
+
+<h3 id="构建并运行"><a href="#构建并运行" class="headerlink" title="构建并运行"></a>构建并运行</h3><p>现在我们已准备好构建和运行我们的应用程序。确保已将iOS设备连接到Mac，然后从Unity File菜单中选择Build＆Run（图3-25）。如果您尚未下载最新版本的Xcode，则需要立即执行此操作（这需要一段时间）。</p>
+<p><img src="/2019/03/02/第三章/1551654576.jpg" alt=""></p>
+<center>图 3-25. 选择Build & Run</center>
+
+<p><img src="/2019/03/02/第三章/1551654731.jpg" alt=""></p>
+<center>图 3-26. 构建设置
+
+<p>在Build设置菜单中，首先选择要在其上构建的平台，在我们的示例中将是iOS。此外，选中“开发构建”复选框。最后，仅选择要构建的场景非常重要。如果未列出当前场景，请单击“添加打开场景”按钮（图3-26）并取消选中任何其他场景。在Build Setting屏幕中，选择Player Settings图标。这将打开玩家设置的Inspector，我们将在其中输入公司名称和产品名称（图3-27）。</p>
+<p><img src="/2019/03/02/第三章/1551654943.jpg" alt=""></p>
+<center>图 3-27. Player Settings的检视器视图</center>
+
+<p>向下滚动菜单以找到Bundle Identifier（图3-26）。请务必注意，一旦您在Xcode中向个人团队注册了捆绑包标识符，将来就无法将相同的捆绑包标识符注册到其他Apple Developer Program团队。这意味着当您使用免费的Apple ID和个人团队测试游戏时，您应该选择仅用于测试的包标识符 - 您将无法使用相同的包标识符来释放游戏。执行此操作的最佳解决方案是在测试包标识符的末尾添加“Test” - 例如，com.yourCompanyName.yourAppNameTest。另请注意，捆绑标识符以所谓的反向DNS样式编写。接受的字符是字母数字字符，句点和连字符。在我的例子中（图3-28），我使用过com。 RottenEggProductions.HelloWorldARTest作为包标识符（您将需要自己的名字）。如果您有签名团队ID，您可能也想要包含该ID。但出于测试目的，这不是必需的。</p>
+<p><img src="/2019/03/02/第三章/1551655117.jpg" alt=""></p>
+<center>图 3-28. 在PlayerSetting中设置Bundle Identifier</center>
+
+<p>现在选择Build and Run图标。 Unity将提示您保存项目。学习入门编程课程的传统是命名我们的第一个应用程序Hello World（不要问我原因）。所以，在这个传统中，我将命名我的第一个AR App，Hello WorldAR。请注意，在图3-29中，我将其保存在与Unity Project相同的文件夹中。有些人会说这不是好习惯，但现在已经足够好了</p>
+<p><img src="/2019/03/02/第三章/1551655198.jpg" alt=""></p>
+<center>图 3-29. 保存Hello WorldAR Menu</center>
+
+<p>保存文件后，Unity将开始编译应用程序（图3-28）并最终打开Xcode（图3-29）。当Xcode打开时（图3-31），确保选择了正确的设备（iPhone或iPad），选择播放按钮以在设备上启动游戏（图3-30）。如果Unity报告任何错误，请务必检查错误是什么并在重试之前解决这些问题。</p>
+<p><img src="/2019/03/02/第三章/1551655287.jpg" alt=""></p>
+<center>图 3-30. Unity编译我们的应用程序</center>
+
+<p><img src="/2019/03/02/第三章/1551655344.jpg" alt=""></p>
+<center>图 3-31. Xcode</center>
+
+<p>系统将提示您允许Unity ARKit访问您的相机，如果一切正常，您应该在现实世界中看到您的惊人立方体。在我的例子中，你可以在我的Mount Aoraki照片前看到我惊人的立方体（图3-32）。</p>
+<p><img src="/2019/03/02/第三章/1551655438.jpg" alt=""></p>
+<center>图 3-32. 我的Hello WorldAR应用程序</center>
+
+<h3 id="保存场景"><a href="#保存场景" class="headerlink" title="保存场景"></a>保存场景</h3><p>现在是拯救我们现场的好时机。从文件菜单中，选择“文件”➤“将场景另存为”并命名此场景（图3-33）。我已选择Hello WorldAR作为此场景的名称（图3-34）。</p>
+<p><img src="/2019/03/02/第三章/1551655680.jpg" alt=""></p>
+<center>图 3-33. 场景另存为（Save Scene as）菜单
+
+<p><img src="/2019/03/02/第三章/1551655775.jpg" alt=""></p>
+<center>图 3-34. 保存场景并选择它的位置</center>
+
+<h3 id="了解场景"><a href="#了解场景" class="headerlink" title="了解场景"></a>了解场景</h3><p>现在可能是讨论Unity场景和项目之间差异的好时机。 Unity项目包含可能用于游戏或应用程序的所有场景和必要代码。场景是项目的元素（或组件）。将该项目视为整部电影，将场景视为该电影的一部分。在游戏中，这些场景可以是菜单，关卡，积分等。</p>
+<h3 id="引入视觉惯性测距法（Visual-Inertial-Odometry）"><a href="#引入视觉惯性测距法（Visual-Inertial-Odometry）" class="headerlink" title="引入视觉惯性测距法（Visual Inertial Odometry）"></a>引入视觉惯性测距法（Visual Inertial Odometry）</h3><p>现在我们将看一些用于创建AR游戏的重要工具。在我们的Hello WorldAR项目中，我们创建了一个位于iPhone相机前面的立方体，并在我们移动相机位置时停留在那里。相机如何知道它的位置？您可能已经知道，iPhone有一些非常酷的方式来了解它的位置。我最常用的是加速度计。加速度计允许iPhone知道它在3轴（X，Y，Z）中的位置。这对于在纵向和横向模式之间切换非常有用。我使用的另一个工具是指南针（或磁力计），正如您可能已经知道的那样，这对于导航非常有用。最后一个工具是陀螺仪。陀螺仪跟踪iPhone的旋转或扭曲。虽然这些是很好的导航工具，但它们没有跟踪AR中手机移动所需的精确度。为了跟踪AR所需的iPhone的移动，Apple最近在手机的相机中加入了一些技术。通过组合视觉信息（来自摄像机）和惯性信息（来自加速度计和陀螺仪），可以精确测量iPhone的位置。</p>
+<h3 id="特征点（Feature-Points）"><a href="#特征点（Feature-Points）" class="headerlink" title="特征点（Feature Points）"></a>特征点（Feature Points）</h3><p>那么相机如何跟踪手机的位置？好问题！ iPhone中的相机（目前是iPhone 8或更高版本）非常智能，可以识别现实世界中的关键点（或特征点），并且当移动相机时，跟踪这些点的位置。这个过程需要一些非常令人印象深刻的数学，但最近的iPhone有足够的处理能力来做到这一点。</p>
+<h3 id="点云（Point-Clouds）"><a href="#点云（Point-Clouds）" class="headerlink" title="点云（Point Clouds）"></a>点云（Point Clouds）</h3><p>Unity ARKit包括一个预制件，用于帮助手机识别物理世界中的特征点。我们将要使用的第一个是PointCloud Prefab。在Unity中打开Hello WorldAR应用程序后，我们将创建一个空的GameObject。从文件菜单中，选择GameObject➤CreateEmpty（图3-35）。</p>
+<p><img src="/2019/03/02/第三章/1551656212.jpg" alt=""></p>
+<center>图 3-35. 创建一个Empty GameObject</center>
+
+<p>在Inspector中选中Empty GameObject后，将其重命名为Point Cloud。现在添加一个组件。在搜索栏中，搜索Unity Point Cloud示例并将其添加到Point Cloud GameObject（图3-36）。</p>
+<p><img src="/2019/03/02/第三章/1551656302.jpg" alt=""></p>
+<center>图 3-36. 搜索Point Cloud Example</center>
+
+<p>添加Unity Point Cloud示例脚本后，现在将最大点数设置为120（图3-37）。您可以根据需要设置多个点云。</p>
+<p><img src="/2019/03/02/第三章/1551656378.jpg" alt=""></p>
+<center>图 3-37. 设置要显示的最大点数</center>
+
+<p>现在我们需要添加一个Point Cloud Particle预制件到Point Cloud。选择Point Cloud Prefab选项框右侧的小齿轮，然后搜索预制件（图 3-38）。选择并拖拽PointCloudPrefab到Point Cloud Particle Example脚本里的Point Cloud Particle预制件选项框（图 3-39）。</p>
+<p><img src="/2019/03/02/第三章/1551656959.jpg" alt=""></p>
+<center>图 3-38. 搜索PointCloud预制件</center>
+
+<p><img src="/2019/03/02/第三章/1551657029.jpg" alt=""></p>
+<center>图 3-39. PointCloudPrefab设置为Point Cloud Prefab</center>
+
+<h3 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h3><p>现在我们将测试我们的Point Cloud。当我们测试我们的Hello WorldAR应用程序时，我们经历了构建应用程序的长期（可能是乏味的）任务，在Xcode中启动它。然后最终能够在我们的iOS设备上看到我们的应用程序。 Unity的优秀人才对此进行了思考，并为我们创造了一种减少测试开发时间的方法。在Unity ARKit中，有一个Scene可以让我们在Unity的Game选项卡中预览构建。如果你想在每次想要预览开发时都经历使用Xcode的过程，那很好。但是，我会向您展示一种您可能更有价值的方式。</p>
+<h3 id="Unity-ARKitRemote"><a href="#Unity-ARKitRemote" class="headerlink" title="Unity ARKitRemote"></a>Unity ARKitRemote</h3><p>由于Unity Remote Connection目前不支持AR，因此我们需要在iOS设备上构建和部署App。 Unity的优秀人才包括在Unity ARKit中，这是一个名为ARKit Remote的场景。您可以使用搜索栏在Project文件夹中找到它。在图3-40中，我使用了搜索字符串remote。</p>
+<p><img src="/2019/03/02/第三章/1551738319.jpg" alt=""></p>
+<center>图 3-40. 搜索UnityARKitRemote场景</center>
+
+<p>双击场景打开它。如果您没有保存当前场景，Unity打开另一场景前系统会提示您先保存它。您将会看到这是一个非常简单的场景，它包含了一个主摄像机（Main Camera）和一个直射光（Directional Light）（图 3-41）。</p>
+<p><img src="/2019/03/02/第三章/1551739189.jpg" alt=""></p>
+<center>图 3-41. UnityARKitRemote</center>
+
+<p>如果在层次结构(Hierarchy)中选择主摄像机(Main Camera)，您将看到主摄像机(Main Camera)添加了多个脚本（图 3-42）。这些脚本将使手机摄像头能够跟踪其位置，并使我们能够在Unity编辑器中查看摄像机视图。</p>
+</center></center></center></center></center></center></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Boyka·Yuri</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhaolilong.com/2019/03/02/第三章/">https://zhaolilong.com/2019/03/02/第三章/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zhaolilong.com">博伊卡の楼閣</a>！</span></div></div><div class="post-meta__tag-list"></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://zhaolilong.com/alipay.jpg"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://zhaolilong.com/wx.jpg"><div class="post-qr-code__desc">微信打赏</div></div></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/02/27/第二章/"><span>第二章</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2011 - 2020 By Boyka·Yuri</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

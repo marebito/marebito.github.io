@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="Boyka·Yuri"><meta name="copyright" content="Boyka·Yuri"><title>逆水行舟，不进则退 | 博伊卡の楼閣</title><link rel="shortcut icon" href="/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.7.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">6</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><nav id="nav" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="site-info"><div id="site-title">博伊卡の楼閣</div><div id="site-sub-title">逆水行舟，不进则退</div><div id="site-social-icons"><a class="social-icon" href="https://github.com/marebito" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-github fab"></i></a><a class="social-icon" href="https://weibo.com/u/2386520501" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-weibo fab"></i></a><a class="social-icon" href="https://zhaolilong.com/atom.xml" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-rss fas"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2019/03/02/第三章/">第三章</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-02</time><div class="content"><h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="Unity-ARKit"><a href="#Unity-ARKit" class="headerlink" title="Unity ARKit"></a>Unity ARKit</h2><p>既然您已经安装了Unity和Unity ARKit插件，现在是时候学习更多有关此工具的知识并开始我们的第一次AR体验。请注意，我称这是一种体验，而不是游戏，尽管它可能以某种方式用作游戏;从我的观点来看，游戏需要一些关键元素，我将在第4章详细介绍。</p>
+<p>如果您还没有打开我们在上一章创建的AR项目，那么现在是进行此操作的好时机。如果您查看Project文件夹（图3-1）并查看每个文件夹，您将看到Unity ARKit插件附带了许多我们将在本书中探索和使用的资源。</p>
+<h3 id="创建一个场景"><a href="#创建一个场景" class="headerlink" title="创建一个场景"></a>创建一个场景</h3><p>我们要做的第一项任务是创建GameObject并将其放入我们的场景中并在AR中查看它。从“菜单”中，选择“GameObject”➤“三维对象”➤“多维数据集”（图3-1）。我们可以选择任何3D对象，但我希望您在AR中看到Cube并在3D空间中移动它。虽然我更喜欢Spheres，但3DCube 有六个顶点（多边形的角点），这些顶点会更容易看到。但是，我们很快就会添加不同形状的GameObject。</p>
+<p><img src="/2019/03/02/第三章/1551539521.jpg" alt=""></p>
+<center>图 3-1. 创建一个3D GameObject</center>
+
+<p>完成此任务后，您将在“场景”面板中看到我们令人惊奇的Cube （图3-2）。</p>
+<p><img src="/2019/03/02/第三章/1551539615.jpg" alt=""></p>
+<center>图 3-2. 场景中的Cube GameObject</center>
+
+<p>现在让我们看看Inspector（图3-3）。如果您的变换位置与我的不同，请暂时不要担心（无论如何我们将移动GameObject）。注意比例是1,1,1。 Unity使用度量标准进行测量，因此Unity空间中的1个单位相当于1米的实际值。现在对于大多数传统游戏（不是AR），这并不是初学者需要担心的（很多）。但是，因为我们将游戏资产投射到现实世界中，所以正确地进行测量和缩放变得非常重要。因此，如果我们将Cube 的比例保持在1米宽，1米高，1米深，这将是一个非常大的Cube 。用于描述3D图形中的坐标的惯例是X，Y，Z。我会在本书中使用这个标准。我将扩大我们惊人的Cube ，所以它将适合我的小公寓。一些读者可能会感到惊讶的是，大多数教学书籍的作者并不住在价值数百万美元的豪宅中（至少这位作者没有）。</p>
+<p><img src="/2019/03/02/第三章/1551539781.jpg" alt=""></p>
+<center>图 3-3. Inspector中的Cube GameObject</center>
+
+<p>在Inspector中，设置scale为0.25, 0.25, 0.25（图 3-4）。</p>
+<p><img src="/2019/03/02/第三章/1551539890.jpg" alt=""></p>
+<center>图 3-4. 减小Cube 的Scale</center>
+
+<p>现在，如果您在场景中查看多维数据集，它将（或应该）看起来更小（图3-5）。如果您想要仔细查看GameObject，可以将场景视图中的摄像机移动到更靠近多维数据集的位置。移动场景视图相机有两种主要方式。最简单的方法是在Hierarchy面板中选择GameObject并按f键（我记得这是f作为焦点）。另一种方法是使用鼠标中键（如果你有一个3键鼠标）来移动或移出相机或双击鼠标（如果你有一个魔术鼠标）。我（非常）老了，喜欢用我的5键鼠标。</p>
+<p><img src="/2019/03/02/第三章/1551540009.jpg" alt=""></p>
+<center>图 3-5. 缩小比例的Cube GameObject的场景视图</center>
+
+<h3 id="摄像机"><a href="#摄像机" class="headerlink" title="摄像机"></a>摄像机</h3><p>现在是讨论相机的好时机。我们刚刚在Scene视图中移动了相机。使用此相机，开发人员可以查看场景中的内容。但是，如果查看“层次”面板，您将看到一个GameObjectMain Camera。这是玩家将要浏览的相机。您将在图3-5中注意到，我的场景视图中有一个摄像头图标。这是玩家的相机在场景中的位置。</p>
+<p>我希望您在“层次”面板中选择“Main Camera”。您将在Scene视图右下方的小窗口中看到一个小窗口（图3-6）。此窗口显示播放器相机的视图（相机预览）。</p>
+<p><img src="/2019/03/02/第三章/1551540191.jpg" alt=""></p>
+<center>图 3-6. 摄像机预览</center>
+
+<p>虽然Camera Preview窗口为我们提供了一个好主意 场景对玩家来说是什么样的，为了获得更好的视野，我们可以选择 游戏视图选项卡（图3-7）。</p>
+<p><img src="/2019/03/02/第三章/1551540259.jpg" alt=""></p>
+<center>图 3-7. 游戏视图</center>
+
+<p>正如我们在前一章中看到的，我们可以使用许多设置（宽高比，比例等）。我们可以在这里看到我们惊人的Cube有点远。我们将首先移动GameObject，然后我们将移动Main Camera。</p>
+<h3 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h3><p>有几种方法可以在Unity中移动（转换）GameObject。我们将使用的第一种方法（也是我使用的主要方法）是在Inspector中设置变换设置。首先，选择我们想要转换的GameObject。然后，在检查器中将变换位置设置为0,0,0（图3-8）。</p>
+<p><img src="/2019/03/02/第三章/1551540355.jpg" alt=""></p>
+<center>图 3-8. 具有更新的转换位置的GameObject</center>
+
+<p>现在让我们看一下Main Camera，看一下播放器的外观（图3-9）。</p>
+<p><img src="/2019/03/02/第三章/1551540437.jpg" alt=""></p>
+<center>图 3-9. 重置变换位置的GameObject的相机预览</center>
+
+
+<p>你会注意到GameObject距离Main Camera仍然有点太远了。在屏幕的左上角（在Hierarchy面板的正上方），有六个图标（图3-10）。</p>
+<p><img src="/2019/03/02/第三章/1551540587.jpg" alt=""></p>
+<center>图 3-10. 六个变换图标</center>
+
+<p>第一个图标是手形工具（Q快捷方式），用于在场景视图中转换（或平移）相机。选择此工具后，在“层次结构（Hierarchy）”移动鼠标中选择任何GameObject，并注意GameObject的变换设置不会更改，但GameObject的视图会发生变化。在按住alt（选项）键的同时，使用“手形”工具可以围绕其枢轴点绕相机进行环绕。通过按住控制按钮，您可以将摄像机移动（或移动）距离GameObject更近或更远。</p>
+<p>下一个图标是移动工具（W快捷方式）。您可以猜测，移动工具用于移动GameObject在场景中的位置。选择Main Camera后，选择移动工具（通过选择移动图标或按W键），您将注意到在场景视图中，Main Camera图标现在具有移动Gizmo（带箭头的红色，绿色蓝色线条）要点 - 图3-11）。首先，选择绿线（Y轴）并向下移动主摄像机。请注意，选择此行时，其他箭头线将显示为灰色，并且您选择的行将更改为黄色。现在尝试将相机移动到Y轴上的0。您会注意到这可能需要一些时间。如果无法正确显示位置，则可能需要在检查器的Y中输入零（这就是我更喜欢在检查器中键入值的原因）。</p>
+<p><img src="/2019/03/02/第三章/1551540769.jpg" alt=""></p>
+<center>图 3-11. 移动Gizmo</center>
+
+<p>下一个工具是旋转工具（E快捷方式）。正如您可能猜到的，此工具用于旋转GameObject。尝试选择多维数据集，然后按R键。您将看到旋转Gizmo（图3-12）。使用旋转Gizmo，您可以通过单击并拖动围绕它出现的线框旋转Gizmo的轴来更改GameObject的旋转。使用“旋转Gizmo”时，红色，绿色和蓝色圆圈围绕红色，绿色和蓝色轴执行旋转（红色是x轴，绿色是y轴，蓝色是z轴）。外圆用于围绕场景视图z轴旋转GameObject。</p>
+<p><img src="/2019/03/02/第三章/1551540850.jpg" alt=""></p>
+<center>图 3-12. 旋转Gizmo</center>
+
+<p>下一个工具是Scale toll（R快捷方式）。通过选择Scale Gizmo的中心然后拖动鼠标，缩放工具用于在所有轴上缩放或重新缩放GameObjects（图3-13）。您也可以使用此工具通过选择任意一个轴来在单个轴上进行缩放。</p>
+<p><img src="/2019/03/02/第三章/1551540923.jpg" alt=""></p>
+<center>图 3-13. 缩放Gizmo</center>
+
+<p>使用多维数据集缩放多维数据集选择的Cube GameObject设置位置，或者在我们使用转换工具时它已被移动; 现在是将位置设置或重置为0,0,0的好时机（图3-14）。</p>
+<p><img src="/2019/03/02/第三章/1551541076.jpg" alt=""></p>
+<center>图 3-14. Cube GameObject位置设置</center>
+
+<p>现在我们需要将Main Camera定位在原点（0,0,0）。如果你看看我的立方体的位置，这意味着我们的相机将在我们的立方体中间。所以，让我们先把立方体移开。将立方体变换位置设置为0,0,1，然后将主摄像机移动到0,0,0（图3-15）。现在，立方体看起来就像距离我们的相机1米远。</p>
+<p><img src="/2019/03/02/第三章/1551541180.jpg" alt=""></p>
+<center>图 3-15. 新的主摄像机设置</center>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>现在是时候看看我们这个惊人的立方体将如何在现实世界中展现出来。在为iOS开发时，我们需要在测试或部署游戏之前使用Xcode。要在iTunes上发布AR游戏，我们需要将游戏提交给Apple进行审批，然后当它获得批准后，我们​​可以从iTunes商店下载它，看看它在我们的设备上的样子。使用Xcode，我们可以在我们的设备上预览我们的游戏将会是什么样子，但这仍然需要我们构建和运行游戏并使用Xcode来预览游戏。正如您可能想象的那样，这是一次非常耗时（并且有点令人沮丧）的体验。 Unity拯救了我们，为我们提供了Unity Remote。 Unity Remote是一个应用程序（或应用程序），可用于iTunes应用商店中的iOS设备。此工具可帮助我们在iOS设备上测试游戏，而无需将游戏提交到iTunes商店。但是，在撰写本文时，Unity Remote（版本5）不支持AR。 Unity的优秀人员已经考虑过这一挑战，并在Unity ARKit中加入了一个名为UnityARKitRemote的小程序。 Unity ARKitRemote为我们提供了在iOS设备上测试AR项目所需的工具。</p>
+<h3 id="ARKit-Remote"><a href="#ARKit-Remote" class="headerlink" title="ARKit Remote"></a>ARKit Remote</h3><p>在项目文件夹中，输入搜索文本查找ARKit Remote预制件（图 3-16）。现在拖拽文件到Hierarchy选项卡（图 3-17）.</p>
+<p><img src="/2019/03/02/第三章/1551595928.jpg" alt=""></p>
+<center>图 3-16. 搜索ARKit Remote
+
+<p><img src="/2019/03/02/第三章/1551595975.jpg" alt=""></p>
+<center>图 3-17. 在Hierarchy中的ARKitRemote预制件
+
+<h3 id="设置主摄像机"><a href="#设置主摄像机" class="headerlink" title="设置主摄像机"></a>设置主摄像机</h3><p>现在在主摄像机设定中，设置clear flag为Depth only（图 3-18）。</p>
+<p><img src="/2019/03/02/第三章/1551596138.jpg" alt=""></p>
+<center>图 3-18. 设置相机的Clear Flags为Depth only
+
+<h3 id="添加一个组件"><a href="#添加一个组件" class="headerlink" title="添加一个组件"></a>添加一个组件</h3><p>现在我们打算添加一个组件到我们的相机。在这个例子中，我们打算添加一个Unity AR Video脚本。添加这个脚本，选中主摄像机（Main Camera），在Inspector中选择添加组件（Add Component）。</p>
+<p>在Inspector中，您将看到一列你能够添加的组件（图 3-18）。这可能花费一会功夫去找，所以我建议使用在添加组件菜单中的搜索栏来添加我们寻找的脚本。在图3-19中，在搜索栏中，我搜索video。</p>
+<p><img src="/2019/03/02/第三章/1551596538.jpg" alt=""></p>
+<center>图 3-19. 搜索Unity AR Video脚本组件</center>
+
+<p>一旦您发现了到Unity AR Video脚本，选中它（单击鼠标），现在您应当看到这个组件被添加到Main Camera上了。</p>
+<p><img src="/2019/03/02/第三章/1551596695.jpg" alt=""></p>
+<center>图 3-20. Unity AR Video脚本组件添加到主摄像机上</center>
+
+<p>在Unity AR Video脚本中，有一个属性叫做Clear Material。我们打算添加一个材质。在Unity AR Video脚本的Clear Materials属性，在属性框的右侧，有一个小齿轮（图 3-19）；如果您选中这个齿轮，您将会看到一个在这个项目文件夹下所有可用材质的列表（图 3-21）。另外，你可以手动搜索，或者使用搜索栏。搜索YUV材质。我将详细介绍这种材料的作用以及我们在后面的章节中使用它的原因。</p>
+<p><img src="/2019/03/02/第三章/1551596988.jpg" alt=""></p>
+<center>图 3-21. 为Clear Material选择YUV材质</center>
+
+<h3 id="跟踪手机运动"><a href="#跟踪手机运动" class="headerlink" title="跟踪手机运动"></a>跟踪手机运动</h3><p>为了使AR项目看起来真实，我们需要跟踪手机在现实世界中的移动，并在手机屏幕上投影虚拟对象的准确表示。 Unity的优秀人才（再次）让我们的生活更轻松，在Unity中，ARKit有一个名为Unity AR Camera Manager的脚本。按照我们添加Unity AR Video脚本的步骤，我们将添加Unity AR Camera Manager。首先选择Main Camera，然后在Inspector中选择Add Component（图 3-22）;现在搜索AR Camera Manager（图3-23），并将其添加到Main Camera。</p>
+<p><img src="/2019/03/02/第三章/1551654194.jpg" alt=""></p>
+<center>图 3-22. 添加组件</center>
+
+<p><img src="/2019/03/02/第三章/1551654227.jpg" alt=""></p>
+<center>搜索Unity AR Camera Manager</center>
+
+<p>最好将Main Camera添加到Unity AR Camera Manager的跟踪Tracked Camera属性中;这将确保AR Camera Manager使用正确的相机。但是，如果您不选择此选项，Unity AR Camera Manager将为您选择。要将Main Camera添加到Unity AR Camera Manager的Camera属性，请从Hierarchy中选择Main Camera，然后将其拖动到Unity AR Camera Manager的Camera属性（图 3-24）。</p>
+<p><img src="/2019/03/02/第三章/1551654485.jpg" alt=""></p>
+<center>图 3-24. 设置Main Camera作为Tracked Camera
+
+<h3 id="构建并运行"><a href="#构建并运行" class="headerlink" title="构建并运行"></a>构建并运行</h3><p>现在我们已准备好构建和运行我们的应用程序。确保已将iOS设备连接到Mac，然后从Unity File菜单中选择Build＆Run（图3-25）。如果您尚未下载最新版本的Xcode，则需要立即执行此操作（这需要一段时间）。</p>
+<p><img src="/2019/03/02/第三章/1551654576.jpg" alt=""></p>
+<center>图 3-25. 选择Build & Run</center>
+
+<p><img src="/2019/03/02/第三章/1551654731.jpg" alt=""></p>
+<center>图 3-26. 构建设置
+
+<p>在Build设置菜单中，首先选择要在其上构建的平台，在我们的示例中将是iOS。此外，选中“开发构建”复选框。最后，仅选择要构建的场景非常重要。如果未列出当前场景，请单击“添加打开场景”按钮（图3-26）并取消选中任何其他场景。在Build Setting屏幕中，选择Player Settings图标。这将打开玩家设置的Inspector，我们将在其中输入公司名称和产品名称（图3-27）。</p>
+<p><img src="/2019/03/02/第三章/1551654943.jpg" alt=""></p>
+<center>图 3-27. Player Settings的检视器视图</center>
+
+<p>向下滚动菜单以找到Bundle Identifier（图3-26）。请务必注意，一旦您在Xcode中向个人团队注册了捆绑包标识符，将来就无法将相同的捆绑包标识符注册到其他Apple Developer Program团队。这意味着当您使用免费的Apple ID和个人团队测试游戏时，您应该选择仅用于测试的包标识符 - 您将无法使用相同的包标识符来释放游戏。执行此操作的最佳解决方案是在测试包标识符的末尾添加“Test” - 例如，com.yourCompanyName.yourAppNameTest。另请注意，捆绑标识符以所谓的反向DNS样式编写。接受的字符是字母数字字符，句点和连字符。在我的例子中（图3-28），我使用过com。 RottenEggProductions.HelloWorldARTest作为包标识符（您将需要自己的名字）。如果您有签名团队ID，您可能也想要包含该ID。但出于测试目的，这不是必需的。</p>
+<p><img src="/2019/03/02/第三章/1551655117.jpg" alt=""></p>
+<center>图 3-28. 在PlayerSetting中设置Bundle Identifier</center>
+
+<p>现在选择Build and Run图标。 Unity将提示您保存项目。学习入门编程课程的传统是命名我们的第一个应用程序Hello World（不要问我原因）。所以，在这个传统中，我将命名我的第一个AR App，Hello WorldAR。请注意，在图3-29中，我将其保存在与Unity Project相同的文件夹中。有些人会说这不是好习惯，但现在已经足够好了</p>
+<p><img src="/2019/03/02/第三章/1551655198.jpg" alt=""></p>
+<center>图 3-29. 保存Hello WorldAR Menu</center>
+
+<p>保存文件后，Unity将开始编译应用程序（图3-28）并最终打开Xcode（图3-29）。当Xcode打开时（图3-31），确保选择了正确的设备（iPhone或iPad），选择播放按钮以在设备上启动游戏（图3-30）。如果Unity报告任何错误，请务必检查错误是什么并在重试之前解决这些问题。</p>
+<p><img src="/2019/03/02/第三章/1551655287.jpg" alt=""></p>
+<center>图 3-30. Unity编译我们的应用程序</center>
+
+<p><img src="/2019/03/02/第三章/1551655344.jpg" alt=""></p>
+<center>图 3-31. Xcode</center>
+
+<p>系统将提示您允许Unity ARKit访问您的相机，如果一切正常，您应该在现实世界中看到您的惊人立方体。在我的例子中，你可以在我的Mount Aoraki照片前看到我惊人的立方体（图3-32）。</p>
+<p><img src="/2019/03/02/第三章/1551655438.jpg" alt=""></p>
+<center>图 3-32. 我的Hello WorldAR应用程序</center>
+
+<h3 id="保存场景"><a href="#保存场景" class="headerlink" title="保存场景"></a>保存场景</h3><p>现在是拯救我们现场的好时机。从文件菜单中，选择“文件”➤“将场景另存为”并命名此场景（图3-33）。我已选择Hello WorldAR作为此场景的名称（图3-34）。</p>
+<p><img src="/2019/03/02/第三章/1551655680.jpg" alt=""></p>
+<center>图 3-33. 场景另存为（Save Scene as）菜单
+
+<p><img src="/2019/03/02/第三章/1551655775.jpg" alt=""></p>
+<center>图 3-34. 保存场景并选择它的位置</center>
+
+<h3 id="了解场景"><a href="#了解场景" class="headerlink" title="了解场景"></a>了解场景</h3><p>现在可能是讨论Unity场景和项目之间差异的好时机。 Unity项目包含可能用于游戏或应用程序的所有场景和必要代码。场景是项目的元素（或组件）。将该项目视为整部电影，将场景视为该电影的一部分。在游戏中，这些场景可以是菜单，关卡，积分等。</p>
+<h3 id="引入视觉惯性测距法（Visual-Inertial-Odometry）"><a href="#引入视觉惯性测距法（Visual-Inertial-Odometry）" class="headerlink" title="引入视觉惯性测距法（Visual Inertial Odometry）"></a>引入视觉惯性测距法（Visual Inertial Odometry）</h3><p>现在我们将看一些用于创建AR游戏的重要工具。在我们的Hello WorldAR项目中，我们创建了一个位于iPhone相机前面的立方体，并在我们移动相机位置时停留在那里。相机如何知道它的位置？您可能已经知道，iPhone有一些非常酷的方式来了解它的位置。我最常用的是加速度计。加速度计允许iPhone知道它在3轴（X，Y，Z）中的位置。这对于在纵向和横向模式之间切换非常有用。我使用的另一个工具是指南针（或磁力计），正如您可能已经知道的那样，这对于导航非常有用。最后一个工具是陀螺仪。陀螺仪跟踪iPhone的旋转或扭曲。虽然这些是很好的导航工具，但它们没有跟踪AR中手机移动所需的精确度。为了跟踪AR所需的iPhone的移动，Apple最近在手机的相机中加入了一些技术。通过组合视觉信息（来自摄像机）和惯性信息（来自加速度计和陀螺仪），可以精确测量iPhone的位置。</p>
+<h3 id="特征点（Feature-Points）"><a href="#特征点（Feature-Points）" class="headerlink" title="特征点（Feature Points）"></a>特征点（Feature Points）</h3><p>那么相机如何跟踪手机的位置？好问题！ iPhone中的相机（目前是iPhone 8或更高版本）非常智能，可以识别现实世界中的关键点（或特征点），并且当移动相机时，跟踪这些点的位置。这个过程需要一些非常令人印象深刻的数学，但最近的iPhone有足够的处理能力来做到这一点。</p>
+<h3 id="点云（Point-Clouds）"><a href="#点云（Point-Clouds）" class="headerlink" title="点云（Point Clouds）"></a>点云（Point Clouds）</h3><p>Unity ARKit包括一个预制件，用于帮助手机识别物理世界中的特征点。我们将要使用的第一个是PointCloud Prefab。在Unity中打开Hello WorldAR应用程序后，我们将创建一个空的GameObject。从文件菜单中，选择GameObject➤CreateEmpty（图3-35）。</p>
+<p><img src="/2019/03/02/第三章/1551656212.jpg" alt=""></p>
+<center>图 3-35. 创建一个Empty GameObject</center>
+
+<p>在Inspector中选中Empty GameObject后，将其重命名为Point Cloud。现在添加一个组件。在搜索栏中，搜索Unity Point Cloud示例并将其添加到Point Cloud GameObject（图3-36）。</p>
+<p><img src="/2019/03/02/第三章/1551656302.jpg" alt=""></p>
+<center>图 3-36. 搜索Point Cloud Example</center>
+
+<p>添加Unity Point Cloud示例脚本后，现在将最大点数设置为120（图3-37）。您可以根据需要设置多个点云。</p>
+<p><img src="/2019/03/02/第三章/1551656378.jpg" alt=""></p>
+<center>图 3-37. 设置要显示的最大点数</center>
+
+<p>现在我们需要添加一个Point Cloud Particle预制件到Point Cloud。选择Point Cloud Prefab选项框右侧的小齿轮，然后搜索预制件（图 3-38）。选择并拖拽PointCloudPrefab到Point Cloud Particle Example脚本里的Point Cloud Particle预制件选项框（图 3-39）。</p>
+<p><img src="/2019/03/02/第三章/1551656959.jpg" alt=""></p>
+<center>图 3-38. 搜索PointCloud预制件</center>
+
+<p><img src="/2019/03/02/第三章/1551657029.jpg" alt=""></p>
+<center>图 3-39. PointCloudPrefab设置为Point Cloud Prefab</center>
+
+<h3 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h3><p>现在我们将测试我们的Point Cloud。当我们测试我们的Hello WorldAR应用程序时，我们经历了构建应用程序的长期（可能是乏味的）任务，在Xcode中启动它。然后最终能够在我们的iOS设备上看到我们的应用程序。 Unity的优秀人才对此进行了思考，并为我们创造了一种减少测试开发时间的方法。在Unity ARKit中，有一个Scene可以让我们在Unity的Game选项卡中预览构建。如果你想在每次想要预览开发时都经历使用Xcode的过程，那很好。但是，我会向您展示一种您可能更有价值的方式。</p>
+<h3 id="Unity-ARKitRemote"><a href="#Unity-ARKitRemote" class="headerlink" title="Unity ARKitRemote"></a>Unity ARKitRemote</h3><p>由于Unity Remote Connection目前不支持AR，因此我们需要在iOS设备上构建和部署App。 Unity的优秀人才包括在Unity ARKit中，这是一个名为ARKit Remote的场景。您可以使用搜索栏在Project文件夹中找到它。在图3-40中，我使用了搜索字符串remote。</p>
+<p><img src="/2019/03/02/第三章/1551738319.jpg" alt=""></p>
+<center>图 3-40. 搜索UnityARKitRemote场景</center>
+
+<p>双击场景打开它。如果您没有保存当前场景，Unity打开另一场景前系统会提示您先保存它。您将会看到这是一个非常简单的场景，它包含了一个主摄像机（Main Camera）和一个直射光（Directional Light）（图 3-41）。</p>
+<p><img src="/2019/03/02/第三章/1551739189.jpg" alt=""></p>
+<center>图 3-41. UnityARKitRemote</center>
+
+<p>如果在层次结构(Hierarchy)中选择主摄像机(Main Camera)，您将看到主摄像机(Main Camera)添加了多个脚本（图 3-42）。这些脚本将使手机摄像头能够跟踪其位置，并使我们能够在Unity编辑器中查看摄像机视图。</p>
+</center></center></center></center></center></center></div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/02/27/第二章/">第二章</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-02-27</time><div class="content"><h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>如果顺利的话，您可能已经对增强现实（或AR）有了一个很好的了解。由于对术语虚拟现实（或VR），增强现实和混合现实之间的差异存在一些混淆，我认为可能值得在本书中澄清AR的含义。</p>
+<p>虚拟现实（VR）是一个计算机生成的环境，通过感官和感知模拟体验。不同于传统的计算机系统，VR系统将用户置于体验之中。代替在他们屏幕前观看，用户沉浸其中并且能够与3D世界互动。</p>
+<p>现在，让我们看看增强现实（AR）。普遍的共识是AR被定义为真实世界环境的一个直接实时视图，它的元素被计算机生成的信息“增强”。VR和AR之间根本的区别在于AR包括真实环境的<strong>实时视图</strong>。VR系统通常不包括真实环境的实时视图。 VR耳机是全封闭的，显示完全计算机产生。</p>
+<p>混合现实（MR，虽然这个缩写词很少使用），是一个术语这主要是微软用来区分他们的HoloLens。我觉得混合现实是另一种形式的AR。但是，还有一些对此进行辩论。当我问微软的好朋友时，他们觉得混合现实介于AR和VR之间，完全集成了数字对象进入您的世界，使它看起来好像它们真的在那里。</p>
+<p>您可能会惊讶于VR和AR这两个词一直存在很多年。虽然关于首次使用术语VR的问题存在相当大的争议（主要是由于对术语的商定定义），有一些普遍认为该术语最初是在20世纪50年代左右使用的，作者提到完全沉浸式系统或环境。自始至终美国军方和美国宇航局，飞机制造商使用AR系统用于培训，研究和开发。然而，直到2016年我们看到了第一个商用消费类AR系统Oculus Rift。Occulus Rift由Oculus VR制造（最终被Facebook以20亿美元的价格买断）。</p>
+<p>多年来也提到了AR。困难同意当时对AR的首次提及也是由于对什么是AR的商定定义。 1989年，乔治道格拉斯写了一篇文章计算机驱动的天文望远镜引导和控制系统具有叠加的星场和天体坐标图形显示这似乎是第一个AR系统。</p>
+<p>最近，有几个有趣的发展AR。虽然有一些专有系统，但第一个最值得注意的开发是为Android和iOS推出PokémonGo手机。使用地理定位功能和集成摄像头在手机上，用户能够在现实世界中看到屏幕上出现的虚拟对象。</p>
+<p>在本书中，我将专注于开发一款iOS的AR游戏。我出于多种原因选择了iOS。首先，有很多设备使用iOS。更重要的是，Apple正在投入AR硬件和软件的开发。在iOS11中，苹果包含了ARKit。ARKit使得它变得简单对于我们创建AR游戏以及在用户的环境中放入虚拟物体的模拟。通过结合来自设备的运动传感器的信息及其相机的数据，ARKit可以提供帮助iPhone或iPad分析周围环境。苹果也加强了iPhone 8和iPhone X中相机的功能。在iPhone 8和iPhone X相机已经被设计用于低光拍摄和60-fps的视频。iPhone X上的双光学防抖功能和改进的iPhone 8上的光学防抖功能也提供了提高视觉清晰度。这些硬件和软件功能有助于实现游戏在用户环境中更自然地出现。苹果也大力投入改善未来iPhone和iPad的AR功能。</p>
+<p>Unity最近在Unity商店中推出了Unity ARKit。 这使我们更容易为iOS制作AR游戏。因此，在本书中，我将使用Unity ARKit。所以现在是一个安装最新版Unity ARKit的好时机。Unity ARKit的最低要求如下：</p>
+<ul>
+<li><p>支持ARKit且具有最新功能的iOS设备 iOS 11.3或更高版本。</p>
+</li>
+<li><p>安装macOS 10.13（High Sierra）或更高版本的Mac。</p>
+</li>
+<li><p>Unity版2017.1或更高版本。</p>
+</li>
+<li><p>来自于Apple Developer网站的最新版本的XCode 9.3（或更高版本）（需要macOS 10.13）。</p>
+</li>
+</ul>
+<p>现在您已经安装了Unity，现在是时候熟悉Unity ARKit的各种元素了，我们将用它来制作和测试我们的游戏。在我们探索Unity ARKit的不同组件时， 我将讨论开发AR游戏的一些技术原理。由于这是一本介绍性的书，我不会深入研究技术细节，并试图保持这个相对较高的水平。我的编辑让我推荐有关额外AR的书籍，所以我可能会保留关于AR的第二本书的更高级或技术内容。</p>
+<p>现在让我们启动Unity并创建一个新项目。</p>
+<p>当您启动Unity时，您将看到Projects屏幕（图 2-1）。</p>
+<p><img src="/2019/02/27/第二章/1551277997.jpg" alt=""></p>
+<center>图 2-1. Unity Projects屏幕</center>
+
+<p>选择屏幕右上角的“新建”图标。这将打开 Unity New Project屏幕（图2-2）。在对话框中，键入 在项目名称中，设置Unity文件的位置，输入您组织的名称，并将模板设置为3D。</p>
+<p><img src="/2019/02/27/第二章/1551278189.jpg" alt=""></p>
+<center>图 2-2. Unity New Project屏幕</center>
+
+<p>在Unity New Project屏幕的对话框中，输入项目名称，选择要保存此文件的位置，然后选择“创建” 项目图标（图2-2）。我选择了AR projects作为文件名并选择了硬盘驱动器上的Users文件夹。</p>
+<p>现在Unity将打开一个空的Unity项目（图 2-3）。</p>
+<p><img src="/2019/02/27/第二章/1551278449.jpg" alt=""></p>
+<center>图 2-3 一个空的Unity项目屏幕</center>
+
+<h3 id="安装Unity-ARKit"><a href="#安装Unity-ARKit" class="headerlink" title="安装Unity ARKit"></a>安装Unity ARKit</h3><p>现在是安装Unity ARKit的好时机。安装来自Unity Store的Unity ARKit，您将需要访问Unity资产商店。 Unity资产商店可以通过多种方式访问​​。在Unity屏幕的主窗口有一个Assets Store的选项卡，这将显示资产商店窗口。该窗口也可以通过使用Command键和数字9键（⌘+9）。从资产商店下载资产，您需要注册，用Unity去创建一个Unity ID。当您已经创建一个Unity ID，在Unity资产商店的窗口中，有一个搜索栏。在搜索栏中输入ARKit，这将显示符合该搜索条件的文件列表（图 2-4）。在Unity中默认窗口设置将显示Unity商店窗口最小化；使用全屏模式查看资产商店，屏幕的右上角有一个下啦菜单。选中这个并点击鼠标左键。这将显示屏幕选项，Reload（重新加载），Maximize（最大化），Close（关闭）选项卡以及Add（添加）选项卡。选中最大化按钮（点击鼠标左键）。在屏幕的顶部，有很多过滤选项。过滤选项的下面，有符合您搜索条件的资产。双击ARKit，这将加载这个资产的屏幕。选中import（导入）按钮。这个资产将被导入到Unity。（图 2-5）。</p>
+<p><img src="/2019/02/27/第二章/1551309799.jpg" alt=""></p>
+<center>图 2-4. Unity资产商店</center>
+
+<p><img src="/2019/02/27/第二章/1551309853.jpg" alt=""></p>
+<center>图 2-5. 场景文件夹中带有ARKit的Unity项目文件夹</center>
+
+<h3 id="编辑器布局"><a href="#编辑器布局" class="headerlink" title="编辑器布局"></a>编辑器布局</h3><p>现在是仔细研究Unity布局的好时机。主窗口被分割成面板。默认显示视图（出厂设置）通过单击视图的选项卡选择区域。视图可以被添加，移动，移除以及缩放，编辑器支持切换布局，所以布局本质上是一种特定的视图排列。例如，主窗口的默认布局（图 2-6）有一个区域包含场景视图（图 2-7）和游戏视图（图 2-8）。</p>
+<p><img src="/2019/02/27/第二章/1551312350.jpg" alt=""></p>
+<center>图 2-6. Unity编辑器默认布局</center>
+
+<p><img src="/2019/02/27/第二章/1551312381.jpg" alt=""></p>
+<center>图 2-7. 多选项卡区域选中场景视图</center>
+
+<p><img src="/2019/02/27/第二章/1551312467.jpg" alt=""></p>
+<center>图 2-8. 多选项卡区域选中游戏视图</center>
+
+<h3 id="预设布局"><a href="#预设布局" class="headerlink" title="预设布局"></a>预设布局</h3><p>默认布局只是几种预设布局中的一种。替代布局可以从主窗口右上角的菜单中选择（图2-9）。 Unity还使我们能够创建自己的布局。在图2-9中，你会看到我的菜单有一个手机游戏配置。这是我的自定义布局，我在创建手机游戏时创建的布局。检验菜单上的各种布局。图2-6至2-7显示了由此产生的布局。</p>
+<p><img src="/2019/02/27/第二章/1551312763.jpg" alt=""></p>
+<center>图 2-9. 布局菜单</center>
+
+<p>我稍后会更详细地描述各种独特的类型，但是现在，请注意，2-by-3（2×3）布局（图2-10）是布局的示例，场景视图和游戏视图位于不同的区域而不是共用同一个。 4-split（4分割）布局（图2-11）有四个场景视图实例，表明布局不限于每个布局 视图类型。 Tall（高版面）布局（图2-12）提供了一个水平场景视图。 Wide（宽版面）布局（图2-13）提供了一个横向场景视图。</p>
+<p><img src="/2019/02/27/第二章/1551313521.jpg" alt=""></p>
+<center>图 2-10. 2×3布局</center>
+
+<p><img src="/2019/02/27/第二章/1551313573.jpg" alt=""></p>
+<center>图 2-11. 4分割布局</center>
+
+<p><img src="/2019/02/27/第二章/1551313606.jpg" alt=""></p>
+<center>图 2-12. 高版面布局</center>
+
+<p><img src="/2019/02/27/第二章/1551313638.jpg" alt=""></p>
+<center>图 2-13. 宽版面布局</center>
+
+<h3 id="自定义布局"><a href="#自定义布局" class="headerlink" title="自定义布局"></a>自定义布局</h3><p>预设布局提供了各种工作空间，但幸运的是，您并不仅限于使用它们。 Unity提供了根据需要完全重新排列编辑器窗口的灵活性。</p>
+<h3 id="缩放区域"><a href="#缩放区域" class="headerlink" title="缩放区域"></a>缩放区域</h3><p>对于初学者，您可能会在尝试各种预设布局时注意到有些区域太窄，例如，在宽版面布局（图2-13）中的左侧面板。幸运的是，您可以单击某个区域的边框并拖动它来调整区域大小。</p>
+<h3 id="移动视图"><a href="#移动视图" class="headerlink" title="移动视图"></a>移动视图</h3><p>更酷，你可以移动视图。将视图的选项卡拖动到另一个选项卡区域将移动视图到那。并将选项卡拖动到一个 “对接”区域将创造一个新的区域。比如，以默认局部启动，拖拽Inspector（检视）选项卡到Hierarchy（层级）选项卡的右侧。现在检视器视图与Hierarchy视图共用相同的区域。结果应当看起来如图2-14。</p>
+<p><img src="/2019/02/27/第二章/1551314467.jpg" alt=""></p>
+<center>图 2-14. 自定义视图移动的工作区</center>
+
+<h3 id="分离视图"><a href="#分离视图" class="headerlink" title="分离视图"></a>分离视图</h3><p>您甚至可以拖拽一个视图到编辑器窗口外面以便它驻留在自己的“浮动”窗口中，可以像任何其他区域一样对待。将“场景”选项卡拖到编辑器外部，使其位于浮动窗口中， 然后将“游戏”选项卡拖动到其选项卡区域。结果应当看起来像图2-15。同样地，将选项卡拖动到浮动的停靠区域，将向窗口添加到另一个区域。</p>
+<blockquote>
+<p>提示 喜欢将游戏视图分离成浮动窗口，因为我在编辑工作之前，我通常不需要看到它直到我单击了“运行”，这样我就可以最大化游戏视图以填充整个屏幕。我也喜欢使用多台显示器。这种方式，我可以最大化我的屏幕空间。</p>
+</blockquote>
+<p><img src="/2019/02/27/第二章/1551314973.jpg" alt=""></p>
+<center>图 2-15. 新视图的列表</center>
+
+<p>浮动窗口经常被其他窗口掩盖，所以菜单栏上的Windows菜单包含用于制作每个视图的菜单项可见性。请注意，每个都有一个键盘快捷键，还有一个布局子菜单与编辑器内的布局菜单相同。</p>
+<h3 id="添加和移除视图"><a href="#添加和移除视图" class="headerlink" title="添加和移除视图"></a>添加和移除视图</h3><p>您还可以使用菜单中的菜单添加和删除每个区域中的视图 该区域的右上角（图2-15）。“关闭标签”项将删除目前显示的视图。“添加标签”项提供了新视图的列表你可以选择。</p>
+<p>您可能希望为不同的目标平台设置不同的布局，或者开发与游戏测试的不同布局，甚至对于不同的游戏采用不同的布局。例如，我有一个专门为我的自定义布局 以合适的肖像方式预先保存游戏视图的手机游戏 比。每次手动重新配置编辑器都是一件麻烦事 你启动Unity。幸运的是，您可以通过选择来命名和保存布局 布局菜单中的“保存布局”选项，将提示您输入 新布局名称（图2-16）。</p>
+<p><img src="/2019/02/27/第二章/1551532134.jpg" alt=""></p>
+<center> 图 2-16. 提示新布局</center>
+
+<p>保存后，新布局将列在布局菜单中 如果选择“删除布局”，如果您选择删除布局将从列表中删除布局 （图2-17）。</p>
+<p><img src="/2019/02/27/第二章/1551532322.jpg" alt=""></p>
+<center>图 2-17. 布局删除菜单</center>
+
+<p>如果您弄乱或删除了原始布局，可以在区域菜单选择中恢复出厂设置选项（图2-18）。这也将删除自定义布局。</p>
+<p><img src="/2019/02/27/第二章/1551532458.jpg" alt=""></p>
+<center>图 2-18. 恢复初始布局设置</center>
+
+<p>如果更改布局但尚未保存更改，则可以随时丢弃它们，只需在布局菜单中重新选择该布局即可。</p>
+<h3 id="检视器视图"><a href="#检视器视图" class="headerlink" title="检视器视图"></a>检视器视图</h3><p>首先要详细描述的最佳视图是Inspector View，用于显示有关在其他视图中选择的对象的信息。它真的不仅仅是检查员，因为它通常可以用来修改选定的项目。</p>
+<p>检视器视图也被用来显示和调整各种设定，可以在编辑菜单中显示。（图 2-19）。</p>
+<p><img src="/2019/02/27/第二章/1551532784.jpg" alt=""></p>
+<center>图 2-19. 在编辑菜单中显示</center>
+
+<p>检视器视图显示了编辑器的设定。如果项目目前有metafile，那么版本控制模式被设置到Meta文件中（如果您正在使用Asset Server，这个选项被设置为Asset Server）。为了隐藏metafile，设置版本控制模式为隐藏。（图 2-20）。</p>
+<p><img src="/2019/02/27/第二章/1551532951.jpg" alt=""></p>
+<center>图 2-20. 检视器视图中的编辑器设定</center>
+
+<p>将版本控制模式设置为已禁用，Unity将删除metafile。资产跟踪现在在项目的Library文件夹里面的二进制文件中处理。</p>
+<blockquote>
+<p><strong>注意</strong> 使用metafile进行版本控制的Unity用户支持还可以选择将资产序列化模式设置为强制文本。在该模式下，Unity场景文件以纯文本格式保存YAML（YAML Ain’t Markup Language）格式。</p>
+</blockquote>
+<p>通常，检视器视图会显示最近选择的对象的属性（当您调出编辑器设置时，您选择它）。但有时您不希望检视器视图发生变化，当你选择其他对象时。在这种情况下，您可以通过选择视图右上方菜单中的“锁定”选项来固定检视器视图到一个对象（图2-21）。</p>
+<p><img src="/2019/02/27/第二章/1551533612.jpg" alt=""></p>
+<center>图 2-21. 锁定检视器视图</center>
+
+<h3 id="项目视图"><a href="#项目视图" class="headerlink" title="项目视图"></a>项目视图</h3><p>虽然检视器视图可以被认为编辑器中最低级别的视图，因为它显示了仅仅单一对象的属性，项目视图可以被认为是最高级别的视图（图 2-22）。项目视图显示了所有游戏可用的资产，范围从单独的模型，纹理，以及脚本到场景文件的合并资产。所有项目资产都是驻留在项目的Assets文件夹中的文件 （因此您可能希望将项目视图视为资产视图）。</p>
+<p><img src="/2019/02/27/第二章/1551533939.jpg" alt=""></p>
+<center>图 2-22. 项目视图的顶层</center>
+
+<h3 id="在一列和两列之间切换"><a href="#在一列和两列之间切换" class="headerlink" title="在一列和两列之间切换"></a>在一列和两列之间切换</h3><p>在几个较旧版本的Unity中，项目视图只有一列显示。该选项仍可在项目视图的菜单中找到（单击视图右上角小的三条线图标），现在您可以在一列到两列之间切换。</p>
+<h3 id="缩放图标"><a href="#缩放图标" class="headerlink" title="缩放图标"></a>缩放图标</h3><p>右侧面板中底部的滑块缩放的视图—更大的比例对于纹理来说是很好的，对于没有有趣图标的脚本来说更小的比例较好。这是按资产类型划分资产的一个很好的理由（即将所有纹理放在Textures文件夹中，脚本放在Script文件夹中，等等）。有可能，单级滑块设置不适合资产类型的混合。</p>
+<h3 id="检查资产"><a href="#检查资产" class="headerlink" title="检查资产"></a>检查资产</h3><p>选择右侧的资产将在“检查器视图”中显示该资产的属性。例如，如果选择动画样本，则“检查器视图”将显示有关动画的信息，其中一些可以更改，例如持续时间，甚至可以让您在编辑器中运行动画（图2-23）。我们将在后面的章节中介绍如何更改资产属性，但现在可以在项目视图中选择各种类型的资源，并查看Inspector视图中显示的内容。</p>
+<p><img src="/2019/02/27/第二章/1551534499.jpg" alt=""></p>
+<center>图 2-23. 在项目视图中检视一个选中资产</center>
+
+<h3 id="资产搜索"><a href="#资产搜索" class="headerlink" title="资产搜索"></a>资产搜索</h3><p>在一个较大复杂的项目中，很难手动搜索一个特定的资产。幸运地，就想在Finder中一样，有一个搜索框可以被用来过滤显示在项目视图右侧面板的结果。如图2-24所示，项目视图显示搜索名称中带有“add”的资产的结果。</p>
+<p><img src="/2019/02/27/第二章/1551534810.jpg" alt=""></p>
+<center>图 2-24. 搜索名称中带有“add”的资产</center>
+
+<p>右侧面板显示资产（即我们所有资产）下的所有内容的搜索结果。通过选择左侧面板中的一个子文件夹，可以进一步缩小搜索范围。例如，如果您知道自己在寻找场景，并且已根据资产类型将资源安排到子文件夹中，则可以选择要搜索的文件夹。在图2-25中，我在examples文件夹中搜索了文件名带有“add”的任何资产。</p>
+<p><img src="/2019/02/27/第二章/1551535022.jpg" alt=""></p>
+<center>图 2-25. 在指定文件夹中搜索资产</center>
+
+<p>请注意搜索下方;有一个选项卡，其中包含所选文件夹的名称。您仍然可以单击左侧的“资源”选项卡，查看本地和Unity资源商店中所有资产的搜索结果，我们将在本书中对其进行大量使用。</p>
+<p>您还可以使用搜索框右侧的菜单按资产类型过滤搜索。您可以选择场景作为感兴趣的资产类型，而不仅仅是在Examples文件夹中搜索（图2-26）。请注意这是如何添加到搜索框中生效的。 t：前缀表示应按以下资产类型过滤搜索。您可以在不使用菜单的情况下输入。</p>
+<p><img src="/2019/02/27/第二章/1551535263.jpg" alt=""></p>
+<center>图 2-26. 通过资产类型过滤搜索</center>
+
+<p>资产类型菜单右侧的按钮用于按标签过滤（您可以在检查器视图中为每个资产分配标签），这对于搜索资产商店也非常方便。最右边的按钮（星号）会将当前搜索保存在左侧面板的“收藏夹”部分中。</p>
+<h3 id="经营资产"><a href="#经营资产" class="headerlink" title="经营资产"></a>经营资产</h3><p>项目视图中的资产可以像Finder中的相应文件一样进行操作。</p>
+<p>双击资产将尝试打开合适的程序以查看或编辑资产。这相当于右键单击资产并选择“打开”。双击场景文件将在此Unity Editor窗口中打开场景，就像您在“文件”菜单中选择了“打开场景”一样。</p>
+<p>您还可以重命名，复制和删除文件，并将文件拖入和拖出文件夹，就像您一样可以在Finder中。当您右键单击资产时，Unity Edit菜单和弹出菜单中的某些操作可用。在接下来的几章中，您将对此进行一些练习。</p>
+<p>同样，在下一章中，您将处理向项目添加资产的工作。这涉及导入文件或导入Unity包，使用菜单栏上的Assets菜单或使用Finder将文件拖到项目的Assets文件夹中。</p>
+<h3 id="Hierarchy视图"><a href="#Hierarchy视图" class="headerlink" title="Hierarchy视图"></a>Hierarchy视图</h3><p>每个游戏引擎都有一个顶级对象，称为GameObject或实体，用于表示具有位置，潜在行为和名称以识别它的任何内容。 UnityGameObject是GameObject类的实例。</p>
+<blockquote>
+<p><strong>注意</strong> 一般来说，当我们引用一种Unity对象时，我们将使用它的类名来精确，并明确如何在脚本中引用该对象。</p>
+</blockquote>
+<p>层次结构视图是当前场景的另一种表示形式。虽然场景视图是您可以像使用内容创建工具一样工作的场景的3D表示，而游戏视图显示了玩游戏时的场景，但是层次结构视图列出了场景中的所有GameObject在易于导航的树形结构中。</p>
+<h3 id="检查GameObject"><a href="#检查GameObject" class="headerlink" title="检查GameObject"></a>检查GameObject</h3><p>单击层次结构视图中的GameObject时，它将成为当前的编辑器选择，其组件将显示在编辑器中。每个GameObject都有一个变换组件，它指定相对于层次结构中父级的位置，旋转和缩放（如果您熟悉3D图形的数学，则变换本质上是对象的变换矩阵）。一些组件为GameObject提供功能（例如，光照是附有光照组件的GameObject）。其他组件引用网格，纹理和脚本等资源。图2-27显示了主摄像机GameObject的组件（在层次结构视图中，GameObject的整个运行器树以蓝色显示，因为它链接到预制件，一种特殊类型的资产，用于克隆一个或一组GameObject）。</p>
+<p><img src="/2019/02/27/第二章/1551535821.jpg" alt=""></p>
+<center>Hierarchy视图和检视视图</center>
+
+<h3 id="父与子GameObject"><a href="#父与子GameObject" class="headerlink" title="父与子GameObject"></a>父与子GameObject</h3><p>您会发现许多GameObject都按层次排列，因此是该视图的名称。育儿对于概念上组合在一起的GameObject有意义。例如，当您想要移动汽车时，您希望车轮随车一起自动移动。因此，车轮应指定为汽车的儿童，偏离汽车的中心。当车轮转动时，它们相对于汽车的运动转动。育儿还允许我们一次激活或停用整组GameObject。</p>
+<h3 id="场景视图"><a href="#场景视图" class="headerlink" title="场景视图"></a>场景视图</h3><p>虽然Hierarchy视图允许我们在当前场景中创建，检查和修改GameObjects，但它并没有为我们提供一种可视化场景的方法。这就是场景视图的用武之地。场景视图类似于3D建模应用程序的界面。它允许您从任何3D有利位置检查和修改场景，并让您了解最终产品的外观。</p>
+<h3 id="场景导航"><a href="#场景导航" class="headerlink" title="场景导航"></a>场景导航</h3><p>如果您不熟悉在3D空间中工作，那么在2D工作中这是一个简单的扩展。而不是仅仅在具有x和y轴以及（x，y）坐标的空间中工作，在3D空间中，您具有额外的z轴和（x，y，z）坐标。 x轴和z轴定义地平面，y-指向上方（您可以将y视为高度）。</p>
+<blockquote>
+<p><strong>注意</strong> 一些3D应用程序和游戏引擎使用z轴表示高度，使用x轴和y轴作为地平面，因此在导入资源时，您可能需要调整（旋转）它们。</p>
+</blockquote>
+<p>3D空间中的视点通常称为相机。单击右上角多色场景Gizmo的x，y和z箭头可以快速翻转相机，使其面向相应的轴。例如，单击y箭头可以看到场景的俯视图（图2-28），场景Gizmo下的文本显示“Top”。</p>
+<p><img src="/2019/02/27/第二章/1551536198.jpg" alt=""></p>
+<center>图 2-28. 场景视图的顶级视图</center>
+
+<p>这里的摄像机与游戏中使用的场景中的CameraGameObject不同，因此当您在场景视图中环顾四周时，您不必担心会弄乱游戏。</p>
+<p>为了演示如何使用导航工具，我从项目文件夹中选择了PlayerGameObject并将其拖到层次结构视图中。</p>
+<p>单击“场景Gizmo”中心的框可在透视图之间切换摄像机投影，从而使对象在远处后退时变小;和正交，无论是近距离还是远距离，它们都以原始尺寸呈现。透视更加真实，而且你通常在游戏中使用它，但正交设计在设计时通常更方便（因此它在计算机辅助设计应用中无处不在）。场景Gizmo下文本前面的小图形表示当前投影。</p>
+<p>您可以使用鼠标滚轮或在“编辑器”窗口的右上方工具栏中选择“手形”工具进行放大和缩小，并在按住Control键的同时单击并拖动鼠标。选择“手形”工具后，您还可以通过单击拖动视图来移动相机，并且可以在按住Option（或Alt）键的同时拖动鼠标来旋转（环绕）相机，这样您就不会受到限制只是轴摄像机的角度，如图2-29所示。</p>
+<p><img src="/2019/02/27/第二章/1551536399.jpg" alt=""></p>
+<center>图 2-29. 场景视图中的倾斜透视</center>
+
+<p>请注意，当您从任意角度查看时，场景Gizmo下的文本会显示Persp或Iso，具体取决于您是使用透视投影还是正投影（Iso是等长投影的缩写，这是游戏中常见的倾斜正交视图喜欢星际争霸）。</p>
+<p>工具栏上的其他按钮激活用于移动，旋转和缩放GameObject的模式。目前没有理由改变它们，因此当您开始创建新项目时，将更详细地解释这些模式。</p>
+<blockquote>
+<p><strong>提示</strong> 如果您不小心对场景进行了更改，可以从“编辑”菜单中选择“撤消”。如果你做了很多你不想保留的更改，当你切换到另一个场景或退出Unity时，你可以拒绝保存这个场景。在此期间，请注意您仍然可以在这些模式下使用备用键盘和鼠标组合移动相机。表2-1列出了所有可能的选项。</p>
+</blockquote>
+<p>表 2-1. 可用的场景视图相机控件</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>手工工具</th>
+<th>一键鼠标或触摸板</th>
+<th>两键鼠标</th>
+<th>三键鼠标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移动</td>
+<td>按住-拖拽</td>
+<td>按住Alt-Command并按住-拖拽</td>
+<td>按住Alt-Control按住-拖拽</td>
+<td>按住Alt和中键按住-拖拽</td>
+</tr>
+<tr>
+<td>旋转</td>
+<td>按住Alt键并按住-拖拽</td>
+<td>按住Alt键按住-拖拽</td>
+<td>按住Alt键并按住-拖拽</td>
+<td>按住Alt并按住-拖拽</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>按住Control键按住-拖拽</td>
+<td>按住Control键按住-拖拽或者两指滑动</td>
+<td>按住Alt键并右键按住-拖拽</td>
+<td>按住Alt键并右键按住-拖拽或者滑动滚轮</td>
+</tr>
+</tbody></table>
+<p>还有一些其他方便的基于键盘的场景导航功能。按箭头键将沿x-z平面（地平面）向前，向后，向左和向右移动摄像机。按住鼠标右键可以像在第一人称游戏中一样导航场景。 AWSD键分别向左，向前，向右和向后移动，并移动鼠标控制相机（视点）所在的位置。</p>
+<p>当你想在场景视图中查看特定的GameObject时，有时最快的方法是在Hierarchy视图中选择GameObject，然后使用Edit菜单中的Frame Selected菜单项（注意方便的快捷键F） 。在图2-28中，我单击Scene Gizmo的x轴以获得水平视图，然后在Hierarchy View中选择Player GameObject，并按下F键（Edit菜单中选择Frame的快捷键）进行缩放在场景视图中的运行器中心和居中。</p>
+<p>您也可以直接在“场景视图”中选择一个GameObject，但必须先退出“手形”工具。就像在层次结构视图中选择GameObject将导致在Scene View和Inspector View中显示该选择一样，在Scene View中选择GameObject同样会在Inspector视图中显示该选择，并在层次结构中将其显示为选定的GameObject视图。在图2-30中，在我调用运行器上的Frame Selected后，我单击了Move工具（编辑器窗口右上角的Hand工具按钮右侧的按钮），然后在Player中单击了Player附近的GameObject。场景视图。层次结构视图自动更新以显示已选择GameObject，并且游戏对象也显示在检查器视图中。</p>
+<p><img src="/2019/02/27/第二章/1551537481.jpg" alt=""></p>
+<center>图 2-30. 在场景视图中选中一个GameObject</center>
+
+<h3 id="场景视图选项"><a href="#场景视图选项" class="headerlink" title="场景视图选项"></a>场景视图选项</h3><p>位于场景视图顶部的按钮提供显示选项，以帮助您进行游戏开发。每个按钮配置一个视图模式。</p>
+<p>最左边的按钮设置绘图模式。通常，此模式设置为“纹理”，但如果要查看所有多边形，可以将其设置为“线框”（图2-31）。</p>
+<p><img src="/2019/02/27/第二章/1551537584.jpg" alt=""></p>
+<center>图 2-31. “场景”视图中的线框显示</center>
+
+<p>下一个按钮设置“渲染路径”，它控制场景是正常着色还是用于诊断。 </p>
+<p>“渲染路径”模式按钮右侧的三个按钮是简单的切换按钮。当你将鼠标悬停在它们上面时，它们会弹出一些鼠标悬停文档（也称为工具提示）。</p>
+<p>第一个控制场景光照模式。这在使用场景视图中的默认光照方案或您放置在游戏中的实际光照之间切换。</p>
+<p>中间按钮切换游戏覆盖模式，无论天空，镜头光晕和雾效果是否可见。</p>
+<p>最后，还有Audition模式，可以打开和关闭声音。</p>
+<h3 id="场景视图Gizmos"><a href="#场景视图Gizmos" class="headerlink" title="场景视图Gizmos"></a>场景视图Gizmos</h3><p>右侧的Gizmos按钮激活与组件关联的诊断图形的显示。图2-32中的场景视图显示了一些小玩意儿。通过单击Gizmos按钮并检查可用小玩意列表，您可以看到代表摄像机和灯光的那些图标。</p>
+<p><img src="/2019/02/27/第二章/1551537792.jpg" alt=""></p>
+<center>图 2-32. 场景视图中的Gizmos</center>
+
+<p>您可以选择和取消选择Gizmos窗口中的各个复选框，以便专注于您感兴趣的对象。左上角的复选框在小玩意的3D显示或2D图标之间切换。相邻的滑块控制小玩意的比例（因此隐藏所有小玩意的快速方法是将比例滑块一直拖动到左侧）。</p>
+<h3 id="游戏视图"><a href="#游戏视图" class="headerlink" title="游戏视图"></a>游戏视图</h3><p>现在让我们来看看游戏视图。与层次结构视图和场景视图一样，游戏视图描绘当前场景，但不用于编辑目的。相反，游戏视图用于运行和调试游戏。</p>
+<p>单击Unity Editor窗口顶部的“运行”按钮时，将自动显示“游戏视图”。如果单击“运行”时没有现有的“游戏视图”，则会创建一个新的游戏视图。如果在编辑器未处于运行模式时游戏视图可见，则它显示游戏处于其初始状态（即，从初始摄像机位置的有利位置）。</p>
+<p>游戏视图显示了游戏在实际部署时的外观和功能，但可能与最终构建目标的外观和行为有所不同。一个可能的区别是游戏视图的大小和宽高比。可以使用视图左上角的菜单更改此设置。图2-33显示了当您从调整视图尺寸的自由宽高比切换到5：4宽高比时会发生什么情况，从而缩小游戏显示范围，使其适合区域和保持所选的宽高比。</p>
+<p><img src="/2019/02/27/第二章/1551537981.jpg" alt=""></p>
+<center>图 2-33. 游戏视图</center>
+
+<h3 id="运行时最大化"><a href="#运行时最大化" class="headerlink" title="运行时最大化"></a>运行时最大化</h3><p>单击“运行时最大化”按钮将导致游戏视图扩展，以便在运行模式下填充整个编辑器窗口（图2-34）。如果视图与“编辑器”窗口分离，则该按钮无效。</p>
+<p><img src="/2019/02/27/第二章/1551538132.jpg" alt=""></p>
+<center>图 2-34. 游戏视图运行时最大化</center>
+
+<h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><p>“统计”按钮显示有关场景的统计信息（图2-35）随着游戏的运行而更新。</p>
+<p><img src="/2019/02/27/第二章/1551538234.jpg" alt=""></p>
+<center>图 2-35. 带有统计的游戏视图</center>
+
+<h3 id="游戏视图Gizmos"><a href="#游戏视图Gizmos" class="headerlink" title="游戏视图Gizmos"></a>游戏视图Gizmos</h3><p>Gizmos按钮可激活与组件关联的诊断图形的显示。图2-36中的游戏视图显示了两个图标，它们是音频源的小玩意。 Gizmos按钮右侧的列表允许您选择要显示的小玩意。</p>
+<p><img src="/2019/02/27/第二章/1551538327.jpg" alt=""></p>
+<center>图 2-36. 带有Gizmos的游戏视图</center>
+
+<p>游戏视图和场景视图都是当前场景的描绘。 Unity项目由一个或多个场景组成，Unity Editor一次打开一个场景。将项目视为游戏，将场景视为关卡（实际上，在场景中运行的一些Unity脚本函数在其名称中使用“级别”）。通过附加组件使Unity GameObject变得有趣，每个组件都提供一些特定的信息或行为。这就是Inspector View的用武之地。如果在Hierarchy View或Scene View中选择一个游戏对象，Inspector View将显示其附加的组件。</p>
+<h3 id="控制台视图"><a href="#控制台视图" class="headerlink" title="控制台视图"></a>控制台视图</h3><p>所有预设布局中的剩余视图（控制台视图）很容易被忽略，但它非常有用（图2-37）。</p>
+<p><img src="/2019/02/27/第二章/1551538502.jpg" alt=""></p>
+<center>图 2-37. 控制台视图</center>
+
+<p>控制台视图中显示信息，警告和错误消息。错误为红色，警告为黄色，信息性消息为白色。从列表中选择一条消息会在下方区域显示更多详细信息。此外，Unity Editor底部的单行区域显示最新的Console消息，因此即使Console视图不可见，您也始终可以看到已记录消息。</p>
+<blockquote>
+<p><strong>提示</strong> 警告消息很容易被忽略，但您可以自行忽略它们。它们是有原因的，通常表明必须解决的问题。如果你让警告累积起来，很难注意到一个非常重要的警告何时出现。</p>
+</blockquote>
+<p>控制台很快就会混乱。您可以使用控制台视图顶部最左侧的三个按钮来管理这种混乱。清除切换按钮可删除所有消息。 “折叠切换”按钮组合了类似的消息。每次编辑器进入播放模式时，清除播放切换将删除所有消息。</p>
+<p>错误暂停按钮将导致编辑器暂停错误消息，特别是当脚本调用Log.LogError时。</p>
+<p>在编辑器中操作时，日志消息最终会出现在编辑器日志中，而从Unity构建的可执行文件生成的消息将被定向到播放器日志。从视图菜单中选择Open Player Log或Open Editor Log（单击Console视图右上角的小图标）将在文本文件或控制台应用程序中显示这些日志（图2-38）。</p>
+<p><img src="/2019/02/27/第二章/1551538673.jpg" alt=""></p>
+<center>图 2-38. Mac控制台应用中的Unity日志</center>
+
+<h3 id="进一步探索"><a href="#进一步探索" class="headerlink" title="进一步探索"></a>进一步探索</h3><p>我们已经结束了这次Unity之旅。在第3章中，您将开始学习一些ARKit功能。这是真正开始使用Unity的第一章。您还没有开始构建自己的场景（将在第3章开始），但您已经能够熟悉Unity编辑器。有很多官方Unity资源可以扩展我将要讨论的主题。</p>
+<h3 id="Unity手册"><a href="#Unity手册" class="headerlink" title="Unity手册"></a>Unity手册</h3><p>正如您所看到的，Unity用户界面很多，我们几乎都没有。现在是认真阅读Unity手册的好时机，可以从Unity编辑器（欢迎屏幕或帮助菜单）或Unity网站（<a href="http://unity3d.com/）下的学习选项卡下阅读“文档”部分。当您想要查看某些内容或只是阅读Unity而没有在附近运行Unity" target="_blank" rel="noopener">http://unity3d.com/）下的学习选项卡下阅读“文档”部分。当您想要查看某些内容或只是阅读Unity而没有在附近运行Unity</a> Editor时，Web版本非常方便。</p>
+<p>本章介绍的大部分内容与Unity手册的Unity基础部分中的主题相匹配，特别是“学习界面”，“自定义工作区”，“发布构建”和“Unity热键”部分。我们确实跳过了进入Unity手册的高级部分，触及Unity对版本控制的支持。 Unity手册的“使用Unity进行外部版本控制”页面对此进行了更深入的介绍。</p>
+<h3 id="指南"><a href="#指南" class="headerlink" title="指南"></a>指南</h3><p>除了“文档”部分，Unity网站上的“学习”选项卡还包含一个“教程”部分，其中包含大量的初级编辑器视频。顾名思义，这些视频介绍了Unity编辑器，实际上这组视频涵盖了本章讨论的大部分内容，包括最重要视图的描述（游戏视图，场景视图，层次结构视图，检查器视图，和Project View）甚至是发布构建的过程。</p>
+<h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><p>虽然我只是简单地讨论了版本控制，但在解释如何删除元文件的上下文中，该主题值得多讨论，因为版本控制系统（或VCS）对于软件开发非常重要（您将首先实现它）你失去你的项目的时间或不记得你做了什么改变打破了你的游戏！）。如果你已经有了一个最喜欢的VCS，你可能想在Unity中使用它，如果你还没有使用它，那么你可能想要考虑它，如果只是保留你的项目的旧版本，以防你需要滚动返回，能够检查版本之间的差异。</p>
+<p>在版本控制系统中，Perforce是游戏工作室中常用的商业工具，而Subversion（svn）作为开源选项有着悠久的历史。目前，像Git和Mercurial这样的分布式版本控制系统正在发展趋势。我在Bitbucket上使用Mercurial（http：// bitbucket.com /）作为我的内部项目并在GitHub上发布公共项目，包括本书的项目。</p>
+<p>说Unity VCS支持与产品无关是另一种说法，Unity没有任何特定的版本控制系统集成到Unity Editor中。 Unity Pro用户的元文件和YAML场景文件只是提供了与常用于源代码的面向文本的版本控制系统的更好兼容性。您仍然必须在Unity之外自己运行VCS操作。顺便提一下，您可以在<a href="http://yaml.org/上找到有关YAML的更多信息。我发现使用GitHub网站上提供的Mac" target="_blank" rel="noopener">http://yaml.org/上找到有关YAML的更多信息。我发现使用GitHub网站上提供的Mac</a> GitHub应用程序和类似的BitTucket SourceTree也很方便，也可以在该网站上找到。</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/02/25/第一章/">第一章</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-02-25</time><div class="content"><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在本书中，我们将学习如何去创建一个增强现实（AR）游戏使用游戏开发软件Unity（Unity3D 2018或者更新版本， Unity）。本章中，我们将通过下载和安装Unity的过程，了解Unity提供的一些工具。我们也将安装一个来自Unity Asset Store存在的AR项目，探索这个游戏的一些特性。第二章，我们将安装ARKit和提供一个Unity用户界面的概览。第三章，我们将开始使用Unity ARKit并使用一些关键的功能。我还将提供视觉惯性测距的基本概述以及这对创建AR项目的意义。我们将使用基本场景并测试Unity ARKit。在第四章，我们将使用一些Unity ARKit中更高级的功能，例如AR场景的命中测试和光照。最后，第五章，我们将把所有这些结合起来，使用Unity ARKit来制作一款AR游戏。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本书是为没有使用Unity或制作游戏的经验的初学者编写的。这些章节按顺序编写，以帮助每一步的学习。但是，如果您正在阅读本书并且已经了解Unity或制作游戏，那么请随意跳过您认为已经知道的章节。</p>
+<h3 id="Unity3D"><a href="#Unity3D" class="headerlink" title="Unity3D"></a>Unity3D</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity游戏引擎是一个创建2D和3D游戏的跨平台游戏开发工具。跨平台不同的人有不同的理解。Unity可以被使用在macOS，Windows，或者Linux上，这可以被认为是一个跨平台开发工具。但是，Unity可以用来开发游戏机，个人计算机，网络浏览器，移动设备，VR系统的游戏等等，这也可能是Unity被认为是跨平台开发工具的原因。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity可用于创建3D游戏，也就是说，游戏看起来像是在3D空间中运行（它有X，Y和Z）。Unity也可用于创建2D游戏。最近，Unity已经用于创建VR和AR游戏或者模拟。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在本书中，我们将使用Unity最新版本，当前是2018.1版本。然而，像大多数软件（和很多硬件）一样，Unity不断推出新特性和新功能，到本书印刷时，可能会有更新版本的Unity。当Unity对其软件进行微小更改时，通常会添加一个数字（如2018.1.1）。当更新有点重要时，版本号将会改变（如2018.2）。当Unity通常进行重大更改时，版本号将完全更改（Unity 1,2,3,4,5）。 2017年7月，Unity将版本编号系统更改为发布年份（2017年和2018年）。</p>
+<h3 id="Unity要求"><a href="#Unity要求" class="headerlink" title="Unity要求"></a>Unity要求</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在你开始学习制作游戏之前，你将需要下载Unity并安装它在你的Mac上。虽然可以在Windows个人计算机上安装带有Unity的iOS设备的游戏，但您需要使用一个名为Xcode的软件来移植Unity代码，以便它可以在Mac或iOS设备上运行。目前，Xcode仅适用于Mac。所以，如果你有一台Windows PC，那么在某个阶段你需要使用Mac来移植游戏。在本书中，我将使用Mac;如果您使用的是Windows PC，则许多说明或说明可能不适用于您。</p>
+<h3 id="准备你的Mac"><a href="#准备你的Mac" class="headerlink" title="准备你的Mac"></a>准备你的Mac</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于使用Unity的iOS开发，您需要一台运行Mac OS X 10.9或更高版本的Lion或Mountain Lion以及Xcode 7.0或更高版本的Mac。 Unity 2018仍然可以在一些较旧的系统上运行，但是您需要最新版本的Xcode，如上所述，这是iOS开发所必需的。最新版本的Xcode通常支持更新版本的iOS。在撰写本文时，Xcode的当前版本是版本9，这是我将在本书中使用的内容。</p>
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我强烈建议您查看Apple开发人员网站（<a href="https://developer.apple.com/" target="_blank" rel="noopener">https://developer.apple.com/</a>）并注册为iOS开发人员。虽然这不是本书的绝对要求，但如果您想在App Store上发布游戏，那么您将需要成为注册的Apple Developer。注册为Apple Developer的过程可能需要一段时间，尤其是如果您正在注册公司。第一步是注册为Apple Developer（目前是免费的），然后一旦注册，下一步就是注册为iOS开发人员（目前每年99美元）。</p>
+<h3 id="下载Xcode"><a href="#下载Xcode" class="headerlink" title="下载Xcode"></a>下载Xcode</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在本书的后面部分，你不需要Xcode，但值得下载和安装Xcode。您可以在Apple Developer网站（<a href="https://developer.apple.com/" target="_blank" rel="noopener">https://developer.apple.com/</a>）上找到最新版本的Xcode。</p>
+<h3 id="下载Unity"><a href="#下载Unity" class="headerlink" title="下载Unity"></a>下载Unity</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在是安装Unity的好时机。访问Unity网站<a href="https://unity3d.com" target="_blank" rel="noopener">https://unity3d.com</a>，然后选择Get Unity或输入[https:// store.unity.com/](https:// store.unity.com/)。在此页面上，您将找到Unity的最新版本（在撰写本文时，2018.1）。您还可以在Unity网站上找到Unity的早期版本。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;虽然只有一个Unity应用程序，但您可以订阅不同的许可选项，具体取决于您的需求和公司规模（如果有的话）。三种许可选项目前是Personal，Plus和Pro。要开始下载过程，请单击符合您需求的订阅选项按钮（在撰写本文时，这将是Try Personal，Get Plus或Go Pro）。该文件大约为1GB，因此下载可能需要一段时间。在你等待的时候，你在Unity网站上，花一些时间查看已发布的一些游戏和演示，社区网站和用户论坛。这些在使用Unity的游戏开发过程中非常有用。</p>
+<h3 id="安装Unity"><a href="#安装Unity" class="headerlink" title="安装Unity"></a>安装Unity</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您从Unity下载的文件是一个下载安装程序，在撰写本文时名为UnityDownloadAssistant。</p>
+<h3 id="运行下载助手"><a href="#运行下载助手" class="headerlink" title="运行下载助手"></a>运行下载助手</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下载UnityDownloadAssistant文件后，双击该文件以运行Unity Download Assistant。双击Unity Download Assistant图标以开始安装Unity（图1-1）。</p>
+<p><img src="/2019/02/25/第一章/1551054573.jpg" alt=""></p>
+<p>图 1-1. Unity下载助手</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装程序将处理整个安装周期，当这个完成的时候，一个Unity的文件夹将会被放置在Applications文件夹里（除非你选择了一个不同的安装位置）。如果您安装了以前版本的Unity，新版本的安装可能替换以前的版本。我建议在安装新版本之前重命名以前版本的文件夹（例如，Unity2017）。这样您仍然可以使用Unity的两个版本。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity安装文件夹包含Unity应用程序和几个支持文件夹和应用程序（图 1-2）。</p>
+<p><img src="/2019/02/25/第一章/1551188404.jpg" alt=""></p>
+<p>图 1-2 Unity安装文件夹</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity文件夹中最重要的文件之一是Unity应用程序，它将提供一些工具用来创建和测试您的游戏。应用程序有时有时称为Unity编辑器，不同于其他程序，Unity运行时引擎（也称为Unity播放器）。Unity运行时引擎已集成到最终版本，这将使游戏能够在目标硬件上运行。当我提到Unity时，通常指的是Unity编辑器。 我有时会将Unity技术称为Unity。但如果顺利的话，上下文是明确的。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Documentation文件夹包含用户手册，组件参考，脚本参考文档。这些在Unity网站上也是可用的（选择学习链接）。所有这些文档都是HTML文档，从Unity Help菜单系统中可以用浏览器打开，或者可以双击直接打开它们。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standard Assets文件夹包含许多以.unityPackage作为文件扩展名的文件。这些是Unity的包文件，它包含Unity资产的集合，可以被导入Unity。它也可能创建你自己的标准资产并导出这些资产为一个包文件。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还有Unity Bug Reporter应用程序。这个应用程序是通常直接在Unity编辑器中运行Report a Bug功能。然而，这个应用程序从Unity安装文件夹直接运行。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您在Unity安装时下载了样例项目，确保在Unity中打开这些。如果您在安装时不下载这些。它仍然可以在任何时候呗下载。</p>
+<h3 id="欢迎"><a href="#欢迎" class="headerlink" title="欢迎"></a>欢迎</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Unity安装完成后（做好准备需要一段时间），Unity编辑器欢迎界面将出现Unity Hello！窗口（图 1-3）。Unity Hello！窗口是您登录Unity账户的地方（如果您有的话）。如果您没有Unity账户，选择Create One链接。如果您当前没有连接网络，您可以通过选择Work offline按钮进行离线工作。</p>
+<p><img src="/2019/02/25/第一章/1551190638.jpg" alt=""></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当您启动Unity（图 1-3）时Unity Hello！窗口将会出现。我强烈建议创建一个Unity账户，如果您还没有创建的话。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首次登录以后，您将会看到License管理界面。如果您已经付费了Unity的授权版本，在对话框中输入你的授权序列号。请输入您的许可证 对话框中的序列号。如果你想使用免费版的Unity， 选择Unity Personal单选按钮（图 1-4）。</p>
+<p><img src="/2019/02/25/第一章/1551222294.jpg" alt=""></p>
+<p>图 1-4 Unity授权管理界面</p>
+<h3 id="设置Unity"><a href="#设置Unity" class="headerlink" title="设置Unity"></a>设置Unity</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在我们开始使用Unity制作游戏之前，现在是查看Unity的一些选项和管理功能的好时机。</p>
+<h3 id="改变外观（Pro版）"><a href="#改变外观（Pro版）" class="headerlink" title="改变外观（Pro版）"></a>改变外观（Pro版）</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你已经购买了一个Unity的Pro授权，你将能够在浅色或深色之间选择。如果你正在使用Unity的免费版本，你讲只能看到浅色外观。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为大多数游戏开发的初学者使用Unity的免费版本，我将使用浅色外观截屏。对于这本书的纸质版本浅色外观也能产生更好的截屏效果。如果你有高级版本并且想去改变外观，选择Unity菜单中的Prefrences（偏好设置）项（图 1-5）</p>
+<p><img src="/2019/02/25/第一章/1551223091.jpg" alt=""></p>
+<p>图 1-5 Unity偏好设置菜单</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着偏好设置菜单的打开，你可以改变皮肤用深色到浅色或浅色到深色（图 1-6）如果你正在使用Unity个人版本，您被迫接受浅色皮肤。</p>
+<p><img src="/2019/02/25/第一章/1551223299.jpg" alt=""></p>
+<p>图 1-6 Unity编辑器中的通用偏好设置菜单</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当您已经打开偏好设置菜单时，我建议确保启动时加载以前的项目选项是未选中的。这将确保Unity在启动时加载项目选择对话框。这将确保您避免更新错误的版本或者在准备好之前更新您正在使用的Unity版本。</p>
+<h3 id="报告问题"><a href="#报告问题" class="headerlink" title="报告问题"></a>报告问题</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你继续使用Unity几年，你将遇到一些bug（真实的和想象中的）。我从1.6版本使用Unity并遇到了很多Unity的bug。软件的bug对于Unity不是唯一的。一个游戏开发引擎是软件中复杂的一片并且Unity肯定赞赏并重视错误报告。如果bug不被报告，那么Unity很难修复它们。Unity Bug Reporter应用程序提供了这个特性。正如前面提到的，报告一个Bug Report可在Unity安装文件夹中找到，也可从Unity编辑器的“帮助”菜单中选择（图1-7）。</p>
+<p><img src="/2019/02/25/第一章/1551224060.jpg" alt=""></p>
+<p>图 1-7 帮助菜单中的报告Bug选项</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在帮助菜单上选择Report a Bug选项或者在Unity安装文件夹中双击Report a Bug应用程序来打开Unity Report a Bug应用程序（图 1-8）。该应用程序提供菜单选项和对话框，供用户指定问题是关于什么的，问题发生的频率，bug的标题，bug的细节，以及附加任何有助于修复的相关文件的选项。Unity Bug Reporter需要用户指定一个email地址以便于Unity团队可以回复bug报告者。</p>
+<p><img src="/2019/02/25/第一章/1551224778.jpg" alt=""></p>
+<p>图 1-8 Unity Bug Reporter窗口</p>
+<h3 id="iOS开发要求"><a href="#iOS开发要求" class="headerlink" title="iOS开发要求"></a>iOS开发要求</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在前面的章节中，我建议下载Xcode和注册苹果开发者计划是一个好的主意。如果你还没有做好。现在是停下来做这些的好时机。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于iOS开发的硬件和软件要求以及关于苹果开发者计划的细节列在苹果开发者支持页面(<a href="https://developer.apple.com" target="_blank" rel="noopener">https://developer.apple.com</a>)上。你也可以找到Xcode的要求和下载页面，网址为<a href="https://developer.apple.com/Xcode/" target="_blank" rel="noopener">https://developer.apple.com/Xcode/</a>。</p>
+<h3 id="Unity网站"><a href="#Unity网站" class="headerlink" title="Unity网站"></a>Unity网站</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着Unity Technologies增加Unity的特性和功能，内容的广度和深度也增加了。网站上有大量的信息，但是我建议看看FAQ部分（<a href="https://unity3d.com/unity/faq" target="_blank" rel="noopener">https://unity3d.com/unity/faq</a>）。也有一些非常棒的指南，文档，以及视频，这些将帮助你使用Unity（<a href="https://unity3d.com/unity/faq" target="_blank" rel="noopener">https://unity3d.com/unity/faq</a>）来学习创建游戏。</p>
+<h3 id="Unity社区"><a href="#Unity社区" class="headerlink" title="Unity社区"></a>Unity社区</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在帮助菜单中，有官方的Unity社区网站链接。这包含了官方Unity论坛（<a href="https://forum.unity.com" target="_blank" rel="noopener">https://forum.unity.com</a>），由Unity工作人员主持。对于任何游戏开发者而言这是非常棒的资源。这个菜单上还有Unity Answers的链接，它使用了一个Stack Exchange格式并包含一些控制（或审核） 问题和解答。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unity反馈网站（<a href="https://feedback.unity3d.com" target="_blank" rel="noopener">https://feedback.unity3d.com</a>）让开发者能够在未来可能的特性上发出请求或者投票。</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/06/20/增强现实交互/">增强现实交互</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-06-20</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/AR/">AR</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/增强现实/">增强现实</a></span><div class="content"><p>在真实世界场景中显示虚拟物体可能是很有趣的，但是你想做得更多而不仅仅是在一个场景上覆盖静态图片。另外在场景中显示虚拟物体，ARKit也可以使得虚拟物体在屏幕上移动，给用户与虚拟物体交互的能力，通过触摸手势，例如点击或者滑动。</p></div><a class="more" href="/2018/06/20/增强现实交互/#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/06/10/Metal编程指南/">Metal编程指南</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-06-10</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Metal/">Metal</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/图形学/">图形学</a></span><div class="content"><ul>
+<li>[Metal基础概念] 简明的描述Metal的主要特性。</li>
+<li>[命令组成和执行模型] 解释如何创建和提交命令到GPU执行。</li>
+<li>[资源对象:缓冲和纹理] 讨论设备内存管理，包括表现GPU内存分配的缓冲和纹理对象。</li>
+<li>[函数和库] 描述Metal着色语言代码如何被呈现在一个Metal应用中，Metal着色语言代码在GPU上如何被加载和执行的。</li>
+<li>[图像渲染:渲染命令编码器] 描述如何渲染3D图像，包括如何穿过多个线程来分配图形操作。</li>
+<li>[数据并行计算处理:计算命令编码器] 阐述如何执行数据并行处理。</li>
+<li>[缓冲和纹理操作:位命令编码器] 描述如何在纹理和缓冲之间拷贝数据。</li>
+</ul></div><a class="more" href="/2018/06/10/Metal编程指南/#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2018/06/03/理解ARKit/">理解ARKit</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-06-03</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/AR/">AR</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/增强现实/">增强现实</a></span><div class="content"><p>近些年最流行的手游之一是Pokemon Go(精灵宝可梦Go), 它展示通过iPhone相机查看覆盖在真实地点的宝可梦角色。将iPhone摄像头对准公园长椅或灌木丛，你可以看到一个宝可梦卡通角色，好像它真的在那。</p>
+<p>这种在实际物理对象上显示虚拟对象的技术被称为增强现实（AR）。增强现实背后的想法是让您将真实世界的物体与出现在iPhone屏幕上的虚拟物体相结合。</p></div><a class="more" href="/2018/06/03/理解ARKit/#more">阅读更多</a><hr></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2011 - 2020 By Boyka·Yuri</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
