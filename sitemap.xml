@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhaolilong.com/tags/index.html</loc>
+    
+    <lastmod>2020-03-10T01:56:09.722Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhaolilong.com/2019/02/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</loc>
     
     <lastmod>2020-03-10T01:56:09.701Z</lastmod>
@@ -44,16 +51,9 @@
   </url>
   
   <url>
-    <loc>https://zhaolilong.com/tags/index.html</loc>
-    
-    <lastmod>2019-02-17T15:09:43.762Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhaolilong.com/404.html</loc>
     
-    <lastmod>2019-02-17T15:09:43.760Z</lastmod>
+    <lastmod>2020-03-10T01:56:09.667Z</lastmod>
     
   </url>
   
