@@ -5,13 +5,20 @@ footer
   background-image: url($bg-svg)
   background-attachment: fixed
 
+  &.footer-bg
+    background-position: bottom
+    background-size: cover
+
+  &.is-mobile
+    background-attachment: local
+
 #footer
   padding: 2rem 1rem
-  color: $light-grey
+  color: $theme-footer-text-color
   text-align: center
 
   a
-    color: $light-grey
+    color: $theme-footer-text-color
     text-decoration: none
     cursor: pointer
 

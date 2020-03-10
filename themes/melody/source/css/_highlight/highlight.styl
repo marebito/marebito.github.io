@@ -2,19 +2,19 @@
 @require "theme"
 @require "diff"
 
-languages = "js" "javascript" "python" "ruby" "xml" "html" "css" "perl" "sql" "coffeescript" "java" "scala" "kotlin" "c" "c++" "go" "less" "sass" "scss" "stylus" "styl" "typescript" "ts" "bash"
+// languages = "js" "javascript" "python" "ruby" "xml" "html" "css" "perl" "sql" "coffeescript" "java" "scala" "kotlin" "c" "c\+\+" "go" "less" "sass" "scss" "stylus" "styl" "typescript" "ts" "bash" "yml" "gradle"
 wordWrap = !hexo-config("rootConfig.highlight.line_number") && hexo-config("code_word_wrap")
 
-loopForLanguages()
-  for lang in languages
-    .article-container
-      figure.highlight
-        &{"." + lang}
-          table
-            &:before
-              content: lang
+// loopForLanguages()
+// for lang in languages
+// .article-container
+// figure.highlight
+// &{"." + lang}
+// table
+// &:before
+// content: lang
 
-loopForLanguages()
+// loopForLanguages()
 
 // Placeholder: $code-block
 $code-block
@@ -101,19 +101,6 @@ blockquote
       width: auto
       border: none
 
-      &:before
-        position: fixed
-        z-index: 1
-        display: inline-block
-        margin-top: -1.4rem
-        padding: 0 0.7rem
-        width: 5rem
-        color: $highlight-foreground
-        content: "Code"
-        font-weight: bold
-        font-size: 0.8rem
-        line-height: 1.4rem
-
       &:after
         position: absolute
         top: -1.4rem
@@ -129,17 +116,39 @@ blockquote
 
     figcaption
       clearfix()
+      position: absolute
+      z-index: 1
       margin-bottom: 1em
+      padding: 0.2em 0 0.2em 0.7rem
+      width: 100%
+      height: 1.4em
       color: $highlight-foreground
       font-size: 1em
       line-height: 1em
 
+      span
+        float: left
+        overflow: hidden
+        max-width: 100%
+        text-overflow: ellipsis
+        white-space: nowrap
+
       a
         float: right
+        padding-right: 10px
         color: $highlight-foreground
 
         &:hover
           border-bottom-color: $highlight-foreground
+
+      &+table
+        margin-top: 1em
+
+        &:before
+          margin-top: -2.1rem
+
+        &:after
+          top: -2.1rem
 
     .gutter pre
       padding-right: 0.5rem
