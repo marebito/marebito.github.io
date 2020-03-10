@@ -13,10 +13,10 @@ theme_color:
 # Main menu navigation
 # ---------------
 menu:
-  Home: /
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
+  主页: /
+  归档: /archives
+  标签: /tags
+  分类: /categories
   #XXX: /xxx
 
 # Favicon
@@ -52,9 +52,9 @@ code_word_wrap: true
   #icon_name: url
 
 social:
-  github fa: https://github.com/marebito
-  weibo fa: https://weibo.com/u/2386520501
-  rss fa: https://zhaolilong.com/atom.xml
+  github fab: https://github.com/marebito
+  weibo fab: https://weibo.com/u/2386520501
+  rss fas: https://zhaolilong.com/atom.xml
 
 # Algolia search
 # ---------------
@@ -81,7 +81,7 @@ local_search:
 # ---------------
 mathjax:
   enable: true
-  cdn: https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML # required
 
 
 # Toggle fireworks (IE >= 10)
@@ -115,7 +115,8 @@ scripts:
 # ---------------
 cdn:
   css:
-    fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+    fontawesome: https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css
+    fontawesomev5: https://use.fontawesome.com/releases/v5.7.2/css/all.css
   js:
     anime: /js/third-party/anime.min.js
     jquery: /js/third-party/jquery.min.js
@@ -127,10 +128,11 @@ cdn:
 # ---------------
 avatar: 
 
-top_img: http://up.bizhitupian.com/pic_source/a3/22/9c/a3229c9da61d530d135bf26fc3076e21.jpg # false or url of img 
+top_img: https://zhaolilong.com/AtlantisNebula.jpg # false or url of img 
+top_img_height: 60
 
 post_meta:
-  date_type: created # created or updated 
+  date_type: created # created or updated algolia
   categories: true
   tags: true
 
@@ -168,10 +170,13 @@ slide:
   parallaxBackgroundHorizontal: null
   parallaxBackgroundVertical: null
 
-# QR_code:
-  # - itemlist:
-  #     img:
-  #     text:
+QR_code:
+  - itemlist:
+      img: https://zhaolilong.com/alipay.jpg
+      text: 支付宝打赏
+  - itemlist:
+      img: https://zhaolilong.com/wx.jpg
+      text: 微信打赏
 
 # adv:
   # enable: false
@@ -259,12 +264,18 @@ busuanzi:
 
 # Sidebar Settings
 # ---------------
-#links_title: Links
-#links:
-  #Name: url
+sidebar_display: post
+
+links_title: 学习链接
+links:
+  数 据 结 构 与 算 法 >>: https://data.biancheng.net
+  U n i t y 学 习 指 南 >>: https://catlikecoding.com/unity/tutorials
+  游 戏 设 计 模 式 >>: https://gameprogrammingpatterns.com/
+  神 经 网 络 与 深 度 学 习 >>: http://neuralnetworksanddeeplearning.com/
+
 
 # Follow Me Button
 follow:
   enable: true
   url: 'https://github.com/marebito'
-  text: 'Follow Me'
+  text: '关 注'
