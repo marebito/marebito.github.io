@@ -85,8 +85,8 @@ live2d:
     width: 105
     height: 210
     position: left # Where the model is displayed on the web page
-    hOffset: 0
-    vOffset: 550
+    hOffset: 200
+    vOffset: 580
 
 canvas_ribbon:
   enable: false

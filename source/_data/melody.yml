@@ -264,7 +264,7 @@ busuanzi:
 
 # Sidebar Settings
 # ---------------
-sidebar_display: post
+sidebar_display: all
 
 links_title: 学习链接
 links:
