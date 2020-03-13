@@ -3,7 +3,13 @@ title: Modbus
 date: 2020-03-12 15:07:32
 tags: 
  - Ardunio
+ - Modbus
+top_img: http://up.bizhitupian.com/pic_source/87/90/d5/8790d5468b68ebdd3321b0bbe6a5534b.jpg
 ---
+
+Modbus是一个通信协议，它可以用来发送和接收数据通过一条串行总线，像RS232和RS485总线。在本章中，你将学习到如何使用Modbus通讯协议通过RS485总线来连接工业设备到您的基于Arduino的PLC（可编程序逻辑控制器）。Modbus使用master-slave（主-从）架构，配置一个节点作为master（例如，Arduino PLC）并配置其他设备作为slaves（温度传感器，湿度传感器，光传感器等等）。使用RS485的好处是它仅仅使用两条共享线来连接所有设备（slaves）到主节点上。它也支持远距离以及电噪声环境中设备的使用。
+
+<!-- more -->
 
 Modbus
 
