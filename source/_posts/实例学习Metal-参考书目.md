@@ -1,3 +1,17 @@
+---
+title: 实例学习Metal-第十四章 参考书目
+date: 2020-04-12 00:00:00
+tags:
+  - iOS/Mac
+  - 图形学
+  - Metal
+---
+
+Barrett, Sean. 2014. “stb Single-File Public Domain Libraries for C/C++.” https://github. com/nothings/stb.<br/><br/>
+Blinn, James F. 1977. “Models of Light Reflection for Computer Synthesized Pictures.” In Proceedings of the 4th Annual Conference on Computer Graphics and Interactive Techniques, 192–98. SIGGRAPH ’77. New York, NY, USA: ACM. doi:10.1145/563858.563893.<br/><br/>
+
+<!-- more -->
+
 Barrett, Sean. 2014. “stb Single-File Public Domain Libraries for C/C++.” https://github. com/nothings/stb.<br/><br/>
 Blinn, James F. 1977. “Models of Light Reflection for Computer Synthesized Pictures.” In Proceedings of the 4th Annual Conference on Computer Graphics and Interactive Techniques, 192–98. SIGGRAPH ’77. New York, NY, USA: ACM. doi:10.1145/563858.563893.<br/><br/>
 Boxley, Paul. 2011. “Terrain Generation with the Diamond Square Algorithm.” http: //www.paulboxley.com/blog/2011/03/terrain-generation-mark-one.<br/><br/>
