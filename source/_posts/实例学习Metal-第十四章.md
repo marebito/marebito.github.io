@@ -1,5 +1,5 @@
 ---
-title: 实例学习Metal-第十三章 介绍数据并行编程
+title: 实例学习Metal-第十四章 图像处理基础
 date: 2020-04-05 00:00:00
 tags:
   - iOS/Mac
