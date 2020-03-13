@@ -1,5 +1,5 @@
 ---
-title: 实例学习Metal-第十四章 参考书目
+title: 实例学习Metal-参考书目
 date: 2020-04-12 00:00:00
 tags:
   - iOS/Mac
