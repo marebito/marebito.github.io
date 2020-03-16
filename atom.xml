@@ -114,6 +114,28 @@
   </entry>
   
   <entry>
+    <title>用arduino uno r3给ESP8266-01WiFi模块烧写固件</title>
+    <link href="https://zhaolilong.com/2020/03/16/%E7%94%A8arduino%20uno%20r3%E7%BB%99ESP8266-01WiFi%E6%A8%A1%E5%9D%97%E7%83%A7%E5%86%99%E5%9B%BA%E4%BB%B6/"/>
+    <id>https://zhaolilong.com/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/</id>
+    <published>2020-03-16T05:55:35.000Z</published>
+    <updated>2020-03-16T06:18:51.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>如何在没有USB转串口烧写器的情况下，直接用arduino uno R3给ESP8266-01WiFi模块烧写固件。</p><a id="more"></a><p>一. 连接esp8266千先连接电脑打开arduino IDE给UNO板写入初始化程序，程序如下</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pinMode(<span class="number">0</span>, INPUT_PULLUP);</span><br><span class="line">    pinMode(<span class="number">1</span>, INPUT_PULLUP);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/1584338558.jpg" alt=""></p><p>二. 把esp8826-01连接到UNO板，连接方法如下：</p><p><img src="/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/1584338752.jpg" alt=""></p><p>三. 打开乐鑫官网下载Flash下载工具，添加准备好的bin格式的固件，设置参数，开始下载。具体步骤见下图：</p><p><img src="/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/1584338851.jpg" alt=""></p><p><img src="/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/1584338910.jpg" alt=""></p><p>四. 烧写完成，接下来就是串口调试了，断开GPIO0引脚地连线，打开串口调试工具，选择正确的波特率和端口后点击打开串口，然后插拔CH_PD引脚连线，当出现乱码固件的版本号就显示出来了，OK！</p><p><img src="/2020/03/16/用arduino uno r3给ESP8266-01WiFi模块烧写固件/1584339052.jpg" alt=""></p><blockquote><p>注意事项</p></blockquote><ul><li>在点击开始以后短暂断开CH_PD引脚的接线，重新上电.</li><li>GPIO0引脚必须拉低接GND.</li><li>调试时必须断开GPIO0引脚.</li><li>VCC和CH_PD引脚供电必须为3.3V.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何在没有USB转串口烧写器的情况下，直接用arduino uno R3给ESP8266-01WiFi模块烧写固件。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="IoT" scheme="https://zhaolilong.com/tags/IoT/"/>
+    
+      <category term="Arduino" scheme="https://zhaolilong.com/tags/Arduino/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实例学习Metal-第十一章 实例渲染</title>
     <link href="https://zhaolilong.com/2020/03/15/%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0Metal-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/"/>
     <id>https://zhaolilong.com/2020/03/15/实例学习Metal-第十一章/</id>
@@ -462,28 +484,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>增强现实交互</title>
-    <link href="https://zhaolilong.com/2018/06/20/%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E%E4%BA%A4%E4%BA%92/"/>
-    <id>https://zhaolilong.com/2018/06/20/增强现实交互/</id>
-    <published>2018-06-20T08:47:03.000Z</published>
-    <updated>2020-03-10T01:56:09.669Z</updated>
-    
-    <content type="html"><![CDATA[<p>在真实世界场景中显示虚拟物体可能是很有趣的，但是你想做得更多而不仅仅是在一个场景上覆盖静态图片。另外在场景中显示虚拟物体，ARKit也可以使得虚拟物体在屏幕上移动，给用户与虚拟物体交互的能力，通过触摸手势，例如点击或者滑动。</p><a id="more"></a><p>例如，一个用户可能想点击一个虚拟物体来使得它移动或者以某种方式响应，例如改变它的外观或者在屏幕上移动。通过制作增强现实交互，你的应用可能更感兴趣和赞同。</p><blockquote><p><strong>注意</strong> 你仅仅可以测试和运行ARKit应用在iPhone 6s或者更高，或者一个iPad Pro上。</p></blockquote><p>让我们创建一个新的增强现实应项目，命名为ARGesture。这个项目将包含一个AppDelegate.swift文件，一个ViewController.swift文件和一个Main.storyboard文件，还有art.scnassets文件夹，它包含了一个ship.scn对象和一个texture.png文件。</p><p>我们的目标是创建一个几何模型并在屏幕上显示它。然后用户可以在那个模型上滑动并使得它旋转。为了做到这点，我们将需要学习一些技能。</p><p>首先，大多数人熟悉操作几何模型使用角度，但是苹果的SceneKit框架使用弧度。我们可以编写我们自己的公式去转换角度到弧度，但是苹果提供了一个数学框架叫作GLKit，它包含了一个可以执行这个计算的函数。作为一个通用的规则，尽可能依赖苹果框架总是最好的，而不是编写你自己的函数，因为苹果框架被测试过，而你讲不得不花费时间调试和测试你自己的函数。</p><p>在ViewController.swift文件的顶部，添加以下行导入GLKit框架</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> GLKit</span><br></pre></td></tr></table></figure><p>你的ViewController.swift文件应该导入GLKit，UIKit，SceneKit和ARKit框架总共四个import语句。</p><p>接下来，我们需要创建一个节点，该节点代表我们想添加到屏幕上的几何模型。这意味着创建一个SCNNode对象。因为我们将需要访问这个对象在不止一个方法中，创建这个作为一个IBOutlet属性，所以ViewController.swift文件顶部应当看起来像这样:</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"><span class="keyword">import</span> SceneKit</span><br><span class="line"><span class="keyword">import</span> ARKit</span><br><span class="line"><span class="keyword">import</span> GLKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">ARSCNViewDelegate</span> </span>&#123;</span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> sceneView: <span class="type">ARSCNView</span>!</span><br><span class="line">    <span class="keyword">let</span> node = <span class="type">SCNNode</span>()</span><br></pre></td></tr></table></figure><p>在viewDidLoad函数中，我们可以添加调试选项，将在屏幕上显示世界原点。你可能不想显示世界原点在最终的应用中，但是它可以当你开发应用时是有用的，显示给你虚拟物体出现在屏幕的位置。添加以下行在viewDidLoad函数中：</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sceneView.debugOptions = [<span class="type">ARSCNDebugOptions</span>.showWorldOrigin, <span class="type">ARSCNDebugOptions</span>.showFeaturePoints]</span><br></pre></td></tr></table></figure><h2 id="存储和访问图形资产"><a href="#存储和访问图形资产" class="headerlink" title="存储和访问图形资产"></a>存储和访问图形资产</h2><p>现在我们需要创建一个几何模型。在这种情况下，我们想创建一个金字塔，所以我们将需要定义它的宽，高和长。另外，我们也想去应用一个纹理到我们的金字塔上。</p><p>增强现实应用项目引入了两个图像文件：ship.scn和texture.png。我们将不显示ship.scn文件，所以你可以删除代码，显示这个ship.scn在屏幕上。然而，我们想去使用texture.png文件。</p><p>在前一章节中，你看到了如何使用一个纹理图像图片通过简单地定义它的名字像这样：</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> material = <span class="type">SCNMaterial</span>()</span><br><span class="line">material.diffuse.contents = <span class="type">UIImage</span>(named: <span class="string">"stone.jpg"</span>)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在真实世界场景中显示虚拟物体可能是很有趣的，但是你想做得更多而不仅仅是在一个场景上覆盖静态图片。另外在场景中显示虚拟物体，ARKit也可以使得虚拟物体在屏幕上移动，给用户与虚拟物体交互的能力，通过触摸手势，例如点击或者滑动。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="AR" scheme="https://zhaolilong.com/tags/AR/"/>
-    
-      <category term="增强现实" scheme="https://zhaolilong.com/tags/%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E/"/>
     
   </entry>
   
