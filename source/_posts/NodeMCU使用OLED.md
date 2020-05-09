@@ -23,12 +23,14 @@ Mac：https://github.com/marcelstoer/nodemcu-pyflasher/releases
 ## 给NodeMCU刷入固件
 
 1. 在nodemcu官网https://nodemcu-build.com/中下载固件
+
 | 基本信息 | 参数 |
 |---|---|
 | 驱动电压  | 3.3~5V |
 | 分辨率  | 128x64 |
 | 驱动接口 | I2C |
 | I2C地址 | 0x3c(默认)\0x3d可选 |
+
 ![](1588987148.png)
 构建模块中勾选I2C和U8G2。
 字体需要勾选中文，默认不支持中文字体
