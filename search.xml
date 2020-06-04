@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>jenkins更新新版本速度慢</title>
+      <link href="/2020/06/04/jenkins%E6%9B%B4%E6%96%B0%E6%96%B0%E7%89%88%E6%9C%AC%E9%80%9F%E5%BA%A6%E6%85%A2/"/>
+      <url>/2020/06/04/jenkins%E6%9B%B4%E6%96%B0%E6%96%B0%E7%89%88%E6%9C%AC%E9%80%9F%E5%BA%A6%E6%85%A2/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>Linux<br>cd /root/.jenkins/updates/</p></li><li><p>OSX<br>cd /Users/Shared/Jenkins/Home/updates<br>cd ~/.jenkins/updates</p></li></ul><p>sed -i ‘s/http://updates.jenkins-ci.org/download/https://mirrors.tuna.tsinghua.edu.cn/jenkins/g’ default.json &amp;&amp; sed -i ‘s/http://<a href="http://www.google.com/https:\/\/www.baidu.com/g&#39;" target="_blank" rel="noopener">www.google.com/https:\/\/www.baidu.com/g&#39;</a> default.json</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux下查看ssh的用户登录日志</title>
       <link href="/2020/05/29/Linux%E4%B8%8B%E6%9F%A5%E7%9C%8Bssh%E7%9A%84%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%97%A5%E5%BF%97/"/>
       <url>/2020/05/29/Linux%E4%B8%8B%E6%9F%A5%E7%9C%8Bssh%E7%9A%84%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%97%A5%E5%BF%97/</url>
