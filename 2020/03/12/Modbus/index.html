@@ -9,13 +9,14 @@
   }
 } </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#多协议无线电板"><span class="toc-number">1.</span> <span class="toc-text">多协议无线电板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arduino和树莓派的RS485-Modbusm模块"><span class="toc-number">2.</span> <span class="toc-text">Arduino和树莓派的RS485/Modbusm模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为Arduino安装RS485库"><span class="toc-number">3.</span> <span class="toc-text">为Arduino安装RS485库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用Modbus搭建PLC"><span class="toc-number">4.</span> <span class="toc-text">用Modbus搭建PLC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#搭建硬件设置"><span class="toc-number">4.1.</span> <span class="toc-text">搭建硬件设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Arduino-Sketch"><span class="toc-number">4.2.</span> <span class="toc-text">Arduino Sketch</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">31</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">16</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://up.bizhitupian.com/pic_source/87/90/d5/8790d5468b68ebdd3321b0bbe6a5534b.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">Modbus</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-12</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">2.6k</span><span class="post-meta__separator">|</span><span>阅读时长: 9 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>Modbus是一个通信协议，它可以用来发送和接收数据通过一条串行总线，像RS232和RS485总线。在本章中，你将学习到如何使用Modbus通讯协议通过RS485总线来连接工业设备到您的基于Arduino的PLC（可编程序逻辑控制器）。Modbus使用master-slave（主-从）架构，配置一个节点作为master（例如，Arduino PLC）并配置其他设备作为slaves（温度传感器，湿度传感器，光传感器等等）。使用RS485的好处是它仅仅使用两条共享线来连接所有设备（slaves）到主节点上。它也支持远距离以及电噪声环境中设备的使用。</p>
 <a id="more"></a>
-
 <p>Modbus</p>
 <p>  Modbus是一个通信协议，它可以用来发送和接收数据通过一条串行总线，像RS232和RS485总线。在本章中，你将学习到如何使用Modbus通讯协议通过RS485总线来连接工业设备到您的基于Arduino的PLC（可编程序逻辑控制器）。Modbus使用master-slave（主-从）架构，配置一个节点作为master（例如，Arduino PLC）并配置其他设备作为slaves（温度传感器，湿度传感器，光传感器等等）。使用RS485的好处是它仅仅使用两条共享线来连接所有设备（slaves）到主节点上。它也支持远距离以及电噪声环境中设备的使用。</p>
 <p>  为了连接您的Arduino PLC到Modbus通信协议开启设备，首先你应当添加一些硬件模块到Arduino中为了开启它作为一个Modbus主节点。</p>
 <p>  <strong>RS485/Modbus模块</strong>是一个理想组件，它可以用来在您的Arduino主板上开启Modbus通信协议。另外，你需要一个板子来与您的Arduino连接和交互。市场上有很多Arduino的RS485/Modbus模块。</p>
-<p>  为了搭建开启RS485和Modbus的Arduino PLC，需要下列操作：<br>    * Multiprotocol Radio Shield（多协议无线电板)<br>    * RS485/Modbus模块</p>
-<h3 id="多协议无线电板"><a href="#多协议无线电板" class="headerlink" title="多协议无线电板"></a>多协议无线电板</h3><p>来自Cooking Hacks的多协议无线电板是Arduino UNO搭建开启Modbus PLCs的理想兼容板。该板被设计为同时连接两个通信模块。<br><img src="/2020/03/12/Modbus/1583998593.png" alt=""></p>
+<p>  为了搭建开启RS485和Modbus的Arduino PLC，需要下列操作：</p>
+<pre><code>* Multiprotocol Radio Shield（多协议无线电板)
+* RS485/Modbus模块
+</code></pre><h3 id="多协议无线电板"><a href="#多协议无线电板" class="headerlink" title="多协议无线电板"></a>多协议无线电板</h3><p>来自Cooking Hacks的多协议无线电板是Arduino UNO搭建开启Modbus PLCs的理想兼容板。该板被设计为同时连接两个通信模块。<br><img src="/2020/03/12/Modbus/1583998593.png" alt=""></p>
 <p><strong>图 7-1.</strong> 来自Cooking Hacks的多协议无线电板。图片由Libelium提供（<a href="http://www.cooking-hacks.com" target="_blank" rel="noopener">http://www.cooking-hacks.com</a>)</p>
 <blockquote>
 <p><strong>注意</strong>    多协议板有两个插口（Figure 7-2)，你可以用来连接任何开启UART（通用异步收发传输器）的硬件模块。两个插口被命名为SOCKET0和SOCKET1。插口是由2mm母排针组成的，它一共有20个连接。（UART代表通用一步收发传输器并且它是最流行的串行协议。）</p>
@@ -25,8 +26,7 @@
 <p>  所有插口开启SPI（串行外设接口），所以你可以连接<strong>RS485，RS232，</strong>CAN(Controller Area Network控制局域网路) 总线<strong>模块</strong>到它们上面。对于<strong>SOCKET0，</strong>SPI使用<strong>3.3V</strong>电平，SOCKET1，SPI使用<strong>5V</strong>电平。</p>
 <p>  有<strong>两个</strong>绕线式接头被焊接到板子上，所以您可以连接它们到任何Arduino UNO或者兼容的板子上。板子物理连接到Arduino像下面这样。</p>
 <ul>
-<li><p><strong>Header 1</strong>：Arduino数字引脚，0到7有八个连接。</p>
-</li>
+<li><strong>Header 1</strong>：Arduino数字引脚，0到7有八个连接。</li>
 <li><p><strong>Header 2</strong>：Arduino模拟引脚，A0到A5有六个连接。</p>
 <p>板子也包含<strong>数字开关</strong>来开启和禁用两个插口。您可以使用Arduino IDE中软件定义的库函数控制它们。</p>
 </li>
@@ -35,6 +35,7 @@
 <p><img src="/2020/03/12/Modbus/1584000687.png" alt=""></p>
 <p><strong>图 7-3.</strong> Arduino和树莓派的RS485/Modbus模块。图片由Libelium提供（<a href="http://www.cooking-hacks.com" target="_blank" rel="noopener">http://www.cooking-hacks.com</a>)</p>
 <p>  表7-1展示了一些Arduino和树莓派的RS485/Modbus模块的技术说明，由Cooking Hacks发布。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -42,7 +43,8 @@
 <th>EIA RS485</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>Physical Media</strong></td>
 <td>Twisted Pair</td>
 </tr>
@@ -70,7 +72,9 @@
 <td><strong>Available Signals</strong></td>
 <td>Tx+/Rx+, Tx-/Rx-(Half Duplex)Tx+,Tx-,Rx+,Rx-(Full Duplex)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>表 7-1.</strong> Arduino和树莓派的RS485/Modbus模块技术说明</p>
 <h3 id="为Arduino安装RS485库"><a href="#为Arduino安装RS485库" class="headerlink" title="为Arduino安装RS485库"></a>为Arduino安装RS485库</h3><p>为了与<strong>RS485</strong>一起工作，首先你应该安装<strong>Arduino的RS485库</strong>。使用以下步骤来安装它到Arduino IDE。</p>
 <pre><code>1. 接下下载的zip文件，RS485_for_Arduino(参见第一章的“Modbus RS485库”部分获得更多关于下载链接的信息）。使用任何压缩软件。你将得到一个名为RS485_for_Arduino的文件夹。
@@ -83,7 +87,8 @@ RS485_for_Arduino
                                 -&gt; RS485
 
 拷贝ModBusMaster485，ModbusSlave485和RS485文件夹到你的Arduino安装的*libraries*文件夹。
-3. 最终，重启Arduino IDE并确认是否你可以看见样例sketches通过选择File ➤ Examples ➤ RS485</code></pre><p>如果你可以看见它们，你已经为Arduino成功安装了RS485库。</p>
+3. 最终，重启Arduino IDE并确认是否你可以看见样例sketches通过选择File ➤ Examples ➤ RS485
+</code></pre><p>如果你可以看见它们，你已经为Arduino成功安装了RS485库。</p>
 <h3 id="用Modbus搭建PLC"><a href="#用Modbus搭建PLC" class="headerlink" title="用Modbus搭建PLC"></a>用Modbus搭建PLC</h3><p>  现在，您将学习如何将温度传感器与Arduino接口，以通过RS485总线使用Modbus通信协议。然后你将学习如何读取传感器值从温度传感器并再Arduino串行显示器上显示它们。</p>
 <h4 id="搭建硬件设置"><a href="#搭建硬件设置" class="headerlink" title="搭建硬件设置"></a>搭建硬件设置</h4><p>搭建硬件设置，需要做下面的事情。</p>
 <ul>
@@ -100,12 +105,12 @@ RS485_for_Arduino
 
 **图 7-4.** Arduino设置RS485和Modbus。图片由Libelium提供（[http://www.cooking-hacks.com](http://www.cooking-hacks.com)
 
-3. **温度传感器**我们将使用来自**PAPOUCH**([www.papouch.com](www.papouch.com))**TQS3-I Modbus RS485室内温度计（图 7-5）。**它支持**Modbus**和**Spinel**通信协议通过**RS485总线**。你可以从[http://www.papouch.com/en/shop/product/tqs3-i-rs485interior-thermometer/tqs3.pdf/_downloadFile.php](http://www.papouch.com/en/shop/product/tqs3-i-rs485interior-thermometer/tqs3.pdf/_downloadFile.php)下载这个产品的文档。</code></pre><p> <img src="/2020/03/12/Modbus/1584003116.png" alt=""></p>
+3. **温度传感器**我们将使用来自**PAPOUCH**([www.papouch.com](www.papouch.com))**TQS3-I Modbus RS485室内温度计（图 7-5）。**它支持**Modbus**和**Spinel**通信协议通过**RS485总线**。你可以从[http://www.papouch.com/en/shop/product/tqs3-i-rs485interior-thermometer/tqs3.pdf/_downloadFile.php](http://www.papouch.com/en/shop/product/tqs3-i-rs485interior-thermometer/tqs3.pdf/_downloadFile.php)下载这个产品的文档。
+</code></pre><p> <img src="/2020/03/12/Modbus/1584003116.png" alt=""></p>
 <p> <strong>图 7-5.</strong> TQS3-I Modbus RS485室内温度计。图片由Papouch提供（<a href="http://www.papouch.com" target="_blank" rel="noopener">http://www.papouch.com</a></p>
 <p>   <strong>Wago接线端</strong>位于装置内部，用于连接电源和RS485。图7-6显示了标有电源的接线端和RS485连接。</p>
 <ul>
-<li><p>连接7-20V的直流供电，使用+极和-极。</p>
-</li>
+<li>连接7-20V的直流供电，使用+极和-极。</li>
 <li><p>连接RS485总线，使用TX+和TX-端。</p>
 <p><img src="/2020/03/12/Modbus/1584004096.png" alt=""></p>
 </li>
@@ -122,13 +127,16 @@ RS485_for_Arduino
 
 **图 7-7.** 信号线端。Image courtesy of Libelium ([https://www.cooking-hacks.com](https://www.cooking-hacks.com))
 
- 3. 使用壁式电源适配器将7-20V之间的DC电源连接到标有+和-的端。</code></pre><h4 id="Arduino-Sketch"><a href="#Arduino-Sketch" class="headerlink" title="Arduino Sketch"></a>Arduino Sketch</h4><p>RS485库中提供了现成的Arduino草图。使用以下步骤来修改草图按照你的Modbus设备。</p>
-<pre><code>1. 开启你的Arduino IDE并选择File ➤ Examples ➤ RS485 ➤ _RS485_04_modbus_read_input_registers，打开名为_RS485_04_modbus_read_input_registers.ino，如清单7-1所示。文件将打开一个新的窗口。</code></pre><p><strong>清单 7-1</strong> 使用Modbus读取温度传感器示例（_RS485_04_modbus_read_input_register.ino）</p>
+ 3. 使用壁式电源适配器将7-20V之间的DC电源连接到标有+和-的端。
+</code></pre><h4 id="Arduino-Sketch"><a href="#Arduino-Sketch" class="headerlink" title="Arduino Sketch"></a>Arduino Sketch</h4><p>RS485库中提供了现成的Arduino草图。使用以下步骤来修改草图按照你的Modbus设备。</p>
+<pre><code>1. 开启你的Arduino IDE并选择File ➤ Examples ➤ RS485 ➤ _RS485_04_modbus_read_input_registers，打开名为_RS485_04_modbus_read_input_registers.ino，如清单7-1所示。文件将打开一个新的窗口。
+</code></pre><p><strong>清单 7-1</strong> 使用Modbus读取温度传感器示例（_RS485_04_modbus_read_input_register.ino）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;RS485.h&gt; </span><br><span class="line">#include &lt;ModbusMaster485.h&gt; </span><br><span class="line">#include &lt;SPI.h&gt;</span><br><span class="line"></span><br><span class="line">// Instantiate ModbusMaster object as slave ID 1 ModbusMaster485 node(254);</span><br><span class="line"></span><br><span class="line">// Define one address for reading </span><br><span class="line">#define address 101</span><br><span class="line">// Define the number of bytes to read </span><br><span class="line">#define bytesQty 2</span><br><span class="line"></span><br><span class="line">void setup() &#123;</span><br><span class="line">    // Power on the USB for viewing data in the serial monitor </span><br><span class="line">    Serial.begin(115200); </span><br><span class="line">    delay(100); </span><br><span class="line">    // Initialize Modbus communication baud rate </span><br><span class="line">    node.begin(19200);</span><br><span class="line"></span><br><span class="line">    // Print hello message </span><br><span class="line">    Serial.println(&quot;Modbus communication over RS-485&quot;);</span><br><span class="line">    delay(100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop() &#123;</span><br><span class="line">    // This variable will store the result of the communication </span><br><span class="line">    // result = 0 : no errors </span><br><span class="line">    // result = 1 : error occurred</span><br><span class="line">    int result = node.readHoldingRegisters(address, bytesQty);</span><br><span class="line">    if (result != 0) &#123; </span><br><span class="line">        // If no response from the slave, print an error message </span><br><span class="line">        Serial.println(&quot;Communication error&quot;); </span><br><span class="line">        delay(1000); </span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // If all OK </span><br><span class="line">        Serial.print(&quot;Read value : &quot;);</span><br><span class="line"></span><br><span class="line">        // Print the read data from the slave </span><br><span class="line">        Serial.print(node.getResponseBuffer(0)); </span><br><span class="line">        delay(1000);</span><br><span class="line">    &#125;</span><br><span class="line">    Serial.print(&quot;\n&quot;); </span><br><span class="line">    delay(2000);</span><br><span class="line">    // Clear the response buffer </span><br><span class="line">    node.clearResponseBuffer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <pre><code>2. 现在按照你的温度传感器的存储寄存器地址修改Arduino草图中address变量的值。看到产品数据清单来找到存储寄存器的正确地址，如表7-2。
 
-**表 7-2. 存储寄存器的说明</code></pre><table>
+**表 7-2. 存储寄存器的说明
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>Address</th>
@@ -137,26 +145,27 @@ RS485_for_Arduino
 <th>Description</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>102</td>
 <td>Read</td>
 <td>0x03</td>
 <td>RAW value, which is the value as it was received from the sensors</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>  在该示例中，温度值被存储在地址102并且可以被函数readHoldingRegisters()读取。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Define one address for reading </span><br><span class="line">#define address 102</span><br></pre></td></tr></table></figure>
-
-<pre><code>3. 修改寄存器的大小（以字节为单位）。在该示例中，存储寄存器在地址102可以存储四个字节的数据。</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Define the number of bytes to read </span><br><span class="line">#define bytesQty 4</span><br></pre></td></tr></table></figure>
-
-<pre><code>4. 以下语句将存储ngreadHoldingRegisters()返回的结果。结果为0表示无错误，结果为1表示已发生错误。</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int result = node.readHoldingRegisters(address, bytesQty);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">    5. 要从响应缓冲区中检索数据，请在loop（）函数内使用以下语句。</span><br></pre></td></tr></table></figure>
-
-<p>getResponseBuffer(0)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    6. 您可以使用以下语句在Arduino串行监视器上打印来自温度传感器的数据：</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">Serial.print(node.getResponseBuffer(0));</span><br></pre></td></tr></table></figure>
-
+<pre><code>3. 修改寄存器的大小（以字节为单位）。在该示例中，存储寄存器在地址102可以存储四个字节的数据。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Define the number of bytes to read </span><br><span class="line">#define bytesQty 4</span><br></pre></td></tr></table></figure>
+<pre><code>4. 以下语句将存储ngreadHoldingRegisters()返回的结果。结果为0表示无错误，结果为1表示已发生错误。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int result = node.readHoldingRegisters(address, bytesQty);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">    5. 要从响应缓冲区中检索数据，请在loop（）函数内使用以下语句。</span><br></pre></td></tr></table></figure>
+<p>getResponseBuffer(0)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    6. 您可以使用以下语句在Arduino串行监视器上打印来自温度传感器的数据：</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">Serial.print(node.getResponseBuffer(0));</span><br></pre></td></tr></table></figure></p>
 <pre><code>7. 读取数据后，不要忘记清除响应缓冲区。您可以使用clearResponseBuffer（）;功能清除响应缓冲区。
 
-8. 现在，验证并将Arduino草图上传到Arduino开发板。成功上传草图后，通过选择工具➤串行监视器打开Arduino串行监视器。串行监视器将打印存储在响应缓冲区中的值，如图7-9所示。</code></pre><p><img src="/2020/03/12/Modbus/1584006631.png" alt=""></p>
+8. 现在，验证并将Arduino草图上传到Arduino开发板。成功上传草图后，通过选择工具➤串行监视器打开Arduino串行监视器。串行监视器将打印存储在响应缓冲区中的值，如图7-9所示。
+</code></pre><p><img src="/2020/03/12/Modbus/1584006631.png" alt=""></p>
 <p><strong>图 7-9.</strong> Arduino串行显示器输出（读取响应缓冲）</p>
 <p>通过使用温度传感器数据表中提到的conversion公式，可以将输出值进一步转换为摄氏或华氏温度。但是某些启用了Modbus的设备可以直接以摄氏度或华氏度输出所需的值，而无需进行任何进一步的转换。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在本章中，您学习了如何通过RS485总线使用Modbus通信协议将工业设备连接到基于Arduino的PLC并编写基于RS485库的Arduino草图。您还学习了如何从启用了Modbus通信协议的设备中读取值。在下一章中，您将学习如何使用NearBus Cloud Connector将基于Arduino的PLC映射到云中。</p>
