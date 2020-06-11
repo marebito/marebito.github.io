@@ -64,3 +64,5 @@ while( charValue != NULL ) {
     charValue = strtok(NULL, split_token);
 }
 ```
+
+> 参考连接: https://www.jianshu.com/p/5d4c5f318b73
