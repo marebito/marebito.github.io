@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Modbus寄存器种类说明</title>
+      <link href="/2020/09/03/Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%8D%E7%B1%BB%E8%AF%B4%E6%98%8E/"/>
+      <url>/2020/09/03/Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%8D%E7%B1%BB%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>寄存器种类</th><th>说明</th><th>PLC类比</th><th>举例说明</th></tr></thead><tbody><tr><td>线圈状态</td><td>输出端口。可设定端口的输出状态，也可以读取该位的输出状态。可分为两种不同的执行状态，例如保持型或边沿触发型。</td><td>DO数字量输出</td><td>电磁阀输出，MOSFET输出，LED显示等。</td></tr><tr><td>离散输入状态</td><td>输入端口。通过外部设定改变输入状态，可读但不可写。</td><td>DI数字量输入</td><td>拨码开关，接近开关等。</td></tr><tr><td>保持寄存器</td><td>输出参数或保持参数，控制器运行时被设定的某些参数。可读可写。</td><td>AO模拟量输出</td><td>模拟量输出设定值，PID运行参数，变量阀输出大小，传感器报警上限下限。</td></tr><tr><td>输入寄存器</td><td>输入参数。控制器运行时从外部设备获得的参数。可读但不可写。</td><td>AI模拟量输入</td><td>模拟量输入</td></tr></tbody></table>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ModbusTCP报文格式说明</title>
       <link href="/2020/09/03/ModbusTCP%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/"/>
       <url>/2020/09/03/ModbusTCP%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/</url>
