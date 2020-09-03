@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>IDEA模板的内置变量</title>
+      <link href="/2020/09/03/IDEA%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F/"/>
+      <url>/2020/09/03/IDEA%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<p>${PACKAGE_NAME} name of the package in which the new file is created</p><p>${USER} current user system login name</p><p>${DATE} current system date</p><p>${TIME} current system time</p><p>${YEAR} current year</p><p>${MONTH} current month</p><p>${MONTH_NAME_SHORT} first 3 letters of the current month name. Example: Jan, Feb, etc.</p><p>${MONTH_NAME_FULL} full name of the current month. Example: January, February, etc.</p><p>${DAY} current day of the month</p><p>${HOUR} current hour</p><p>${MINUTE} current minute</p><p>${PROJECT_NAME} the name of the current project</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mac版本软件崩溃解决方案</title>
       <link href="/2020/09/03/Mac%E7%89%88%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%B4%A9%E6%BA%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
       <url>/2020/09/03/Mac%E7%89%88%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%B4%A9%E6%BA%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
