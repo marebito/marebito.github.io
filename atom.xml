@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaolilong.com/"/>
-  <updated>2020-09-03T06:39:12.342Z</updated>
+  <updated>2020-09-03T06:41:00.276Z</updated>
   <id>https://zhaolilong.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>U8G2自定义中文字库的方法</title>
+    <link href="https://zhaolilong.com/2020/09/03/U8G2%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%AD%E6%96%87%E5%AD%97%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://zhaolilong.com/2020/09/03/U8G2自定义中文字库的方法/</id>
+    <published>2020-09-03T06:40:02.000Z</published>
+    <updated>2020-09-03T06:41:00.276Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://segmentfault.com/a/1190000022324409" target="_blank" rel="noopener">https://segmentfault.com/a/1190000022324409</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000022324409&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://segmentfault.com/a/1190000022324409&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="-U8G2 -字库" scheme="https://zhaolilong.com/tags/U8G2-%E5%AD%97%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>《Arduino》开发之用u8g2库给0.96寸OLED刷bmp图片，OLED图片取模</title>
@@ -476,30 +500,6 @@
     <summary type="html">
     
       &lt;p&gt;本章介绍了数据并行编程的主题，在GPU上完成时也称为计算编程（与图形编程相反，这是我们通常使用GPU执行的操作）。我们将介绍设置计算管道和并行处理大型数据集上的内核函数的基础知识。本章将作为下一章的设置，演示如何使用计算内核在GPU上进行图像处理。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="iOS/Mac" scheme="https://zhaolilong.com/tags/iOS-Mac/"/>
-    
-      <category term="图形学" scheme="https://zhaolilong.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-      <category term="Metal" scheme="https://zhaolilong.com/tags/Metal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实例学习Metal-第十二章 渲染文本</title>
-    <link href="https://zhaolilong.com/2020/03/22/%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0Metal-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/"/>
-    <id>https://zhaolilong.com/2020/03/22/实例学习Metal-第十二章/</id>
-    <published>2020-03-21T16:00:00.000Z</published>
-    <updated>2020-03-13T03:02:13.506Z</updated>
-    
-    <content type="html"><![CDATA[<p>在本章中，我们将讨论使用Metal渲染高保真文本的方法。在考虑3D图形时，很容易忽略文本渲染。但是，很少有游戏或应用程序可以在不显示任何文本的情况下使用，因此考虑如何最好地使用GPU将文本合并到我们的Metal应用程序中非常重要。</p><a id="more"></a><h1 id="Chapter-12-第十二章"><a href="#Chapter-12-第十二章" class="headerlink" title="Chapter 12(第十二章)"></a>Chapter 12(第十二章)</h1><h2 id="Rendering-Text-渲染文本"><a href="#Rendering-Text-渲染文本" class="headerlink" title="Rendering Text(渲染文本)"></a>Rendering Text(渲染文本)</h2><p>在本章中，我们将讨论使用Metal渲染高保真文本的方法。在考虑3D图形时，很容易忽略文本渲染。但是，很少有游戏或应用程序可以在不显示任何文本的情况下使用，因此考虑如何最好地使用GPU将文本合并到我们的Metal应用程序中非常重要。</p><p><img src="/2020/03/22/实例学习Metal-第十二章/1584067620.png" alt=""></p><center>图12.1：示例应用程序使用signed-distance字段技术呈现的文本<center><h4 id="The-Structure-and-Interpretation-of-Fonts-字体的结构与解释"><a href="#The-Structure-and-Interpretation-of-Fonts-字体的结构与解释" class="headerlink" title="The Structure and Interpretation of Fonts(字体的结构与解释)"></a>The Structure and Interpretation of Fonts(字体的结构与解释)</h4><p>我们通过选择<code>字体</code>开始绘制文本的过程。字体是字形的集合，字形是字符或字符部分的图形表示。在现代字体格式中，字形表示为分段曲线，特别是线段和二次贝塞尔曲线。</p><p><img src="/2020/03/22/实例学习Metal-第十二章/1584067651.png" alt=""></p><center>图12.2：来自Verdana的'g'字形，显示了如何构造字形的二次Beziér曲线</center><p>绘制一串文本至少包含两个不同的阶段。首先，<code>文本布局引擎</code>确定将使用哪些字形来表示字符串以及它们如何相对于彼此定位。然后，渲染引擎负责将字形的抽象描述转换为屏幕上的文本。</p><h3 id="Approaches-to-Real-Time-Text-Rendering-实时文本渲染的方法"><a href="#Approaches-to-Real-Time-Text-Rendering-实时文本渲染的方法" class="headerlink" title="Approaches to Real-Time Text Rendering(实时文本渲染的方法)"></a>Approaches to Real-Time Text Rendering(实时文本渲染的方法)</h3><p>您可以通过多种方式在iOS上呈现文本。您可能熟悉UIKit控件，如UILabel和UITextField。这些UI元素由叫作Core Text的强大框架支持。 Core Text是一种Unicode文本布局引擎，它与Quartz 2D（Core Graphics）紧密集成，可以布局和渲染文本。</p><p>文本布局是一个非常复杂的主题，必须考虑到不同的脚本，书写方向和印刷约定。我们永远不会想要自己重新发明这个功能，因此我们会让Core Text在我们的实时文本渲染解决方案中付出沉重的代价。</p><p>让我们简要介绍一下在实时3D图形环境中绘制文本的常用方法。</p><h4 id="Dynamic-Rasterization-动态光栅化"><a href="#Dynamic-Rasterization-动态光栅化" class="headerlink" title="Dynamic Rasterization(动态光栅化)"></a>Dynamic Rasterization(动态光栅化)</h4><p>文本渲染最灵活的方法之一是动态光栅化，其中字符串在CPU上进行光栅化，并将生成的位图作为纹理上载到GPU进行绘制。这是<code>stb_truetype</code>等库采用的方法(Bar-rett 2014)。</p><p>动态光栅化的缺点是每当文本字符串改变时重新绘制字形的计算成本。即使文本渲染的大部分成本发生在布局阶段，光栅化字形对CPU的需求也是非常重要的，并且iOS上没有现有的字体光栅化GPU实现。此技术还需要一定量的纹理内存，与字体大小和正在呈现的字符串的长度成比例。最后，放大时，光栅化文本会变得模糊或模糊，具体取决于放大滤镜。</p><h4 id="Font-Atlases-字体地图集"><a href="#Font-Atlases-字体地图集" class="headerlink" title="Font Atlases(字体地图集)"></a>Font Atlases(字体地图集)</h4><p>许多使用GPU绘制文本的应用程序更喜欢预先渲染所有可能的字形而不是动态绘制它们。这种方法根据纹理内存进行折衷，以获得按需栅格化字形的计算成本。为了最小化字体所需的纹理内存量，字形被打包成单个矩形纹理，称为图集。下图说明了这种纹理。</p><p><img src="/2020/03/22/实例学习Metal-第十二章/1584067674.png" alt=""></p><center> 图 12.3：一个字体地图集</center><p>辅助数据结构存储描述每个字形的边界矩形的纹理坐标。绘制字符串时，应用程序会生成一个网格，其中包含字符串构成字形的适当位置和纹理坐标。</p><p><img src="/2020/03/22/实例学习Metal-第十二章/1584067697.png" alt=""></p><center>图12.4：为文本字符串中的每个字形生成一对三角形</center><p>字体图集的一个缺点是，即使它们包含的许多字形在运行时都没有使用，它们也会占用大量的内存。</p><p>与动态光栅化一样，使用图集纹理渲染的文本在放大时会受到失去的影响。这里，问题可能更糟，因为字形通常被绘制得更小以便将整个字体打包成一个纹理。</p><p>在下一节中，我们将寻求纠正一些基于天真地图集的文本渲染问题。</p><h4 id="Signed-Distance-Fields-签名距离字段"><a href="#Signed-Distance-Fields-签名距离字段" class="headerlink" title="Signed-Distance Fields(签名距离字段)"></a>Signed-Distance Fields(签名距离字段)</h4><p>我们将深入探索的方法使用有符号距离字段，该字段是字体图集的预先表示，其隐式存储字形轮廓。具体地，有符号距离场纹理的纹理元素值对应于纹素与最近的字形边缘的距离，其中字形外的纹素采用负值。</p><p><img src="/2020/03/22/实例学习Metal-第十二章/1584067721.png" alt=""></p><center>图12.5：从字体图集生成的带符号距离字段。最亮的像素是最里面的。</center><p>为了在纹理中存储有符号距离字段，必须对其进行缩放和量化以匹配像素格式。我们的示例项目使用单通道8位纹理，每像素占一个字节。通过这种结构，恰好落在字形边缘的纹素的值为127或50％。</p><p>在其最简单的化身中，可以使用固定功能alpha测试来完成符号距离场渲染。通过丢弃其值小于50％的所有片段，将仅渲染字形内的那些像素。不幸的是，这会产生沿着字形边缘产生“摆动”的效果，因为下采样和量化的距离纹理不能捕获足够的细节来完美地重建理想的轮廓。</p><p>对alpha测试技术的改进是使用像素着色器在字形的内部和外部之间进行插值，从而平滑摆动的不连续性。这将在下面详细描述。</p><p>签名距离场渲染由Valve的Green Green（Green 2007）引入主流，描述了该技术在热门游戏Team Fortress 2中的使用。我们的实施将严格遵循Green的论文中提出的方案。</p><h4 id="Signed-Distance-Field-Rendering-in-Metal-Metal中的符号距离场渲染"><a href="#Signed-Distance-Field-Rendering-in-Metal-Metal中的符号距离场渲染" class="headerlink" title="Signed-Distance Field Rendering in Metal(Metal中的符号距离场渲染)"></a>Signed-Distance Field Rendering in Metal(Metal中的符号距离场渲染)</h4><p>在本节中，我们将详细描述使用Metal在GPU上实现平滑文本渲染的方法。</p><h4 id="Generating-a-Font-Atlas-Texture-生成字体图集纹理）"><a href="#Generating-a-Font-Atlas-Texture-生成字体图集纹理）" class="headerlink" title="Generating a Font Atlas Texture(生成字体图集纹理）"></a>Generating a Font Atlas Texture(生成字体图集纹理）</h4><p>第一步是将我们选择的字体中的所有可用字形呈现为图集。在示例代码中，不使用最佳打包;相反，字形只是从左到右排列，以贪婪的方式从上到下包裹线条。这大大简化了实施，代价是浪费了一些空间。</p><p>示例代码通过确定所选字体的最大大小来构建来自UIFont的字体图集，其字形将完全适合用于构建图集（4096×4096像素）的位图。然后，它使用Core Text从字体中检索字形轮廓，并在没有抗锯齿的情况下将它们渲染到地图集图像中。</p><p>在绘制字体图集时，实现还将每个字形的原点和范围（即纹理坐标）存储在单独的数组中。在渲染期间使用此数组从布局的字形映射到atlas纹理上的相应区域。</p><h4 id="Generating-a-Signed-Distance-Field-生成有符号距离场"><a href="#Generating-a-Signed-Distance-Field-生成有符号距离场" class="headerlink" title="Generating a Signed-Distance Field(生成有符号距离场)"></a>Generating a Signed-Distance Field(生成有符号距离场)</h4><p>上述过程以相当高的分辨率生成字体的二进制图像。也就是说，落入字形内部的像素一直是“开启”（255），而字形外部的像素一直都是“关闭”（0）。我们现在需要对此位图执行带符号距离变换，以生成字体图集的带符号距离字段表示，我们将使用它来进行渲染。</p><h4 id="A-Brute-Force-Approach-蛮力方法"><a href="#A-Brute-Force-Approach-蛮力方法" class="headerlink" title="A Brute Force Approach(蛮力方法)"></a>A Brute Force Approach(蛮力方法)</h4><p>生成有符号距离字段需要找到从每个纹素到最近的字形边缘的距离。某些实现（例如GLyphy（Esfahbod 2014））直接针对字形的分段曲线表示执行此计算。这种方法可以具有惊人的保真度，但实施起来很复杂，充满了边缘情况。</p><p>由于我们已选择生成字体的位图表示，因此我们可以简单地在每个纹素的邻域上进行操作，在我们处理边缘另一侧的纹素时执行最小化搜索。为了达到易处理性，这要求我们选择一个合理大小的区域来进行搜索。</p><p>合理的启发式是字体平均笔划宽度的一半。例如，在典型笔画为20像素宽的字体中，在字形内到目前为止它们具有大于10的距离的纹素已经将在渲染期间被钳位到“内部”的最大值。类似地，在字形外部距离大于10的纹素不太可能影响字形的呈现方式。因此，我们将对每个纹素周围的10 x 10邻域进行搜索。</p><p>根据Green的说法，蛮力方法适用于在生产中使用的工作站类别上为文本和矢量图形创建距离场。<br>TF2。然而，由于对签名距离场生成进行了大量研究，让我们看一下稍微好一点的方法，即使在移动硬件上也能让我们快速生成它们。</p><h4 id="A-Better-Approach-Dead-Reckoning-更好的方法：航位推算法"><a href="#A-Better-Approach-Dead-Reckoning-更好的方法：航位推算法" class="headerlink" title="A Better Approach: Dead Reckoning(更好的方法：航位推算法)"></a>A Better Approach: Dead Reckoning(更好的方法：航位推算法)</h4><p>有符号距离场具有广泛的适用性，因此成为许多研究的主题。 G. J. Grevera，建立在一个名为cham-的古老的算法倒角距离算法的基础之上，构造了一种更精确的启发式方法，称为“航位推算”（Grevera 2004）。实质上，该算法在源图像上执行两次传递，首先向下和向右传播最小距离，然后将第一次传递中发现的最小距离传播回到左侧。在每个步骤中，距离值被确定为围绕中心纹理元素的一些掩模上的最小距离值加上沿着矢量到最近的先前发现边缘的距离。</p><p>在不深入研究该算法的所有细节的情况下，值得注意的是它比蛮力方法快得多。在两次传球中，航位推算都只能得到3x3纹素的邻域，远远低于类似精度的蛮力算法。虽然我们还没有使用计算着色器实现它，但我们强烈怀疑它可以通过基于GPU的实现更快地制作。</p><h4 id="使用核心文本进行布局"><a href="#使用核心文本进行布局" class="headerlink" title="使用核心文本进行布局"></a>使用核心文本进行布局</h4><p>一旦我们有了字体的有符号距离字段表示，我们需要一种在屏幕上呈现其字形的方法。此过程的第一部分再次使用Core Text布局引擎告诉我们应该呈现哪些字形以及它们应该如何定位。我们使用CTFramesetter对象在所选矩形中布局文本。框架设置过程生成一个CTLine对象数组，每个对象包含一系列字形。有关这些类的其他详细信息，请参阅Core Text参考。</p><p>为了构造用于使用Metal渲染的文本网格，我们枚举了Core Text框架设置提供的字形，它为我们提供了屏幕空间坐标和我们在构建字体图集纹理时先前构建的纹理坐标表的索引。这两个数据允许我们创建一个表示文本字符串的索引三角形网格。然后可以以通常的方式渲染该网格，片段着色器对从每个像素的有符号距离场纹理转换为适当的颜色进行繁重的提升。</p><h4 id="The-Orthographic-Projection-正投影"><a href="#The-Orthographic-Projection-正投影" class="headerlink" title="The Orthographic Projection(正投影)"></a>The Orthographic Projection(正投影)</h4><p>在屏幕上绘制文本时，我们使用<code>正交投影</code>或<code>平行投影</code>。这种投影使网格平行于屏幕平面，而不会引入透视投影中固有的缩短。</p><p>渲染UI元素时，可以方便地选择其范围与视图尺寸匹配的正交投影。因此，示例应用程序使用的正交投影使用（0,0）作为屏幕的左上角和屏幕的可绘制宽度和高度（以像素为单位）作为右下角，与UIKit的约定相匹配。</p><p>在数学上，这种转换由以下矩阵表示：</p><p>$$<br> \left[<br> \begin{matrix}<br>   2\over r-l &amp; 0 &amp; 0 &amp; r+l \over l-r \<br>   0 &amp; 2\over t-b &amp; 0 &amp; t+b \over b-t \<br>   0 &amp; 0 &amp; 1\over f-n &amp; n \over f-n \<br>   0 &amp; 0 &amp; 0 &amp; 1<br>  \end{matrix}<br>  \right]<br>$$</p><p>这里l，r，t，b，n和f是左，右，上，下，近和远剪裁平面值。在我们的实现中，假设近平面和远平面分别位于z = 0和z = 1。</p><h4 id="The-Vertex-and-Fragment-Functions-顶点和片段函数"><a href="#The-Vertex-and-Fragment-Functions-顶点和片段函数" class="headerlink" title="The Vertex and Fragment Functions(顶点和片段函数)"></a>The Vertex and Fragment Functions(顶点和片段函数)</h4><p>绘制文本的顶点函数非常简单;它看起来与我们过去使用的顶点函数完全一样。文本网格的每个顶点由模型矩阵（可用于定位和缩放文本）和组合的视图 - 投影矩阵变换，该矩阵简单地是上面讨论的正交投影矩阵。</p><p>另一方面，片段函数涉及更多。由于我们正在使用带符号距离字段作为查找表而不是纹理，我们需要将场中的采样纹理像素转换为颜色值，该颜色值根据像素与相应字形边缘的接近度而变化。</p><p>我们在字形的边缘应用抗锯齿，通过在边缘周围的窄带中从不透明到半透明插值。通过使用内置的<code>dfdx</code>和<code>dfdy</code>函数找到距离场的梯度的长度，每个像素计算该带的宽度。然后我们使用smoothstep函数，它从0过渡到1这个平滑边缘的宽度，使用采样距离值本身作为最终参数。无论文本放大或缩小多少，这都会产生大约一个像素宽的边带。 Green对原始方法的改进归功于Gustavson（Gustavson 2012）。</p><p>以下是用于从有符号距离字段表示中呈现字形的完整片段函数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">float edgeDistance = 0.5;</span><br><span class="line">float dist = texture.sample(samp, vert.texCoords).r;</span><br><span class="line">float edgeWidth = 0.7 * length(float2(dfdx(dist), dfdy(dist))); </span><br><span class="line">float opacity = smoothstep(edgeDistance - edgeWidth, edgeDistance + edgeWidth, dist);</span><br><span class="line">return half4(textColor.r, textColor.g, textColor.b, opacity);</span><br></pre></td></tr></table></figure><p>请注意，我们返回一个具有alpha分量的颜色，因此我们使用的管道状态应启用Alpha混合，以便文本与其后面的几何图形正确混合。这也意味着应该在场景几何的其余部分之后绘制文本。</p><h3 id="The-Sample-App-示例应用"><a href="#The-Sample-App-示例应用" class="headerlink" title="The Sample App(示例应用)"></a>The Sample App(示例应用)</h3><p>本章的示例代码位于12-TextRendering目录中。</p><p>本章的示例应用程序呈现了一段可以实时缩放和平移的文本。使用一对UIGestureRecognizers实现交互。更确切地说，即使在极端放大率下，字形的边缘仍然保持非常清晰，这与预光栅化的位图纹理在放大下会变得锯齿状或模糊的方式形成对比。</p></center></center>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在本章中，我们将讨论使用Metal渲染高保真文本的方法。在考虑3D图形时，很容易忽略文本渲染。但是，很少有游戏或应用程序可以在不显示任何文本的情况下使用，因此考虑如何最好地使用GPU将文本合并到我们的Metal应用程序中非常重要。&lt;/p&gt;
     
     </summary>
     
