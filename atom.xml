@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaolilong.com/"/>
-  <updated>2020-09-03T01:45:52.220Z</updated>
+  <updated>2020-09-03T02:17:30.086Z</updated>
   <id>https://zhaolilong.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Modbus常用功能码备查</title>
+    <link href="https://zhaolilong.com/2020/09/03/Modbus%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E7%A0%81%E5%A4%87%E6%9F%A5/"/>
+    <id>https://zhaolilong.com/2020/09/03/Modbus常用功能码备查/</id>
+    <published>2020-09-03T01:48:13.000Z</published>
+    <updated>2020-09-03T02:17:30.086Z</updated>
+    
+    <content type="html"><![CDATA[<p>Modbus功能码</p><table><thead><tr><th>功能码</th><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>读取线圈状态</td><td>取得一组逻辑线圈的当前状态（ON/OFF）</td></tr><tr><td>02</td><td>读取输入状态</td><td>取得一组开关输入的当前状态（ON/OFF）</td></tr><tr><td>03</td><td>读取保持寄存器</td><td>在一个或多个保持寄存器中取得当前的二进制值</td></tr><tr><td>04</td><td>读取输入寄存器</td><td>在一个或多个输入寄存器中取得当前的二进制值</td></tr><tr><td>05</td><td>强置单线圈</td><td>强置一个逻辑线圈的通断状态</td></tr><tr><td>06</td><td>预置单寄存器</td><td>把二进制值装入一个保持寄存器</td></tr><tr><td>15</td><td>强置多线圈</td><td>强置一串连续逻辑线圈的通断</td></tr><tr><td>16</td><td>预置多寄存器</td><td>把具体的二进制值装入一串连续的保持寄存器</td></tr></tbody></table><p>Modbus功能码与数据类型对应表</p><table><thead><tr><th>功能码</th><th>功能</th><th>数据类型</th><th>对应地址</th></tr></thead><tbody><tr><td>01</td><td>读</td><td>位</td><td>0000X</td></tr><tr><td>02</td><td>读</td><td>位</td><td>1000X</td></tr><tr><td>03</td><td>读</td><td>整型、字符型、状态字、浮点型</td><td>4000X</td></tr><tr><td>04</td><td>读</td><td>整型、状态字、浮点型</td><td>3000X</td></tr><tr><td>05</td><td>写</td><td>位</td><td>0000X</td></tr><tr><td>06</td><td>写</td><td>整型、字符型、状态字、浮点型</td><td>4000X</td></tr><tr><td>15</td><td>写</td><td>位</td><td>0000X</td></tr><tr><td>16</td><td>写</td><td>整型、字符型、状态字、浮点型</td><td>4000X</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Modbus功能码&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能码&lt;/th&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;01&lt;/td&gt;
+&lt;td&gt;读取线圈状态&lt;/td&gt;
+&lt;td&gt;取得一组逻辑
+      
+    
+    </summary>
+    
+    
+      <category term="Modbus" scheme="https://zhaolilong.com/tags/Modbus/"/>
+    
+  </entry>
   
   <entry>
     <title>Modbus寄存器地址规则</title>
@@ -392,9 +427,9 @@
     </summary>
     
     
-      <category term="Ardunio" scheme="https://zhaolilong.com/tags/Ardunio/"/>
-    
       <category term="Modbus" scheme="https://zhaolilong.com/tags/Modbus/"/>
+    
+      <category term="Ardunio" scheme="https://zhaolilong.com/tags/Ardunio/"/>
     
   </entry>
   
@@ -459,30 +494,6 @@
     <summary type="html">
     
       &lt;p&gt;在本章中，我们将讨论Metal中一些更高级的纹理功能。我们将立方体贴图应用于天空盒以模拟周围的详细环境现场。我们还将介绍一种称为立方体环境映射的技术来模拟反射和折射，以进一步增强我们虚拟世界的真实感。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="iOS/Mac" scheme="https://zhaolilong.com/tags/iOS-Mac/"/>
-    
-      <category term="图形学" scheme="https://zhaolilong.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-      <category term="Metal" scheme="https://zhaolilong.com/tags/Metal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实例学习Metal-第七章 纹理贴图</title>
-    <link href="https://zhaolilong.com/2020/02/16/%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0Metal-%E7%AC%AC%E4%B8%83%E7%AB%A0/"/>
-    <id>https://zhaolilong.com/2020/02/16/实例学习Metal-第七章/</id>
-    <published>2020-02-15T16:00:00.000Z</published>
-    <updated>2020-03-13T02:13:14.256Z</updated>
-    
-    <content type="html"><![CDATA[<p>在本章中，我们将学习mipmapping，这是一种在远处渲染纹理对象的重要技术。我们将找出为什么mipmapping很重要，它如何补充常规纹理过滤，以及如何使用blit命令编码器在GPU上有效地生成mipmap。</p><a id="more"></a><h1 id="Chapter7-第七章"><a href="#Chapter7-第七章" class="headerlink" title="Chapter7(第七章)"></a>Chapter7(第七章)</h1><h2 id="Mipmapping-纹理贴图"><a href="#Mipmapping-纹理贴图" class="headerlink" title="Mipmapping(纹理贴图)"></a>Mipmapping(纹理贴图)</h2><p>在本章中，我们将学习mipmapping，这是一种在远处渲染纹理对象的重要技术。我们将找出为什么mipmapping很重要，它如何补充常规纹理过滤，以及如何使用blit命令编码器在GPU上有效地生成mipmap。</p><h3 id="A-Review-of-Texture-Filtering-纹理过滤研究综述"><a href="#A-Review-of-Texture-Filtering-纹理过滤研究综述" class="headerlink" title="A Review of Texture Filtering(纹理过滤研究综述)"></a>A Review of Texture Filtering(纹理过滤研究综述)</h3><p>在上一章中，我们使用纹理过滤来描述当像素的屏幕空间大小与纹素的大小不同时，纹素应如何映射到像素。当每个纹素映射到多个像素时，这称为<code>放大率</code>，当每个像素映射到多个纹素时，这称为<code>缩小</code>。在Metal中，我们可以选择在这两种方案中应用哪种类型的过滤。</p><p>最近的过滤只选择最接近的纹理像素来表示采样点。这导致块状输出图像，但计算上便宜。线性滤波选择四个相邻纹素并生成它们的加权平均值。</p><p>在Metal中，我们指定过滤类型使用MTLSamplerDescriptor的minFilter和magFilter属性。</p><p><img src="/2020/02/16/实例学习Metal-第七章/1584065223.png" alt=""></p><center>图7.1：示例应用程序说明了各种mipmapping过滤器的效果。这里使用的mipmap是人工着色的，用于演示目的。</center><h3 id="Mipmap-Theory-纹理贴图原理"><a href="#Mipmap-Theory-纹理贴图原理" class="headerlink" title="Mipmap Theory(纹理贴图原理)"></a>Mipmap Theory(纹理贴图原理)</h3><p>名称“mipmap”来自拉丁语短语“multum in parvo”，大致意思是“很少”。这暗示了mipmap中的每个纹素都结合了几个在它上面的水平的纹素。在我们讨论如何构建纹理贴图之前，让我们花一些时间来讨论为什么我们首先需要它们。</p><h4 id="The-Aliasing-Problem-锯齿问题"><a href="#The-Aliasing-Problem-锯齿问题" class="headerlink" title="The Aliasing Problem(锯齿问题)"></a>The Aliasing Problem(锯齿问题)</h4><p>你可能会认为，因为我们处理了纹理缩小和放大的情况，我们的纹理贴图应该是完美的，没有视觉伪像。不幸的是，当纹理缩小超过某个因素时，会产生一种邪恶的效果。</p><p>当虚拟相机跨越场景时，每帧使用不同的纹理像素集来确定包括远处对象的像素的颜色。无论选择何种缩小滤镜，都会发生这种情况。在视觉上，这会产生难看的闪光。问题基本上是对高频信号进行欠采样（在这种情况下信号是纹理）。如果有一种方法可以在采样过程中平滑纹理，我们可以换取少量的模糊度，以显着减少运动过程中的分解闪烁效应。</p><p>使用线性缩小滤波器和线性缩小滤波器结合mipmap之间的区别如下所示，以激发进一步的讨论。</p><p><img src="/2020/02/16/实例学习Metal-第七章/1584065357.png" alt=""></p><center>图7.2：基本线性滤波和mipmapped线性滤波的并排比较</center><h4 id="The-Mipmap-Solution-Mipmap解决方案"><a href="#The-Mipmap-Solution-Mipmap解决方案" class="headerlink" title="The Mipmap Solution(Mipmap解决方案)"></a>The Mipmap Solution(Mipmap解决方案)</h4><p>Mipmapping是一种设计用于解决此混叠问题的技术。不是在运行中对图像进行下采样，而是在离线或加载时生成一系列预滤波图像（级别）。每个级别比其前身小两倍（沿每个维度）。这导致每个纹理的内存使用量增加33％，但可以极大地增强运动中场景的保真度。</p><p>在下图中，显示了为棋盘纹理生成的级别。</p><p><img src="/2020/02/16/实例学习Metal-第七章/1584065467.png" alt=""></p><center>图7.3：构成mipmap的各个级别。每个图像的大小是其前一个图像的一半，面积的1/4，低至1个像素。</center><h4 id="Mipmap-Sampling-Mipmap采样"><a href="#Mipmap-Sampling-Mipmap采样" class="headerlink" title="Mipmap Sampling(Mipmap采样)"></a>Mipmap Sampling(Mipmap采样)</h4><p>当对mipmapped纹理进行采样时，片段的投影区域用于确定哪个mipmap级别最接近纹理的纹素大小。相对于纹素大小较小的片段使用已经减少到更大程度的mipmap级别。</p><p>在Metal中，mipmap过滤器与缩小过滤器分开指定，在描述符的mipFilter属性中，但min和mip过滤器交互以创建四种可能的场景。下面按照增加计算成本的顺序描述它们。</p><p>当minFilter设置为MTLSamplerMinMagFilterNearest并且mipFilter设置为MTLSamplerMipFilterNearest时，将选择最接近匹配的mipmap级别，并使用其中的单个纹素作为样本。</p><p>当minFilter设置为MTLSamplerMinMagFilterNearest且mipFilter设置为MTLSamplerMipFilterLinear时，将选择两个最接近匹配的mipmap级别，并从中获取一个样本。然后将这两个样品平均以产生最终样本。</p><p>当minFilter设置为MTLSamplerMinMagFilterLinear并且mipFilter设置为MTLSamplerMipFilterNearest时，将选择最接近匹配的mipmap级别，并平均四个纹素以生成样本。</p><p>当minFilter设置为MTLSamplerMinMagFilterLinear并且mipFilter设置为MTLSamplerMipFilterLinear时，将选择两个最接近匹配的mipmap级别，并对每个级别的四个样本进行平均以创建该级别的样本。然后将这两个平均样本再次平均以产生最终样本。</p><p>下图显示了使用线性最小值滤波器时使用最近和线性mip滤波器之间的差异：</p><p><img src="/2020/02/16/实例学习Metal-第七章/1584065494.png" alt=""></p><center>图7.4：使用线性最小值滤波器和最近的mip滤波器的效果。 Mip水平已经人工着色，以更清楚地显示不同的水平。</center><p><img src="/2020/02/16/实例学习Metal-第七章/1584065514.png" alt=""></p><center>图7.5：使用线性最小值滤波器和线性mip滤波器的效果。 Mip水平已经人工着色，以更清楚地显示不同的水平。</center><h3 id="Mipmapped-Textures-in-Metal-Metal中的Mipmapped纹理"><a href="#Mipmapped-Textures-in-Metal-Metal中的Mipmapped纹理" class="headerlink" title="Mipmapped Textures in Metal(Metal中的Mipmapped纹理)"></a>Mipmapped Textures in Metal(Metal中的Mipmapped纹理)</h3><p>在Metal中构建一个mipmap纹理是一个由两部分组成的过程：创建纹理对象并将图像数据复制到mipmap级别。 Metal不会自动为我们生成mipmap级别，因此我们将在下面介绍两种自行生成方式。</p><h4 id="Creating-the-Texture-创建纹理"><a href="#Creating-the-Texture-创建纹理" class="headerlink" title="Creating the Texture(创建纹理)"></a>Creating the Texture(创建纹理)</h4><p>我们可以使用相同的便捷方法来创建2D mipmapped纹理描述符，就像非mipmapped纹理一样，传递YES作为最终参数。</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">MTLTextureDescriptor</span> texture2DDescriptorWithPixelFormat:<span class="built_in">MTLPixelFormatRGBA8Unorm</span></span><br><span class="line">width:width height:height mipmapped:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure><p>当mipmapped参数等于YES时，Metal会计算描述符<code>mipmapLevelCount</code>属性。用于查找级别数的公式是floor（log2（max（width，height）））+ 1.例如，512×256纹理有10个级别。</p><p>一旦我们有了描述符，我们就从Metal设备请求一个纹理对象：</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">id</span>&lt;<span class="built_in">MTLTexture</span>&gt; texture = [device newTextureWithDescriptor:descriptor];</span><br></pre></td></tr></table></figure><h4 id="Generating-Mipmap-Levels-Manually-手动生成Mipmap级别"><a href="#Generating-Mipmap-Levels-Manually-手动生成Mipmap级别" class="headerlink" title="Generating Mipmap Levels Manually(手动生成Mipmap级别)"></a>Generating Mipmap Levels Manually(手动生成Mipmap级别)</h4><p>创建mipmap级别涉及创建基本图像的越来越小的版本，直到级别的维度仅为一个像素大小。<br>iOS和OS X共享一个名为Core Graphics的框架，该框架具有用于绘制形状，文本和图像的低级实用程序。生成mipmap级别包括使用CGBitmapContextCreate创建位图上下文，使用CGContextDrawImage将基本图像绘制到其中，然后将基础数据复制到Metal纹理的相应级别，如下所示：</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MTLRegion</span> region = <span class="built_in">MTLRegionMake2D</span>(<span class="number">0</span>, <span class="number">0</span>, mipWidth, mipWidth); [texture replaceRegion:region</span><br><span class="line">mipmapLevel:level withBytes:mipImageData bytesPerRow:mipWidth * bytesPerPixel]</span><br></pre></td></tr></table></figure><p>对于级别1，mipWidth和mipHeight等于原始图像大小的一半。每次围绕mipmap生成循环，宽度和高度减半，级别被添加，并且过程重复直到生成所有级别。<br>在示例应用程序中，色调颜色应用于使用Core Graphics生成的每个mipmap级别，以便可以轻松区分它们。下图显示了由Core Graphics生成的包含棋盘纹理的图像。</p><p><img src="/2020/02/16/实例学习Metal-第七章/1584065574.png" alt=""></p><center>图7.6：CPU生成的mipmap级别;在每个级别应用了一种色调颜色，以便在渲染时将其区分开来</center><h3 id="The-Blit-Command-Encoder-Blit命令编码器"><a href="#The-Blit-Command-Encoder-Blit命令编码器" class="headerlink" title="The Blit Command Encoder(Blit命令编码器)"></a>The Blit Command Encoder(Blit命令编码器)</h3><p>在CPU上生成mipmap的主要缺点是速度。使用Core Graphics缩小图像比使用GPU要<strong>容易十倍</strong>。但是我们如何将工作卸载到GPU？令人高兴的是，Metal包含一种特殊类型的命令编码器，其作用是利用GPU进行图像复制和调整操作大小：blit命令编码器。术语“blit”是短语“block transfer”的衍生词。</p><h4 id="Capabilities-of-the-Blit-Command-Encoder-Blit命令编码器的功能"><a href="#Capabilities-of-the-Blit-Command-Encoder-Blit命令编码器的功能" class="headerlink" title="Capabilities of the Blit Command Encoder(Blit命令编码器的功能)"></a>Capabilities of the Blit Command Encoder(Blit命令编码器的功能)</h4><p>Blit命令编码器支持GPU资源（缓冲区和纹理）之间的硬件加速传输。 blit命令编码器可用于填充具有特定值的缓冲区，将一个纹理的一部分复制到另一个纹理中，并在缓冲区和纹理之间进行复制。</p><p>我们不会在本章中探讨blit命令编码器的所有功能。我们将使用它来生成mipmap的所有级别。</p><h4 id="Capabilities-of-the-Blit-Command-Encoder-使用Blit命令编码器生成Mipmap"><a href="#Capabilities-of-the-Blit-Command-Encoder-使用Blit命令编码器生成Mipmap" class="headerlink" title="Capabilities of the Blit Command Encoder(使用Blit命令编码器生成Mipmap)"></a>Capabilities of the Blit Command Encoder(使用Blit命令编码器生成Mipmap)</h4><p>使用blit命令编码器生成mipmap是非常简单的，因为有一个名为generateMipmapsForTexture的MTLBlitCommandEncoder协议上的方法：调用此方法后，我们添加一个完成处理程序，以便我们知道何时<br>命令完成。这个过程非常快，在A8处理器上的1024×1024纹理大约需要1毫秒。</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">id</span>&lt;<span class="built_in">MTLBlitCommandEncoder</span>&gt; commandEncoder = [commandBuffer blitCommandEncoder]; </span><br><span class="line">[commandEncoder generateMipmapsForTexture:texture];</span><br><span class="line">[commandEncoder endEncoding];</span><br><span class="line">[commandBuffer addCompletedHandler:^(<span class="keyword">id</span>&lt;<span class="built_in">MTLCommandBuffer</span>&gt; buffer) &#123;</span><br><span class="line"><span class="comment">// texture is now ready for use &#125;];</span></span><br><span class="line">[commandBuffer commit];</span><br></pre></td></tr></table></figure><p>调用完成块时，纹理已准备好用于渲染。</p><h3 id="The-Sample-App-示例应用"><a href="#The-Sample-App-示例应用" class="headerlink" title="The Sample App(示例应用)"></a>The Sample App(示例应用)</h3><p>本章的示例代码位于07-Mipmapping目录中。</p><p>示例应用程序显示旋转的纹理立方体。您可以使用轻击手势在多种不同模式之间切换：无mipmapping，使用GPU生成的纹理进行mipmapping，使用CPU生成的纹理进行mipmapping和线性mip过滤，以及使用CPU生成的纹理和最近的mip过滤进行mipmapping。 CPU生成的纹理具有应用于每个级别的不同颜色的色调，以明确对哪些级别进行采样。</p><p>如果启用了mipmapping，则可以使用捏合手势将立方体缩放得更近和更远，这将导致对不同的mipmap级别进行采样。您还可以观察到当立方体接近边缘时，或者当它离开相机时不使用mipmap导致的降级。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在本章中，我们将学习mipmapping，这是一种在远处渲染纹理对象的重要技术。我们将找出为什么mipmapping很重要，它如何补充常规纹理过滤，以及如何使用blit命令编码器在GPU上有效地生成mipmap。&lt;/p&gt;
     
     </summary>
     
