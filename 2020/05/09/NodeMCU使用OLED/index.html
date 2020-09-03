@@ -7,21 +7,23 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#给NodeMCU刷入固件"><span class="toc-number">1.</span> <span class="toc-text">给NodeMCU刷入固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用ESPFlashDownloadTool写入固件"><span class="toc-number">2.</span> <span class="toc-text">用ESPFlashDownloadTool写入固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照接线图进行接线"><span class="toc-number">3.</span> <span class="toc-text">按照接线图进行接线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试程序"><span class="toc-number">4.</span> <span class="toc-text">测试程序</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">31</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">16</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">NodeMCU使用OLED</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-09</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">244</span><span class="post-meta__separator">|</span><span>阅读时长: 1 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>硬件准备：</p>
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#给NodeMCU刷入固件"><span class="toc-number">1.</span> <span class="toc-text">给NodeMCU刷入固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用ESPFlashDownloadTool写入固件"><span class="toc-number">2.</span> <span class="toc-text">用ESPFlashDownloadTool写入固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照接线图进行接线"><span class="toc-number">3.</span> <span class="toc-text">按照接线图进行接线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试程序"><span class="toc-number">4.</span> <span class="toc-text">测试程序</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">32</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">16</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">NodeMCU使用OLED</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-09</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">244</span><span class="post-meta__separator">|</span><span>阅读时长: 1 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>硬件准备：</p>
 <ol>
-<li>NodeMCU</li>
+<li><p>NodeMCU</p>
+</li>
 <li><p>I2c-12864-oled液晶屏模块 0.96寸 （12864就是128*64点阵的屏幕，所以叫12864！）<br><img src="/2020/05/09/NodeMCU使用OLED/1588986804.jpg" alt=""></p>
 </li>
 <li><p>母对母杜邦线4根</p>
 </li>
-<li>microUSB口-用来连接ESP8266</li>
+<li><p>microUSB口-用来连接ESP8266</p>
+</li>
 </ol>
 <p>软件准备：<br>Win：<a href="https://github.com/nodemcu/nodemcu-flasher/tree/master/Win64/Release" target="_blank" rel="noopener">https://github.com/nodemcu/nodemcu-flasher/tree/master/Win64/Release</a><br>Mac：<a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">https://github.com/marcelstoer/nodemcu-pyflasher/releases</a></p>
 <a id="more"></a>
+
 <h2 id="给NodeMCU刷入固件"><a href="#给NodeMCU刷入固件" class="headerlink" title="给NodeMCU刷入固件"></a>给NodeMCU刷入固件</h2><ol>
 <li>在nodemcu官网<a href="https://nodemcu-build.com/中下载固件" target="_blank" rel="noopener">https://nodemcu-build.com/中下载固件</a></li>
 </ol>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -29,8 +31,7 @@
 <th>参数</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>驱动电压</td>
 <td>3.3~5V</td>
 </tr>
@@ -46,15 +47,14 @@
 <td>I2C地址</td>
 <td>0x3c(默认)\0x3d可选</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p><img src="/2020/05/09/NodeMCU使用OLED/1588987148.png" alt=""><br>构建模块中勾选I2C和U8G2。<br>字体需要勾选中文，默认不支持中文字体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8g2_font_wqy15_t_chinese1</span><br><span class="line">u8g2_font_wqy15_t_chinese2</span><br><span class="line">u8g2_font_wqy15_t_chinese3</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p><img src="/2020/05/09/NodeMCU使用OLED/1588987148.png" alt=""><br>构建模块中勾选I2C和U8G2。<br>字体需要勾选中文，默认不支持中文字体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8g2_font_wqy15_t_chinese1</span><br><span class="line">u8g2_font_wqy15_t_chinese2</span><br><span class="line">u8g2_font_wqy15_t_chinese3</span><br></pre></td></tr></table></figure>
+
 <p><img src="/2020/05/09/NodeMCU使用OLED/1588987612.png" alt=""><br><img src="/2020/05/09/NodeMCU使用OLED/1588988007.png" alt=""></p>
 <p>在邮箱中查看<br><img src="/2020/05/09/NodeMCU使用OLED/1588988246.png" alt=""></p>
 <p>一般下载integer的固件</p>
 <h2 id="用ESPFlashDownloadTool写入固件"><a href="#用ESPFlashDownloadTool写入固件" class="headerlink" title="用ESPFlashDownloadTool写入固件"></a>用ESPFlashDownloadTool写入固件</h2><h2 id="按照接线图进行接线"><a href="#按照接线图进行接线" class="headerlink" title="按照接线图进行接线"></a>按照接线图进行接线</h2><p><img src="/2020/05/09/NodeMCU使用OLED/1588988622.png" alt=""></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -62,8 +62,7 @@
 <th>OLED</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>D5</td>
 <td>SDA</td>
 </tr>
@@ -79,10 +78,9 @@
 <td>3V</td>
 <td>VCC</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h2 id="测试程序"><a href="#测试程序" class="headerlink" title="测试程序"></a>测试程序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//"hello world" test</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;U8g2lib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">U8G2_SSD1306_128X64_NONAME_F_HW_I2C <span class="title">u8g2</span><span class="params">(U8G2_R0)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.begin();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.clearBuffer();                   <span class="comment">// clear the internal memory</span></span><br><span class="line">  u8g2.setFont(u8g2_font_ncenB14_tr);   <span class="comment">// choose a suitable font</span></span><br><span class="line">  u8g2.drawStr(<span class="number">0</span>,<span class="number">20</span>,<span class="string">"Hello World!"</span>);    <span class="comment">// write something to the internal memory</span></span><br><span class="line">  u8g2.sendBuffer();                    <span class="comment">// transfer internal memory to the display</span></span><br><span class="line">  delay(<span class="number">1000</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Boyka·Yuri</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhaolilong.com/2020/05/09/NodeMCU使用OLED/">https://zhaolilong.com/2020/05/09/NodeMCU使用OLED/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zhaolilong.com">博伊卡の楼閣</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NodeMCU/">NodeMCU</a><a class="post-meta__tags" href="/tags/OLED/">OLED</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://zhaolilong.com/alipay.jpg"><div class="post-qr-code__desc">支付宝打赏</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="https://zhaolilong.com/wx.jpg"><div class="post-qr-code__desc">微信打赏</div></div></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/05/09/U8G2详解/"><i class="fa fa-chevron-left">  </i><span>U8G2详解</span></a></div><div class="next-post pull-right"><a href="/2020/04/29/Linux查找并终止指定进程/"><span>Linux查找并终止指定进程</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2011 - 2020 By Boyka·Yuri</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
