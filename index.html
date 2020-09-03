@@ -36,6 +36,7 @@
 <th>寄存器PLC地址</th>
 <th>位操作/字操作</th>
 <th>作用</th>
+<th>操作数量</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -44,6 +45,7 @@
 <td>00001-09999</td>
 <td>位</td>
 <td>取得一组逻辑线圈的当前状态（ON/OFF）</td>
+<td>单个或多个</td>
 </tr>
 <tr>
 <td>02</td>
@@ -51,6 +53,7 @@
 <td>10001-19999</td>
 <td>位</td>
 <td>取得一组开关输入的当前状态（ON/OFF）</td>
+<td>单个或多个</td>
 </tr>
 <tr>
 <td>03</td>
@@ -58,6 +61,7 @@
 <td>40001-49999</td>
 <td>整型、字符型、状态字、浮点型</td>
 <td>在一个或多个保持寄存器中取得当前的二进制值</td>
+<td>单个或多个</td>
 </tr>
 <tr>
 <td>04</td>
@@ -65,6 +69,7 @@
 <td>30001-39999</td>
 <td>整型、状态字、浮点型</td>
 <td>在一个或多个输入寄存器中取得当前的二进制值</td>
+<td>单个或多个</td>
 </tr>
 <tr>
 <td>05</td>
@@ -72,6 +77,7 @@
 <td>00001-09999</td>
 <td>位</td>
 <td>强置一个逻辑线圈的通断状态</td>
+<td>单个</td>
 </tr>
 <tr>
 <td>06</td>
@@ -79,6 +85,7 @@
 <td>40001-49999</td>
 <td>整型、字符型、状态字、浮点型</td>
 <td>把二进制值装入一个保持寄存器</td>
+<td>单个</td>
 </tr>
 <tr>
 <td>15</td>
@@ -86,6 +93,7 @@
 <td>00001-09999</td>
 <td>位</td>
 <td>强置一串连续逻辑线圈的通断</td>
+<td>多个</td>
 </tr>
 <tr>
 <td>16</td>
@@ -93,6 +101,7 @@
 <td>40001-49999</td>
 <td>整型、字符型、状态字、浮点型</td>
 <td>把具体的二进制值装入一串连续的保持寄存器</td>
+<td>多个</td>
 </tr>
 </tbody></table>
 </div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2020/09/03/Modbus寄存器地址规则/">Modbus寄存器地址规则</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-09-03</time><div class="content"><p>Modbus协议定义的寄存器地址是5位十进制地址，即：</p>
