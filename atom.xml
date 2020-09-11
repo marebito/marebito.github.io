@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaolilong.com/"/>
-  <updated>2020-09-03T06:41:00.276Z</updated>
+  <updated>2020-09-11T08:13:24.093Z</updated>
   <id>https://zhaolilong.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker删除镜像和容器</title>
+    <link href="https://zhaolilong.com/2020/09/11/Docker%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%E5%92%8C%E5%AE%B9%E5%99%A8/"/>
+    <id>https://zhaolilong.com/2020/09/11/Docker删除镜像和容器/</id>
+    <published>2020-09-11T08:12:31.000Z</published>
+    <updated>2020-09-11T08:13:24.093Z</updated>
+    
+    <content type="html"><![CDATA[<p>当一个host中镜像和容器较多，需要重置时可选择删除其中部分或全部的镜像和容器。那么你就需要下面的操作了。</p><p>1、删除容器</p><p>1）首先需要停止所有的容器</p><p>docker stop $(docker ps -a -q)</p><p>2）删除所有的容器（只删除单个时把后面的变量改为image id即可）</p><p>docker rm $(docker ps -a -q)</p><p>2、删除镜像</p><p>1）查看host中的镜像</p><p>docker images</p><p>2）删除指定id的镜像</p><p>docker rmi <image id=""></image></p><p>想要删除untagged images，也就是那些id为的image的话可以用</p><p>docker rmi $(docker images | grep “^” | awk “{print $3}”)</p><p>3）删除全部的images</p><p>docker rmi $(docker images -q)</p><p>3、当要删除的iamges和其他的镜像有关联而无法删除时</p><p>可通过 -f 参数强制删除</p><p>docker rmi -f $(docker images -q)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;当一个host中镜像和容器较多，需要重置时可选择删除其中部分或全部的镜像和容器。那么你就需要下面的操作了。&lt;/p&gt;
+&lt;p&gt;1、删除容器&lt;/p&gt;
+&lt;p&gt;1）首先需要停止所有的容器&lt;/p&gt;
+&lt;p&gt;docker stop $(docker ps -a -q)&lt;/p&gt;
+&lt;p&gt;2）删
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>U8G2自定义中文字库的方法</title>
@@ -476,30 +501,6 @@
     
       &lt;p&gt;在本章中，我们将开始使用Metal着色语言探索图像处理世界。我们将创建一个能够表示图像滤镜链的框架，然后编写一对图像滤镜，以便我们调整图像的饱和度和模糊度。最终结果将是一个交互式应用程序，允许您实时控制图像过滤器参数。&lt;/p&gt;
 &lt;p&gt;图像处理是数据并行编程的主要应用之一。在许多情况下，图像滤波器仅需要查询源图像中的一个像素或小邻域像素以计算每个输出像素的值。在这种情况下，图像滤波器的工作可以以并行方式完成。这非常适合现代GPU架构，它使用许多小内核同时处理多个数据。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="iOS/Mac" scheme="https://zhaolilong.com/tags/iOS-Mac/"/>
-    
-      <category term="图形学" scheme="https://zhaolilong.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-      <category term="Metal" scheme="https://zhaolilong.com/tags/Metal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实例学习Metal-第十三章 介绍数据并行编程</title>
-    <link href="https://zhaolilong.com/2020/03/29/%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0Metal-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/"/>
-    <id>https://zhaolilong.com/2020/03/29/实例学习Metal-第十三章/</id>
-    <published>2020-03-28T16:00:00.000Z</published>
-    <updated>2020-03-13T03:06:58.793Z</updated>
-    
-    <content type="html"><![CDATA[<p>本章介绍了数据并行编程的主题，在GPU上完成时也称为计算编程（与图形编程相反，这是我们通常使用GPU执行的操作）。我们将介绍设置计算管道和并行处理大型数据集上的内核函数的基础知识。本章将作为下一章的设置，演示如何使用计算内核在GPU上进行图像处理。</p><a id="more"></a><h1 id="Chapter-13-第十三章"><a href="#Chapter-13-第十三章" class="headerlink" title="Chapter 13(第十三章)"></a>Chapter 13(第十三章)</h1><h2 id="Introduction-to-Data-Parallel-Programming-介绍数据并行编程"><a href="#Introduction-to-Data-Parallel-Programming-介绍数据并行编程" class="headerlink" title="Introduction to Data-Parallel Programming(介绍数据并行编程)"></a>Introduction to Data-Parallel Programming(介绍数据并行编程)</h2><p>本章介绍了数据并行编程的主题，在GPU上完成时也称为计算编程（与图形编程相反，这是我们通常使用GPU执行的操作）。我们将介绍设置计算管道和并行处理大型数据集上的内核函数的基础知识。本章将作为下一章的设置，演示如何使用计算内核在GPU上进行图像处理。</p><h3 id="Kenel-Functions-内核函数"><a href="#Kenel-Functions-内核函数" class="headerlink" title="Kenel Functions(内核函数)"></a>Kenel Functions(内核函数)</h3><p>在本书中，我们广泛使用了顶点和片段函数。在本章中，我们介绍一种新的着色器函数：内核函数。内核函数允许我们构建大规模并行程序，这些程序可以同时处理多个数据。我们将交替使用术语“内核函数”，“计算内核”和“计算着色器”。</p><p>在着色器源中通过为内核限定符添加前缀来标识内核函数，就像我们使用<code>顶点</code>或<code>片段</code>为其他类型的函数添加前缀一样。这些类型的函数之间的一个区别是内核函数<code>必须</code>返回void。这是因为内核函数对缓冲区和纹理进行操作，而不是像顶点和片段函数那样将数据提供给其他管道阶段。</p><p>以下代码段是内核函数签名的示例。稍后将详细讨论此函数签名中引入的新属性。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kernel void kernel_function(</span><br><span class="line">texture2d&lt;float, access::read&gt; inTexture [[texture(0)]], texture2d&lt;float, access::write&gt; outTexture [[texture(1)]], uint2 gid [[thread_position_in_grid]]);</span><br></pre></td></tr></table></figure><h3 id="The-Compute-Pipeline-计算管道"><a href="#The-Compute-Pipeline-计算管道" class="headerlink" title="The Compute Pipeline(计算管道)"></a>The Compute Pipeline(计算管道)</h3><p>构建计算管道类似于为我们的3D渲染工作构建渲染管道。我们创建一个上下文对象来保存各种Metal对象，而不是渲染器类。</p><h4 id="The-Context-Class-上下文类"><a href="#The-Context-Class-上下文类" class="headerlink" title="The Context Class(上下文类)"></a>The Context Class(上下文类)</h4><p>上下文包装了设备，库和命令队列，因为它们是长期存在的对象，将由我们创建的各种内核类引用。</p><p>上下文类有一个非常简单的接口。调用<code>+newContext</code>工厂方法将返回具有系统默认设备的上下文。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@interface MBEContext : NSObject</span><br><span class="line">@property (strong) id&lt;MTLDevice&gt; device;</span><br><span class="line">@property (strong) id&lt;MTLLibrary&gt; library; @property (strong) id&lt;MTLCommandQueue&gt; commandQueue;</span><br><span class="line">+ (instancetype)newContext; @end</span><br></pre></td></tr></table></figure><p>每个上下文有一个串行命令队列。这允许我们序列化工作项，例如可能在它们之间具有数据依赖性的图像过滤器。</p><h4 id="Creating-a-Pipeline-State-创建管道状态"><a href="#Creating-a-Pipeline-State-创建管道状态" class="headerlink" title="Creating a Pipeline State(创建管道状态)"></a>Creating a Pipeline State(创建管道状态)</h4><p>构建用于执行内核函数的管道状态比创建渲染管道要简单一些。没有与计算管道的MTLRenderPipelineDescriptor等效，因为计算管道的唯一可配置部分是其关联的内核函数。</p><p>与顶点和片段函数一样，内核函数通过库中的名称检索：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[library newFunctionWithName:@&quot;kernel_function&quot;];</span><br></pre></td></tr></table></figure><p>然后通过从设备请求计算管道状态对象来创建计算管道。如果在为目标硬件编译内核函数时发生错误，则会将错误分配给error参数，并返回nil。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id&lt;MTLComputePipelineState&gt; pipeline = [device newComputePipelineStateWithFunction:kernelFunction error:&amp;error];</span><br></pre></td></tr></table></figure><h4 id="Creating-a-Command-Buffer-and-Command-Encoder-创建命令缓冲区和命令编码器"><a href="#Creating-a-Command-Buffer-and-Command-Encoder-创建命令缓冲区和命令编码器" class="headerlink" title="Creating a Command Buffer and Command Encoder(创建命令缓冲区和命令编码器)"></a>Creating a Command Buffer and Command Encoder(创建命令缓冲区和命令编码器)</h4><p>正如我们使用渲染命令编码器将绘制调用编码到命令缓冲区中一样，我们使用新类型的命令编码器来执行内核函数：MTLComputeCommandEncoder。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id&lt;MTLCommandBuffer&gt; commandBuffer = [context.commandQueue commandBuffer]; id&lt;MTLComputeCommandEncoder&gt; commandEncoder =</span><br><span class="line">[commandBuffer computeCommandEncoder];</span><br></pre></td></tr></table></figure><p>但是，在将工作发送到GPU之前，我们需要了解如何配置计算命令编码器的参数表以及如何描述我们希望GPU执行的工作。</p><h4 id="The-Argument-Table-参数表"><a href="#The-Argument-Table-参数表" class="headerlink" title="The Argument Table(参数表)"></a>The Argument Table(参数表)</h4><p>我们之前使用参数表来指定哪些缓冲区，纹理和采样器状态绑定到顶点和片段函数的参数。</p><p>例如，我们通过在渲染命令编码器上调用<code>-setFragmentTexture:atIndex:</code>方法来配置片段着色器的参数。回想一下，索引参数将参数表中的条目与片段函数的签名中具有相应属性（例如，<code>[[texture（0）]]</code>）的参数匹配。<br>设置计算编码器的参数表有类似的方法：<code>-setTexture:atIndex:</code>。在准备执行内核函数时，我们将使用此方法设置参数表。</p><h4 id="Threadgroups-线程组"><a href="#Threadgroups-线程组" class="headerlink" title="Threadgroups(线程组)"></a>Threadgroups(线程组)</h4><p>线程组是Metal内核函数编程的核心概念。为了并行执行，必须将每个工作负载分解为称为线程组的块，这些块可以进一步划分并分配给GPU上的线程池。</p><p>为了有效运行，GPU不会调度单个线程。相反，它们被安排成套（有时称为“warp”或“wavefronts”，尽管Metal文档不使用这些术语）。线程执行宽度表示此执行单元的大小。这是实际计划在GPU上并发运行的线程数。您可以使用其<code>threadExecutionWidth</code>属性从命令编码器查询此值。它可能是2的小功率，例如32或64。</p><p>我们还可以通过查询<code>maxTotalThreadsPerThreadgroup</code>来确定线程组大小的上限。此数字始终是线程执行宽度的倍数。例如，在iPhone 6上它是512。</p><p>为了最有效地使用GPU，线程组中的项目总数应该是线程执行宽度的倍数，并且必须低于每个线程组的最大总线程数。这通知我们如何选择细分输入数据以实现最快和最方便的执行。</p><p>线程组不必是一维的。通常，线程组的尺寸与正在操作的数据的尺寸相匹配是很方便的。例如，当在2D图像上操作时，每个块通常将是源纹理的矩形区域。下图显示了如何选择将纹理细分为线程组。</p><p><img src="/2020/03/29/实例学习Metal-第十三章/1584068791.png" alt=""></p><center>图13.1：要处理的图像被划分为多个线程组，此处用白色方块表示。</center><p>为了告诉Metal每个线程组的维度以及在给定的计算调用中应该执行多少个线程组，我们创建了一对MTLSize结构：</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MTLSize</span> threadgroupCounts = <span class="built_in">MTLSizeMake</span>(<span class="number">8</span>, <span class="number">8</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">MTLSize</span> threadgroups = <span class="built_in">MTLSizeMake</span>([texture width] / threadgroupCounts.width,</span><br><span class="line">[texture height] / threadgroupCounts.height, <span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>在这里，我们有点随意选择8行8列的线程组大小，或者每个线程组总共64个项目。我们假设这个代码处理的纹理的维度是8的倍数，这通常是一个安全的选择。总线程组大小是目标硬件线程执行宽度的偶数倍，并且安全地低于最大总线程数。如果纹理尺寸不能被我们的线程组大小整除，我们需要在内核函数中采取措施，不要在纹理边界之外读取或写入。</p><p>既然在我们已经确定了线程组的大小以及我们需要执行多少线程组，现在我们已经准备好让GPU工作了。</p><h4 id="Dispatching-Threadgroups-for-Execution-调度线程组以执行"><a href="#Dispatching-Threadgroups-for-Execution-调度线程组以执行" class="headerlink" title="Dispatching Threadgroups for Execution(调度线程组以执行)"></a>Dispatching Threadgroups for Execution(调度线程组以执行)</h4><p>编码命令来对一组数据执行内核函数称为<code>调度</code>。一旦我们引用了一个计算命令编码器，我们就可以调用它的<code>-dispatchThreadgroups:threadsPerThreadgroup:</code>方法对执行请求进行编码，传递我们之前计算过的MTLSize结构。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[commandEncoder dispatchThreadgroups:threadgroups threadsPerThreadgroup:threadgroupCounts];</span><br></pre></td></tr></table></figure><p>一旦完成调度，我们告诉命令编码器endEncoding，然后提交相应的命令缓冲区。然后我们可以在命令缓冲区上使用<code>-waitUntilCompleted</code>方法来阻止，直到着色器在GPU上运行完毕。每个数据项将执行一次内核函数（例如，源纹理中每个纹素一次）。</p><h3 id="Conclusion-结论"><a href="#Conclusion-结论" class="headerlink" title="Conclusion(结论)"></a>Conclusion(结论)</h3><p>在这个简短的章节中，我们为讨论Metal中的高性能图像滤波以及数据并行编程的其他应用奠定了基础。在下一章中，我们将在Metal中应用数据并行编程来解决图像处理中的一些有趣问题。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本章介绍了数据并行编程的主题，在GPU上完成时也称为计算编程（与图形编程相反，这是我们通常使用GPU执行的操作）。我们将介绍设置计算管道和并行处理大型数据集上的内核函数的基础知识。本章将作为下一章的设置，演示如何使用计算内核在GPU上进行图像处理。&lt;/p&gt;
     
     </summary>
     
