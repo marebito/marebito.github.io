@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>linux查看redis安装目录_查看redis端口占用</title>
+      <link href="/2020/09/14/linux%E6%9F%A5%E7%9C%8Bredis%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95-%E6%9F%A5%E7%9C%8Bredis%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
+      <url>/2020/09/14/linux%E6%9F%A5%E7%9C%8Bredis%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95-%E6%9F%A5%E7%9C%8Bredis%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>如果命令 which 和whereis 都找不到安装目录，可使用以下办法</p><p>  ps -ef|grep redis</p><p>得到了进程号 xxxx</p><p> 然后 ls -l /proc/xxxx/cwd</p><p>![image-20200914113316172](/Users/boyka/Library/Application Support/typora-user-images/image-20200914113316172.png)</p><p>查看端口占用</p><p>netstat -tunpl|grep 6379</p><p>如果：-bash: netstat: command not found</p><p>yum install net-tools</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker安装redis</title>
       <link href="/2020/09/14/docker%E5%AE%89%E8%A3%85redis/"/>
       <url>/2020/09/14/docker%E5%AE%89%E8%A3%85redis/</url>
