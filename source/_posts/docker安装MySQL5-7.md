@@ -1,8 +1,7 @@
 ---
 title: docker安装MySQL5.7
 date: 2020-09-11 16:05:53
-tags: - Docker
-	  - MySQL
+tags: 
 ---
 
 1. 安装mysql5.7 docker镜像
