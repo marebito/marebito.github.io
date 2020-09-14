@@ -7,9 +7,8 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章"><span class="toc-number">1.</span> <span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity-ARKit"><span class="toc-number">1.1.</span> <span class="toc-text">Unity ARKit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个场景"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建一个场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#摄像机"><span class="toc-number">1.1.2.</span> <span class="toc-text">摄像机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变换"><span class="toc-number">1.1.3.</span> <span class="toc-text">变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARKit-Remote"><span class="toc-number">1.1.4.</span> <span class="toc-text">ARKit Remote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置主摄像机"><span class="toc-number">1.1.5.</span> <span class="toc-text">设置主摄像机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加一个组件"><span class="toc-number">1.1.6.</span> <span class="toc-text">添加一个组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跟踪手机运动"><span class="toc-number">1.1.7.</span> <span class="toc-text">跟踪手机运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建并运行"><span class="toc-number">1.1.8.</span> <span class="toc-text">构建并运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存场景"><span class="toc-number">1.1.9.</span> <span class="toc-text">保存场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#了解场景"><span class="toc-number">1.1.10.</span> <span class="toc-text">了解场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入视觉惯性测距法（Visual-Inertial-Odometry）"><span class="toc-number">1.1.11.</span> <span class="toc-text">引入视觉惯性测距法（Visual Inertial Odometry）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征点（Feature-Points）"><span class="toc-number">1.1.12.</span> <span class="toc-text">特征点（Feature Points）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点云（Point-Clouds）"><span class="toc-number">1.1.13.</span> <span class="toc-text">点云（Point Clouds）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试-1"><span class="toc-number">1.1.14.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-ARKitRemote"><span class="toc-number">1.1.15.</span> <span class="toc-text">Unity ARKitRemote</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">43</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">第三章</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-02</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">5.4k</span><span class="post-meta__separator">|</span><span>阅读时长: 17 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>既然您已经安装了Unity和Unity ARKit插件，现在是时候学习更多有关此工具的知识并开始我们的第一次AR体验。请注意，我称这是一种体验，而不是游戏，尽管它可能以某种方式用作游戏;从我的观点来看，游戏需要一些关键元素，我将在第4章详细介绍。</p>
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章"><span class="toc-number">1.</span> <span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity-ARKit"><span class="toc-number">1.1.</span> <span class="toc-text">Unity ARKit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个场景"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建一个场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#摄像机"><span class="toc-number">1.1.2.</span> <span class="toc-text">摄像机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变换"><span class="toc-number">1.1.3.</span> <span class="toc-text">变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARKit-Remote"><span class="toc-number">1.1.4.</span> <span class="toc-text">ARKit Remote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跟踪手机运动"><span class="toc-number">1.1.5.</span> <span class="toc-text">跟踪手机运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存场景"><span class="toc-number">1.1.6.</span> <span class="toc-text">保存场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#了解场景"><span class="toc-number">1.1.7.</span> <span class="toc-text">了解场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入视觉惯性测距法（Visual-Inertial-Odometry）"><span class="toc-number">1.1.8.</span> <span class="toc-text">引入视觉惯性测距法（Visual Inertial Odometry）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征点（Feature-Points）"><span class="toc-number">1.1.9.</span> <span class="toc-text">特征点（Feature Points）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点云（Point-Clouds）"><span class="toc-number">1.1.10.</span> <span class="toc-text">点云（Point Clouds）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试-1"><span class="toc-number">1.1.11.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-ARKitRemote"><span class="toc-number">1.1.12.</span> <span class="toc-text">Unity ARKitRemote</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">44</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">第三章</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-03-02</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">5.4k</span><span class="post-meta__separator">|</span><span>阅读时长: 17 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>既然您已经安装了Unity和Unity ARKit插件，现在是时候学习更多有关此工具的知识并开始我们的第一次AR体验。请注意，我称这是一种体验，而不是游戏，尽管它可能以某种方式用作游戏;从我的观点来看，游戏需要一些关键元素，我将在第4章详细介绍。</p>
 <a id="more"></a>
-
 <h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><h2 id="Unity-ARKit"><a href="#Unity-ARKit" class="headerlink" title="Unity ARKit"></a>Unity ARKit</h2><p>既然您已经安装了Unity和Unity ARKit插件，现在是时候学习更多有关此工具的知识并开始我们的第一次AR体验。请注意，我称这是一种体验，而不是游戏，尽管它可能以某种方式用作游戏;从我的观点来看，游戏需要一些关键元素，我将在第4章详细介绍。</p>
 <p>如果您还没有打开我们在上一章创建的AR项目，那么现在是进行此操作的好时机。如果您查看Project文件夹（图3-1）并查看每个文件夹，您将看到Unity ARKit插件附带了许多我们将在本书中探索和使用的资源。</p>
 <h3 id="创建一个场景"><a href="#创建一个场景" class="headerlink" title="创建一个场景"></a>创建一个场景</h3><p>我们要做的第一项任务是创建GameObject并将其放入我们的场景中并在AR中查看它。从“菜单”中，选择“GameObject”➤“三维对象”➤“多维数据集”（图3-1）。我们可以选择任何3D对象，但我希望您在AR中看到Cube并在3D空间中移动它。虽然我更喜欢Spheres，但3DCube 有六个顶点（多边形的角点），这些顶点会更容易看到。但是，我们很快就会添加不同形状的GameObject。</p>
@@ -81,16 +80,26 @@
 <p><img src="/2019/03/02/第三章/1551595928.jpg" alt=""></p>
 <center>图 3-16. 搜索ARKit Remote
 
-<p><img src="/2019/03/02/第三章/1551595975.jpg" alt=""></p>
+![](1551595975.jpg)
+
 <center>图 3-17. 在Hierarchy中的ARKitRemote预制件
 
-<h3 id="设置主摄像机"><a href="#设置主摄像机" class="headerlink" title="设置主摄像机"></a>设置主摄像机</h3><p>现在在主摄像机设定中，设置clear flag为Depth only（图 3-18）。</p>
-<p><img src="/2019/03/02/第三章/1551596138.jpg" alt=""></p>
+### 设置主摄像机
+
+现在在主摄像机设定中，设置clear flag为Depth only（图 3-18）。
+
+![](1551596138.jpg)
+
 <center>图 3-18. 设置相机的Clear Flags为Depth only
 
-<h3 id="添加一个组件"><a href="#添加一个组件" class="headerlink" title="添加一个组件"></a>添加一个组件</h3><p>现在我们打算添加一个组件到我们的相机。在这个例子中，我们打算添加一个Unity AR Video脚本。添加这个脚本，选中主摄像机（Main Camera），在Inspector中选择添加组件（Add Component）。</p>
-<p>在Inspector中，您将看到一列你能够添加的组件（图 3-18）。这可能花费一会功夫去找，所以我建议使用在添加组件菜单中的搜索栏来添加我们寻找的脚本。在图3-19中，在搜索栏中，我搜索video。</p>
-<p><img src="/2019/03/02/第三章/1551596538.jpg" alt=""></p>
+### 添加一个组件
+
+现在我们打算添加一个组件到我们的相机。在这个例子中，我们打算添加一个Unity AR Video脚本。添加这个脚本，选中主摄像机（Main Camera），在Inspector中选择添加组件（Add Component）。
+
+在Inspector中，您将看到一列你能够添加的组件（图 3-18）。这可能花费一会功夫去找，所以我建议使用在添加组件菜单中的搜索栏来添加我们寻找的脚本。在图3-19中，在搜索栏中，我搜索video。
+
+![](1551596538.jpg)
+
 <center>图 3-19. 搜索Unity AR Video脚本组件</center>
 
 <p>一旦您发现了到Unity AR Video脚本，选中它（单击鼠标），现在您应当看到这个组件被添加到Main Camera上了。</p>
@@ -112,15 +121,21 @@
 <p><img src="/2019/03/02/第三章/1551654485.jpg" alt=""></p>
 <center>图 3-24. 设置Main Camera作为Tracked Camera
 
-<h3 id="构建并运行"><a href="#构建并运行" class="headerlink" title="构建并运行"></a>构建并运行</h3><p>现在我们已准备好构建和运行我们的应用程序。确保已将iOS设备连接到Mac，然后从Unity File菜单中选择Build＆Run（图3-25）。如果您尚未下载最新版本的Xcode，则需要立即执行此操作（这需要一段时间）。</p>
-<p><img src="/2019/03/02/第三章/1551654576.jpg" alt=""></p>
+### 构建并运行
+
+现在我们已准备好构建和运行我们的应用程序。确保已将iOS设备连接到Mac，然后从Unity File菜单中选择Build＆Run（图3-25）。如果您尚未下载最新版本的Xcode，则需要立即执行此操作（这需要一段时间）。
+
+![](1551654576.jpg)
+
 <center>图 3-25. 选择Build & Run</center>
 
 <p><img src="/2019/03/02/第三章/1551654731.jpg" alt=""></p>
 <center>图 3-26. 构建设置
 
-<p>在Build设置菜单中，首先选择要在其上构建的平台，在我们的示例中将是iOS。此外，选中“开发构建”复选框。最后，仅选择要构建的场景非常重要。如果未列出当前场景，请单击“添加打开场景”按钮（图3-26）并取消选中任何其他场景。在Build Setting屏幕中，选择Player Settings图标。这将打开玩家设置的Inspector，我们将在其中输入公司名称和产品名称（图3-27）。</p>
-<p><img src="/2019/03/02/第三章/1551654943.jpg" alt=""></p>
+在Build设置菜单中，首先选择要在其上构建的平台，在我们的示例中将是iOS。此外，选中“开发构建”复选框。最后，仅选择要构建的场景非常重要。如果未列出当前场景，请单击“添加打开场景”按钮（图3-26）并取消选中任何其他场景。在Build Setting屏幕中，选择Player Settings图标。这将打开玩家设置的Inspector，我们将在其中输入公司名称和产品名称（图3-27）。
+
+![](1551654943.jpg)
+
 <center>图 3-27. Player Settings的检视器视图</center>
 
 <p>向下滚动菜单以找到Bundle Identifier（图3-26）。请务必注意，一旦您在Xcode中向个人团队注册了捆绑包标识符，将来就无法将相同的捆绑包标识符注册到其他Apple Developer Program团队。这意味着当您使用免费的Apple ID和个人团队测试游戏时，您应该选择仅用于测试的包标识符 - 您将无法使用相同的包标识符来释放游戏。执行此操作的最佳解决方案是在测试包标识符的末尾添加“Test” - 例如，com.yourCompanyName.yourAppNameTest。另请注意，捆绑标识符以所谓的反向DNS样式编写。接受的字符是字母数字字符，句点和连字符。在我的例子中（图3-28），我使用过com。 RottenEggProductions.HelloWorldARTest作为包标识符（您将需要自己的名字）。如果您有签名团队ID，您可能也想要包含该ID。但出于测试目的，这不是必需的。</p>
@@ -146,7 +161,8 @@
 <p><img src="/2019/03/02/第三章/1551655680.jpg" alt=""></p>
 <center>图 3-33. 场景另存为（Save Scene as）菜单
 
-<p><img src="/2019/03/02/第三章/1551655775.jpg" alt=""></p>
+![](1551655775.jpg)
+
 <center>图 3-34. 保存场景并选择它的位置</center>
 
 <h3 id="了解场景"><a href="#了解场景" class="headerlink" title="了解场景"></a>了解场景</h3><p>现在可能是讨论Unity场景和项目之间差异的好时机。 Unity项目包含可能用于游戏或应用程序的所有场景和必要代码。场景是项目的元素（或组件）。将该项目视为整部电影，将场景视为该电影的一部分。在游戏中，这些场景可以是菜单，关卡，积分等。</p>
