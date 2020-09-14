@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>docker安装redis</title>
+      <link href="/2020/09/14/docker%E5%AE%89%E8%A3%85redis/"/>
+      <url>/2020/09/14/docker%E5%AE%89%E8%A3%85redis/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/liyiran/p/11522114.html" target="_blank" rel="noopener">https://www.cnblogs.com/liyiran/p/11522114.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker部署mysql：无法登陆</title>
       <link href="/2020/09/14/docker%E9%83%A8%E7%BD%B2mysql%EF%BC%9A%E6%97%A0%E6%B3%95%E7%99%BB%E9%99%86/"/>
       <url>/2020/09/14/docker%E9%83%A8%E7%BD%B2mysql%EF%BC%9A%E6%97%A0%E6%B3%95%E7%99%BB%E9%99%86/</url>
