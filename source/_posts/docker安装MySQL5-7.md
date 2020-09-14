@@ -70,3 +70,45 @@ docker run -p 3306:3306 --name mysql -v /root/mysql/conf:/etc/mysql/conf.d -v /r
 查看/root/mysql/data目录是否有数据文件
 
 ![img](https://img-blog.csdnimg.cn/20190617135810787.png)
+
+
+
+设置mysql容器自动重启
+
+![image-20200914100200040](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100200040.png)
+
+> 解决IPv4 forwarding is disabled. Networking will not work.
+>
+> ![image-20200914100232915](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100232915.png)
+
+添加net.ipv4.ip_forward=1
+
+![image-20200914100351949](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100351949.png)
+
+重启网络服务
+
+![image-20200914100408921](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100408921.png)
+
+查看状态
+
+![image-20200914100427343](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100427343.png)
+
+net.ipv4.ip_forward=1 则表示修改成功.
+
+
+
+进入容器命令:
+
+![image-20200914100605677](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100605677.png)
+
+查看MySQL配置文件位置:
+
+
+
+![image-20200914100646941](/Users/boyka/Library/Application Support/typora-user-images/image-20200914100646941.png)
+
+
+
+查看MySQL相关文件路径:
+
+![image-20200914101129882](/Users/boyka/Library/Application Support/typora-user-images/image-20200914101129882.png)
