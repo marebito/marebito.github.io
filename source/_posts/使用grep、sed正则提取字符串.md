@@ -1,8 +1,7 @@
 ---
 title: 使用grep、sed正则提取字符串
 date: 2020-09-03 14:13:51
-tags: - 正则
-	  - 提取字符串
+tags: 
 ---
 
 ## grep
