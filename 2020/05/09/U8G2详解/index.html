@@ -7,20 +7,26 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2简介"><span class="toc-number">1.</span> <span class="toc-text">U8g2简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2支持的显示控制器"><span class="toc-number">2.</span> <span class="toc-text">U8g2支持的显示控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2支持的Arduino主板"><span class="toc-number">3.</span> <span class="toc-text">U8g2支持的Arduino主板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2如何在Arduino平台上安装"><span class="toc-number">4.</span> <span class="toc-text">U8g2如何在Arduino平台上安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2优势"><span class="toc-number">5.</span> <span class="toc-text">U8g2优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2库函数详解"><span class="toc-number">6.</span> <span class="toc-text">U8g2库函数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本函数"><span class="toc-number">6.1.</span> <span class="toc-text">基本函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-begin-——-构造U8G2"><span class="toc-number">6.1.1.</span> <span class="toc-text">u8g2.begin() —— 构造U8G2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-beginSimple-——-构造U8G2"><span class="toc-number">6.1.2.</span> <span class="toc-text">u8g2.beginSimple() —— 构造U8G2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-initDisplay-——-初始化显示控制器"><span class="toc-number">6.1.3.</span> <span class="toc-text">u8g2.initDisplay() —— 初始化显示控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clearDisplay-——-清除屏幕内容"><span class="toc-number">6.1.4.</span> <span class="toc-text">u8g2.clearDisplay() —— 清除屏幕内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setPowerSave-——-是否开启省电模式"><span class="toc-number">6.1.5.</span> <span class="toc-text">u8g2.setPowerSave() —— 是否开启省电模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clear-——-清除操作"><span class="toc-number">6.1.6.</span> <span class="toc-text">u8g2.clear() —— 清除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clearBuffer-——-清除缓冲区"><span class="toc-number">6.1.7.</span> <span class="toc-text">u8g2.clearBuffer() —— 清除缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-disableUTF8Print-——-禁用-UTF8打印"><span class="toc-number">6.1.8.</span> <span class="toc-text">u8g2.disableUTF8Print() —— 禁用 UTF8打印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-enableUTF8Print-——-启用-UTF8打印"><span class="toc-number">6.1.9.</span> <span class="toc-text">u8g2.enableUTF8Print() —— 启用 UTF8打印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-home-——-重置显示光标的位置"><span class="toc-number">6.1.10.</span> <span class="toc-text">u8g2.home() —— 重置显示光标的位置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制相关函数"><span class="toc-number">6.2.</span> <span class="toc-text">绘制相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawBox-——-画实心方形"><span class="toc-number">6.2.1.</span> <span class="toc-text">u8g2.drawBox() —— 画实心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawCircle-——-画空心圆"><span class="toc-number">6.2.2.</span> <span class="toc-text">u8g2.drawCircle() —— 画空心圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawDisc-——-画实心圆"><span class="toc-number">6.2.3.</span> <span class="toc-text">u8g2.drawDisc() —— 画实心圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawEllipse-——-画空心椭圆"><span class="toc-number">6.2.4.</span> <span class="toc-text">u8g2.drawEllipse() —— 画空心椭圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawFilledEllipse-——-画实心椭圆"><span class="toc-number">6.2.5.</span> <span class="toc-text">u8g2.drawFilledEllipse() —— 画实心椭圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawFrame-——-画空心方形"><span class="toc-number">6.2.6.</span> <span class="toc-text">u8g2.drawFrame() —— 画空心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawGlyph-——-绘制字体字集的符号"><span class="toc-number">6.2.7.</span> <span class="toc-text">u8g2.drawGlyph() —— 绘制字体字集的符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawHLine-——-绘制水平线"><span class="toc-number">6.2.8.</span> <span class="toc-text">u8g2.drawHLine() —— 绘制水平线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawLine-——-两点之间绘制线"><span class="toc-number">6.2.9.</span> <span class="toc-text">u8g2.drawLine() —— 两点之间绘制线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawPixel-——-绘制像素点"><span class="toc-number">6.2.10.</span> <span class="toc-text">u8g2.drawPixel() —— 绘制像素点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawRBox-——-绘制圆角实心方形"><span class="toc-number">6.2.11.</span> <span class="toc-text">u8g2.drawRBox() —— 绘制圆角实心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawRFrame-——-绘制圆角空心方形"><span class="toc-number">6.2.12.</span> <span class="toc-text">u8g2.drawRFrame() —— 绘制圆角空心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawStr-——-绘制字符串"><span class="toc-number">6.2.13.</span> <span class="toc-text">u8g2.drawStr() —— 绘制字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawTriangle-——-绘制实心三角形"><span class="toc-number">6.2.14.</span> <span class="toc-text">u8g2.drawTriangle() —— 绘制实心三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawUTF8-——-绘制UTF8编码的字符"><span class="toc-number">6.2.15.</span> <span class="toc-text">u8g2.drawUTF8() —— 绘制UTF8编码的字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawVLine-——-绘制竖直线"><span class="toc-number">6.2.16.</span> <span class="toc-text">u8g2.drawVLine() —— 绘制竖直线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawXBM-drawXBMP-——-绘制图像"><span class="toc-number">6.2.17.</span> <span class="toc-text">u8g2.drawXBM()/drawXBMP() —— 绘制图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-firstPage-nextPage-——-绘制命令"><span class="toc-number">6.2.18.</span> <span class="toc-text">u8g2.firstPage()/nextPage() —— 绘制命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-print-——-绘制内容"><span class="toc-number">6.2.19.</span> <span class="toc-text">u8g2.print() —— 绘制内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-sendBuffer-——-绘制缓冲区的内容"><span class="toc-number">6.2.20.</span> <span class="toc-text">u8g2.sendBuffer() —— 绘制缓冲区的内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示配置相关函数"><span class="toc-number">6.3.</span> <span class="toc-text">显示配置相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getAscent-——-获取基准线以上的高度"><span class="toc-number">6.3.1.</span> <span class="toc-text">u8g2.getAscent() —— 获取基准线以上的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDescent-——-获取基准线以下的高度"><span class="toc-number">6.3.2.</span> <span class="toc-text">u8g2.getDescent() —— 获取基准线以下的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDisplayHeight-——-获取显示器的高度"><span class="toc-number">6.3.3.</span> <span class="toc-text">u8g2.getDisplayHeight() —— 获取显示器的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDisplayWidth-——-获取显示器的宽度"><span class="toc-number">6.3.4.</span> <span class="toc-text">u8g2.getDisplayWidth() —— 获取显示器的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getMaxCharHeight-——-获取当前字体里的最大字符的高度"><span class="toc-number">6.3.5.</span> <span class="toc-text">u8g2.getMaxCharHeight() —— 获取当前字体里的最大字符的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getMaxCharWidth-——-获取当前字体里的最大字符的宽度"><span class="toc-number">6.3.6.</span> <span class="toc-text">u8g2.getMaxCharWidth() —— 获取当前字体里的最大字符的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getStrWidth-——-获取字符串的像素宽度"><span class="toc-number">6.3.7.</span> <span class="toc-text">u8g2.getStrWidth() —— 获取字符串的像素宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getUTF8Width-——-获取UTF-8字符串的像素宽度"><span class="toc-number">6.3.8.</span> <span class="toc-text">u8g2.getUTF8Width() —— 获取UTF-8字符串的像素宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setAutoPageClear-——-设置自动清除缓冲区"><span class="toc-number">6.3.9.</span> <span class="toc-text">u8g2.setAutoPageClear() —— 设置自动清除缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBitmapMode-——-设置位图模式"><span class="toc-number">6.3.10.</span> <span class="toc-text">u8g2.setBitmapMode() —— 设置位图模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBusClock-——-设置总线时钟"><span class="toc-number">6.3.11.</span> <span class="toc-text">u8g2.setBusClock() —— 设置总线时钟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setClipWindow-——-设置采集窗口大小"><span class="toc-number">6.3.12.</span> <span class="toc-text">u8g2.setClipWindow() —— 设置采集窗口大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setCursor-——-设置绘制光标位置"><span class="toc-number">6.3.13.</span> <span class="toc-text">u8g2.setCursor() —— 设置绘制光标位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setDisplayRotation-——-设置显示器的旋转角度"><span class="toc-number">6.3.14.</span> <span class="toc-text">u8g2.setDisplayRotation() —— 设置显示器的旋转角度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setDrawColor-——-设置绘制颜色"><span class="toc-number">6.3.15.</span> <span class="toc-text">u8g2.setDrawColor() —— 设置绘制颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setFont-——-设置字体集"><span class="toc-number">6.3.16.</span> <span class="toc-text">u8g2.setFont() —— 设置字体集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setFontDirection-——-设置字体方向"><span class="toc-number">6.3.17.</span> <span class="toc-text">u8g2.setFontDirection() —— 设置字体方向</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存相关函数"><span class="toc-number">6.4.</span> <span class="toc-text">缓存相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferPtr-——-获取缓存空间的地址"><span class="toc-number">6.4.1.</span> <span class="toc-text">u8g2.getBufferPtr() —— 获取缓存空间的地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferTileHeight-——-获取缓冲区的Tile高度"><span class="toc-number">6.4.2.</span> <span class="toc-text">u8g2.getBufferTileHeight() —— 获取缓冲区的Tile高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferTileWidth-——-获取缓冲区的Tile宽度"><span class="toc-number">6.4.3.</span> <span class="toc-text">u8g2.getBufferTileWidth() —— 获取缓冲区的Tile宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferCurrTileRow-——-获取缓冲区的当前Tile-row"><span class="toc-number">6.4.4.</span> <span class="toc-text">u8g2.getBufferCurrTileRow() —— 获取缓冲区的当前Tile row</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBufferCurrTileRow-——-设置缓冲区的当前Tile-row"><span class="toc-number">6.4.5.</span> <span class="toc-text">u8g2.setBufferCurrTileRow() —— 设置缓冲区的当前Tile row</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何运用U8G2库"><span class="toc-number">7.</span> <span class="toc-text">如何运用U8G2库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#区分显示器"><span class="toc-number">7.1.</span> <span class="toc-text">区分显示器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择物理总线方式"><span class="toc-number">7.2.</span> <span class="toc-text">选择物理总线方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区分数字连线"><span class="toc-number">7.3.</span> <span class="toc-text">区分数字连线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2初始化"><span class="toc-number">7.4.</span> <span class="toc-text">U8g2初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2绘制模式"><span class="toc-number">7.5.</span> <span class="toc-text">U8g2绘制模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2支持三种绘制模式："><span class="toc-number">7.6.</span> <span class="toc-text">U8g2支持三种绘制模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Full-screen-buffer-mode"><span class="toc-number">7.7.</span> <span class="toc-text">Full screen buffer mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-mode"><span class="toc-number">7.8.</span> <span class="toc-text">Page mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8x8-character-mode"><span class="toc-number">7.9.</span> <span class="toc-text">U8x8 character mode</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">44</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">U8G2详解</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-09</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">7.6k</span><span class="post-meta__separator">|</span><span>阅读时长: 30 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="U8g2简介"><a href="#U8g2简介" class="headerlink" title="U8g2简介"></a>U8g2简介</h2><p>U8g2是嵌入式设备的单色图形库，一句话简单明了。主要应用于嵌入式设备，包括我们常见的单片机。<br>    <br><a id="more"></a></p>
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2简介"><span class="toc-number">1.</span> <span class="toc-text">U8g2简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2支持的显示控制器"><span class="toc-number">2.</span> <span class="toc-text">U8g2支持的显示控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2支持的Arduino主板"><span class="toc-number">3.</span> <span class="toc-text">U8g2支持的Arduino主板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2如何在Arduino平台上安装"><span class="toc-number">4.</span> <span class="toc-text">U8g2如何在Arduino平台上安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2优势"><span class="toc-number">5.</span> <span class="toc-text">U8g2优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U8g2库函数详解"><span class="toc-number">6.</span> <span class="toc-text">U8g2库函数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本函数"><span class="toc-number">6.1.</span> <span class="toc-text">基本函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-begin-——-构造U8G2"><span class="toc-number">6.1.1.</span> <span class="toc-text">u8g2.begin() —— 构造U8G2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-beginSimple-——-构造U8G2"><span class="toc-number">6.1.2.</span> <span class="toc-text">u8g2.beginSimple() —— 构造U8G2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-initDisplay-——-初始化显示控制器"><span class="toc-number">6.1.3.</span> <span class="toc-text">u8g2.initDisplay() —— 初始化显示控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clearDisplay-——-清除屏幕内容"><span class="toc-number">6.1.4.</span> <span class="toc-text">u8g2.clearDisplay() —— 清除屏幕内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setPowerSave-——-是否开启省电模式"><span class="toc-number">6.1.5.</span> <span class="toc-text">u8g2.setPowerSave() —— 是否开启省电模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clear-——-清除操作"><span class="toc-number">6.1.6.</span> <span class="toc-text">u8g2.clear() —— 清除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-clearBuffer-——-清除缓冲区"><span class="toc-number">6.1.7.</span> <span class="toc-text">u8g2.clearBuffer() —— 清除缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-disableUTF8Print-——-禁用-UTF8打印"><span class="toc-number">6.1.8.</span> <span class="toc-text">u8g2.disableUTF8Print() —— 禁用 UTF8打印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-enableUTF8Print-——-启用-UTF8打印"><span class="toc-number">6.1.9.</span> <span class="toc-text">u8g2.enableUTF8Print() —— 启用 UTF8打印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-home-——-重置显示光标的位置"><span class="toc-number">6.1.10.</span> <span class="toc-text">u8g2.home() —— 重置显示光标的位置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制相关函数"><span class="toc-number">6.2.</span> <span class="toc-text">绘制相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawBox-——-画实心方形"><span class="toc-number">6.2.1.</span> <span class="toc-text">u8g2.drawBox() —— 画实心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawCircle-——-画空心圆"><span class="toc-number">6.2.2.</span> <span class="toc-text">u8g2.drawCircle() —— 画空心圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawDisc-——-画实心圆"><span class="toc-number">6.2.3.</span> <span class="toc-text">u8g2.drawDisc() —— 画实心圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawEllipse-——-画空心椭圆"><span class="toc-number">6.2.4.</span> <span class="toc-text">u8g2.drawEllipse() —— 画空心椭圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawFilledEllipse-——-画实心椭圆"><span class="toc-number">6.2.5.</span> <span class="toc-text">u8g2.drawFilledEllipse() —— 画实心椭圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawFrame-——-画空心方形"><span class="toc-number">6.2.6.</span> <span class="toc-text">u8g2.drawFrame() —— 画空心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawGlyph-——-绘制字体字集的符号"><span class="toc-number">6.2.7.</span> <span class="toc-text">u8g2.drawGlyph() —— 绘制字体字集的符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawHLine-——-绘制水平线"><span class="toc-number">6.2.8.</span> <span class="toc-text">u8g2.drawHLine() —— 绘制水平线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawLine-——-两点之间绘制线"><span class="toc-number">6.2.9.</span> <span class="toc-text">u8g2.drawLine() —— 两点之间绘制线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawPixel-——-绘制像素点"><span class="toc-number">6.2.10.</span> <span class="toc-text">u8g2.drawPixel() —— 绘制像素点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawRBox-——-绘制圆角实心方形"><span class="toc-number">6.2.11.</span> <span class="toc-text">u8g2.drawRBox() —— 绘制圆角实心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawRFrame-——-绘制圆角空心方形"><span class="toc-number">6.2.12.</span> <span class="toc-text">u8g2.drawRFrame() —— 绘制圆角空心方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawStr-——-绘制字符串"><span class="toc-number">6.2.13.</span> <span class="toc-text">u8g2.drawStr() —— 绘制字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawTriangle-——-绘制实心三角形"><span class="toc-number">6.2.14.</span> <span class="toc-text">u8g2.drawTriangle() —— 绘制实心三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawUTF8-——-绘制UTF8编码的字符"><span class="toc-number">6.2.15.</span> <span class="toc-text">u8g2.drawUTF8() —— 绘制UTF8编码的字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawVLine-——-绘制竖直线"><span class="toc-number">6.2.16.</span> <span class="toc-text">u8g2.drawVLine() —— 绘制竖直线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-drawXBM-drawXBMP-——-绘制图像"><span class="toc-number">6.2.17.</span> <span class="toc-text">u8g2.drawXBM()/drawXBMP() —— 绘制图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-firstPage-nextPage-——-绘制命令"><span class="toc-number">6.2.18.</span> <span class="toc-text">u8g2.firstPage()/nextPage() —— 绘制命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-print-——-绘制内容"><span class="toc-number">6.2.19.</span> <span class="toc-text">u8g2.print() —— 绘制内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-sendBuffer-——-绘制缓冲区的内容"><span class="toc-number">6.2.20.</span> <span class="toc-text">u8g2.sendBuffer() —— 绘制缓冲区的内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示配置相关函数"><span class="toc-number">6.3.</span> <span class="toc-text">显示配置相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getAscent-——-获取基准线以上的高度"><span class="toc-number">6.3.1.</span> <span class="toc-text">u8g2.getAscent() —— 获取基准线以上的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDescent-——-获取基准线以下的高度"><span class="toc-number">6.3.2.</span> <span class="toc-text">u8g2.getDescent() —— 获取基准线以下的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDisplayHeight-——-获取显示器的高度"><span class="toc-number">6.3.3.</span> <span class="toc-text">u8g2.getDisplayHeight() —— 获取显示器的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getDisplayWidth-——-获取显示器的宽度"><span class="toc-number">6.3.4.</span> <span class="toc-text">u8g2.getDisplayWidth() —— 获取显示器的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getMaxCharHeight-——-获取当前字体里的最大字符的高度"><span class="toc-number">6.3.5.</span> <span class="toc-text">u8g2.getMaxCharHeight() —— 获取当前字体里的最大字符的高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getMaxCharWidth-——-获取当前字体里的最大字符的宽度"><span class="toc-number">6.3.6.</span> <span class="toc-text">u8g2.getMaxCharWidth() —— 获取当前字体里的最大字符的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getStrWidth-——-获取字符串的像素宽度"><span class="toc-number">6.3.7.</span> <span class="toc-text">u8g2.getStrWidth() —— 获取字符串的像素宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getUTF8Width-——-获取UTF-8字符串的像素宽度"><span class="toc-number">6.3.8.</span> <span class="toc-text">u8g2.getUTF8Width() —— 获取UTF-8字符串的像素宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setAutoPageClear-——-设置自动清除缓冲区"><span class="toc-number">6.3.9.</span> <span class="toc-text">u8g2.setAutoPageClear() —— 设置自动清除缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBitmapMode-——-设置位图模式"><span class="toc-number">6.3.10.</span> <span class="toc-text">u8g2.setBitmapMode() —— 设置位图模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBusClock-——-设置总线时钟"><span class="toc-number">6.3.11.</span> <span class="toc-text">u8g2.setBusClock() —— 设置总线时钟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setClipWindow-——-设置采集窗口大小"><span class="toc-number">6.3.12.</span> <span class="toc-text">u8g2.setClipWindow() —— 设置采集窗口大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setCursor-——-设置绘制光标位置"><span class="toc-number">6.3.13.</span> <span class="toc-text">u8g2.setCursor() —— 设置绘制光标位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setDisplayRotation-——-设置显示器的旋转角度"><span class="toc-number">6.3.14.</span> <span class="toc-text">u8g2.setDisplayRotation() —— 设置显示器的旋转角度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setDrawColor-——-设置绘制颜色"><span class="toc-number">6.3.15.</span> <span class="toc-text">u8g2.setDrawColor() —— 设置绘制颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setFont-——-设置字体集"><span class="toc-number">6.3.16.</span> <span class="toc-text">u8g2.setFont() —— 设置字体集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setFontDirection-——-设置字体方向"><span class="toc-number">6.3.17.</span> <span class="toc-text">u8g2.setFontDirection() —— 设置字体方向</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存相关函数"><span class="toc-number">6.4.</span> <span class="toc-text">缓存相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferPtr-——-获取缓存空间的地址"><span class="toc-number">6.4.1.</span> <span class="toc-text">u8g2.getBufferPtr() —— 获取缓存空间的地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferTileHeight-——-获取缓冲区的Tile高度"><span class="toc-number">6.4.2.</span> <span class="toc-text">u8g2.getBufferTileHeight() —— 获取缓冲区的Tile高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferTileWidth-——-获取缓冲区的Tile宽度"><span class="toc-number">6.4.3.</span> <span class="toc-text">u8g2.getBufferTileWidth() —— 获取缓冲区的Tile宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-getBufferCurrTileRow-——-获取缓冲区的当前Tile-row"><span class="toc-number">6.4.4.</span> <span class="toc-text">u8g2.getBufferCurrTileRow() —— 获取缓冲区的当前Tile row</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8g2-setBufferCurrTileRow-——-设置缓冲区的当前Tile-row"><span class="toc-number">6.4.5.</span> <span class="toc-text">u8g2.setBufferCurrTileRow() —— 设置缓冲区的当前Tile row</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何运用U8G2库"><span class="toc-number">7.</span> <span class="toc-text">如何运用U8G2库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#区分显示器"><span class="toc-number">7.1.</span> <span class="toc-text">区分显示器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择物理总线方式"><span class="toc-number">7.2.</span> <span class="toc-text">选择物理总线方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区分数字连线"><span class="toc-number">7.3.</span> <span class="toc-text">区分数字连线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2初始化"><span class="toc-number">7.4.</span> <span class="toc-text">U8g2初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2绘制模式"><span class="toc-number">7.5.</span> <span class="toc-text">U8g2绘制模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8g2支持三种绘制模式："><span class="toc-number">7.6.</span> <span class="toc-text">U8g2支持三种绘制模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Full-screen-buffer-mode"><span class="toc-number">7.7.</span> <span class="toc-text">Full screen buffer mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-mode"><span class="toc-number">7.8.</span> <span class="toc-text">Page mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U8x8-character-mode"><span class="toc-number">7.9.</span> <span class="toc-text">U8x8 character mode</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Boyka·Yuri</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/marebito">关 注</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">45</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">学习链接</div><a class="author-info-links__name text-center" href="https://data.biancheng.net">数 据 结 构 与 算 法 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://catlikecoding.com/unity/tutorials">U n i t y 学 习 指 南 &gt;&gt;</a><a class="author-info-links__name text-center" href="https://gameprogrammingpatterns.com/">游 戏 设 计 模 式 &gt;&gt;</a><a class="author-info-links__name text-center" href="http://neuralnetworksanddeeplearning.com/">神 经 网 络 与 深 度 学 习 &gt;&gt;</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://zhaolilong.com/AtlantisNebula.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">博伊卡の楼閣</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">U8G2详解</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-09</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">7.6k</span><span class="post-meta__separator">|</span><span>阅读时长: 30 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="U8g2简介"><a href="#U8g2简介" class="headerlink" title="U8g2简介"></a>U8g2简介</h2><p>U8g2是嵌入式设备的单色图形库，一句话简单明了。主要应用于嵌入式设备，包括我们常见的单片机。
+    </p>
+<a id="more"></a>
+
 <h2 id="U8g2支持的显示控制器"><a href="#U8g2支持的显示控制器" class="headerlink" title="U8g2支持的显示控制器"></a>U8g2支持的显示控制器</h2><p>    U8g2支持单色OLED和LCD，包括以下控制器：SSD1305，SSD1306，SSD1309，SSD1322，SSD1325，SSD1327，SSD1329，SSD1606，SSD1607，SH1106，SH1107，SH1108，SH1122，T6963，RA8835，LC7981，PCD8544，PCF8812，HX1230 ，UC1601，UC1604，UC1608，UC1610，UC1611，UC1701，ST7565，ST7567，ST7588，ST75256，NT7534，IST3020，ST7920，LD7032，KS0108，SED1520，SBN1661，IL3820，MAX7219（有关完整列表，请参见 此处）。<br>    可以说，基本上主流的显示控制器都支持，比如我们常见的SSD1306 12864，读者在使用该库之前请查阅自己的OLED显示控制器是否处于支持列表中。
     </p>
 <h2 id="U8g2支持的Arduino主板"><a href="#U8g2支持的Arduino主板" class="headerlink" title="U8g2支持的Arduino主板"></a>U8g2支持的Arduino主板</h2><p>    可以说基本上所有Arduino API的主板都得到U8g2的支持。包括：</p>
 <p>Aruino Zero，Uno，Mega，Due，101，MKR Zero以及所有其他Arduino官方主板<br>基于Arduino平台的STM32<br>基于Arduino平台的ESP8266和ESP32<br>甚至其他不知名的基于Arduino平台的开发板</p>
-<h2 id="U8g2如何在Arduino平台上安装"><a href="#U8g2如何在Arduino平台上安装" class="headerlink" title="U8g2如何在Arduino平台上安装"></a>U8g2如何在Arduino平台上安装</h2><p> Arduino库U8g2可以从Arduino IDE的库管理器安装，读者在库管理器搜索“U8g2”关键字就可以下载安装：<br> <br> <img src="/2020/05/09/U8G2详解/1588990435.png" alt=""><br> <br> 下载完毕，测试一下库是否安装成功：<br> <br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;U8g2lib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="U8g2如何在Arduino平台上安装"><a href="#U8g2如何在Arduino平台上安装" class="headerlink" title="U8g2如何在Arduino平台上安装"></a>U8g2如何在Arduino平台上安装</h2><p> Arduino库U8g2可以从Arduino IDE的库管理器安装，读者在库管理器搜索“U8g2”关键字就可以下载安装：<br> <br> <img src="/2020/05/09/U8G2详解/1588990435.png" alt=""><br> <br> 下载完毕，测试一下库是否安装成功：
+ </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;U8g2lib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>编译成功，证明你本地已经加载了U8G2库。<br><img src="/2020/05/09/U8G2详解/1588990704.png" alt=""></p>
 <blockquote>
 <p><font color="red">重要知识点</font></p>
+</blockquote>
 <ul>
 <li>像素点点阵<br>OLED其实就是一个M x n 的像素点阵，想显示什么就得把具体位置的像素点亮起来。对于每一个像素点，有可能是1点亮，也有可能是0点亮；</li>
 <li>坐标系<br><img src="/2020/05/09/U8G2详解/1588990808.png" alt=""><br>在坐标系中，左上角是原点，向右是X轴，向下是Y轴。</li>
 </ul>
-</blockquote>
 <h2 id="U8g2优势"><a href="#U8g2优势" class="headerlink" title="U8g2优势"></a>U8g2优势</h2><ul>
 <li>U8g2库平台支持性好，基本上支持绝大部分Arduino开发板，特别也博主比较喜欢的ESP8266；</li>
 <li>U8g2库显示控制器支持性好，基本上市面上的OLED都完美支持；</li>
@@ -30,18 +36,22 @@
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化U8g2库</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 initDisplay clearDisplay setPowerSave</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">bool</span> U8G2::begin(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>源码说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">begin</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line"><span class="comment">/* note: call to u8x8_utf8_init is not required here, this is done in the setup procedures before */</span></span><br><span class="line">   initDisplay(); <span class="comment">//初始化显示器</span></span><br><span class="line">   clearDisplay();  <span class="comment">// 重置清屏</span></span><br><span class="line">   setPowerSave(<span class="number">0</span>); <span class="comment">//唤醒屏幕</span></span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-beginSimple-——-构造U8G2"><a href="#u8g2-beginSimple-——-构造U8G2" class="headerlink" title="u8g2.beginSimple() —— 构造U8G2"></a>u8g2.beginSimple() —— 构造U8G2</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 简单初始化U8g2库</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 beginSimple</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::beginSimple(<span class="keyword">void</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>源码说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">beginSimple</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line"><span class="comment">/* does not clear the display and does not wake up the display */</span></span><br><span class="line"><span class="comment">/* user is responsible for calling clearDisplay() and setPowerSave(0) */</span></span><br><span class="line">   initDisplay();<span class="comment">//初始化显示器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>可以看到和begin()函数的区别，需要用户自行控制初始化过程，给了一定的自由度，建议直接用begin函数。</p>
 </blockquote>
@@ -49,6 +59,7 @@
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化显示控制器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::initDisplay(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>这个方法不需要单独调用，会在begin函数主动调用一次，在里面针对具体的OLED进行配置；</p>
 </blockquote>
@@ -56,6 +67,7 @@
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 清除屏幕</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::clearDisplay(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>这个方法无需单独调用，会在begin函数主动调用一次；<br>不要在 firstPage 和 nextPage 函数之间调用该方法；</p>
 </blockquote>
@@ -63,66 +75,79 @@
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 清除显示缓冲区</span></span><br><span class="line"><span class="comment"> * @param is_enable</span></span><br><span class="line"><span class="comment"> *        1 表示启用显示器的省电模式，屏幕上看不到任何东西</span></span><br><span class="line"><span class="comment"> *        0 表示禁用省电模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setPowerSave(<span class="keyword">uint8_t</span> is_enable)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>不管是启用还是禁用，显示器需要的内存消耗是不会变的，说到底就是为了关闭屏幕，做到省电；</li>
 <li>所以这里就可以理解为什么初始化需要 setPowerSave(0);</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-clear-——-清除操作"><a href="#u8g2-clear-——-清除操作" class="headerlink" title="u8g2.clear() —— 清除操作"></a>u8g2.clear() —— 清除操作</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 清除屏幕显示，清除缓冲区，光标回到左上角原点位置（0，0）</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 home clearDisplay clearBuffer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::clear(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>源码说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123; </span><br><span class="line">   home(); <span class="comment">//回到原点</span></span><br><span class="line">   clearDisplay(); <span class="comment">//清除屏幕上的显示</span></span><br><span class="line">   clearBuffer();  <span class="comment">//清除缓冲区</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-clearBuffer-——-清除缓冲区"><a href="#u8g2-clearBuffer-——-清除缓冲区" class="headerlink" title="u8g2.clearBuffer() —— 清除缓冲区"></a>u8g2.clearBuffer() —— 清除缓冲区</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 清除内存中数据缓冲区</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::clearBuffer(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong><font color="red">注意点:</font></strong><br>一般这个函数是与sendBuffer函数配对使用，通常用法如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.clearBuffer();</span><br><span class="line">  <span class="comment">// ... write something to the buffer </span></span><br><span class="line">  u8g2.sendBuffer();</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong><font color="red">注意点:</font></strong><br>一般这个函数是与sendBuffer函数配对使用，通常用法如下：</p>
 </blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.clearBuffer();</span><br><span class="line">  <span class="comment">// ... write something to the buffer </span></span><br><span class="line">  u8g2.sendBuffer();</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-disableUTF8Print-——-禁用-UTF8打印"><a href="#u8g2-disableUTF8Print-——-禁用-UTF8打印" class="headerlink" title="u8g2.disableUTF8Print() —— 禁用 UTF8打印"></a>u8g2.disableUTF8Print() —— 禁用 UTF8打印</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 禁用Arduino平台下支持输出UTF8字符集，默认是开启</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::disableUTF8Print(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-enableUTF8Print-——-启用-UTF8打印"><a href="#u8g2-enableUTF8Print-——-启用-UTF8打印" class="headerlink" title="u8g2.enableUTF8Print() —— 启用 UTF8打印"></a>u8g2.enableUTF8Print() —— 启用 UTF8打印</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 开启Arduino平台下支持输出UTF8字符集</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::enableUTF8Print(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>我们的中文字符就是UTF8；</li>
-</ul>
 </blockquote>
 <ul>
-<li>常见例子</li>
+<li><p>我们的中文字符就是UTF8；</p>
+</li>
+<li><p>常见例子</p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.begin();</span><br><span class="line">  u8g2.enableUTF8Print();       <span class="comment">// enable UTF8 support for the Arduino print() function</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.setFont(u8g2_font_unifont_t_chinese2);  <span class="comment">// use chinese2 for all the glyphs of "你好世界"</span></span><br><span class="line">  u8g2.firstPage();</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    u8g2.setCursor(<span class="number">0</span>, <span class="number">40</span>);</span><br><span class="line">    u8g2.print(<span class="string">"你好世界"</span>);     <span class="comment">// Chinese "Hello World" </span></span><br><span class="line">  &#125; <span class="keyword">while</span> ( u8g2.nextPage() );</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-home-——-重置显示光标的位置"><a href="#u8g2-home-——-重置显示光标的位置" class="headerlink" title="u8g2.home() —— 重置显示光标的位置"></a>u8g2.home() —— 重置显示光标的位置</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 重置显示光标的位置，回到原点（0，0）</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 print clear</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::home(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="绘制相关函数"><a href="#绘制相关函数" class="headerlink" title="绘制相关函数"></a>绘制相关函数</h3><h4 id="u8g2-drawBox-——-画实心方形"><a href="#u8g2-drawBox-——-画实心方形" class="headerlink" title="u8g2.drawBox() —— 画实心方形"></a>u8g2.drawBox() —— 画实心方形</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画实心方形，左上角坐标为(x,y),宽度为w，高度为h</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param w 方形的宽度</span></span><br><span class="line"><span class="comment"> * @param h 方形的高度</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawFrame setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawBox(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong>:</li>
+<li><p>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</p>
+</li>
+<li><p><strong>示例</strong>:</p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawBox(<span class="number">3</span>,<span class="number">7</span>,<span class="number">25</span>,<span class="number">15</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawCircle-——-画空心圆"><a href="#u8g2-drawCircle-——-画空心圆" class="headerlink" title="u8g2.drawCircle() —— 画空心圆"></a>u8g2.drawCircle() —— 画空心圆</h4><ul>
 <li><strong>函数说明</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画空心圆，圆心坐标为(x0,y0),半径为rad</span></span><br><span class="line"><span class="comment"> * @param x0 圆点的x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 圆点的y坐标</span></span><br><span class="line"><span class="comment"> * @param rad 圆形的半径</span></span><br><span class="line"><span class="comment"> * @param opt 圆形选项</span></span><br><span class="line"><span class="comment"> *        U8G_DRAW_ALL 整个圆</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_RIGHT 右上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_LEFT  左上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_LEFT  左下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_RIGHT 右下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        选项可以通过 | 操作符来组合</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawDisc setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawCircle(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> rad, <span class="keyword">uint8_t</span> opt = U8G2_DRAW_ALL)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <blockquote>
@@ -132,117 +157,134 @@
 <li><strong>示例</strong>:</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawCircle(<span class="number">20</span>, <span class="number">25</span>, <span class="number">10</span>, U8G2_DRAW_ALL);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawDisc-——-画实心圆"><a href="#u8g2-drawDisc-——-画实心圆" class="headerlink" title="u8g2.drawDisc() —— 画实心圆"></a>u8g2.drawDisc() —— 画实心圆</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画实心圆，圆心坐标为(x0,y0),半径为rad</span></span><br><span class="line"><span class="comment"> * @param x0 圆点的x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 圆点的y坐标</span></span><br><span class="line"><span class="comment"> * @param rad 圆形的半径</span></span><br><span class="line"><span class="comment"> * @param opt 圆形选项</span></span><br><span class="line"><span class="comment"> *        U8G_DRAW_ALL 整个圆</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_RIGHT 右上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_LEFT  左上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_LEFT  左下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_RIGHT 右下部分的圆弧</span></span><br><span class="line"><span class="comment"> *       选项可以通过 | 操作符来组合</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawCircle setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawDisc(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> rad, <span class="keyword">uint8_t</span> opt = U8G_DRAW_ALL)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
 <li>直径等于2rad + 1；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawEllipse-——-画空心椭圆"><a href="#u8g2-drawEllipse-——-画空心椭圆" class="headerlink" title="u8g2.drawEllipse() —— 画空心椭圆"></a>u8g2.drawEllipse() —— 画空心椭圆</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画空心椭圆，圆心坐标为(x0,y0),半径为rad</span></span><br><span class="line"><span class="comment"> * @param x0 圆点的x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 圆点的y坐标</span></span><br><span class="line"><span class="comment"> * @param rx 椭圆形水平x方向的半径</span></span><br><span class="line"><span class="comment"> * @param ry 椭圆形竖直y方向的半径</span></span><br><span class="line"><span class="comment"> * @param opt 圆形选项</span></span><br><span class="line"><span class="comment"> *        U8G_DRAW_ALL 整个椭圆</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_RIGHT 右上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_LEFT  左上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_LEFT  左下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_RIGHT 右下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        选项可以通过 | 操作符来组合</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawCircle</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawEllipse(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> rx, <span class="keyword">u8g2_uint_t</span> ry, <span class="keyword">uint8_t</span> opt)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>rx*ry 在8位模式的u8g2必须小于512</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>rx*ry 在8位模式的u8g2必须小于512</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawEllipse(<span class="number">20</span>, <span class="number">25</span>, <span class="number">15</span>, <span class="number">10</span>, U8G2_DRAW_ALL);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawFilledEllipse-——-画实心椭圆"><a href="#u8g2-drawFilledEllipse-——-画实心椭圆" class="headerlink" title="u8g2.drawFilledEllipse() —— 画实心椭圆"></a>u8g2.drawFilledEllipse() —— 画实心椭圆</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画实心椭圆，圆心坐标为(x0,y0),半径为rad</span></span><br><span class="line"><span class="comment"> * @param x0 圆点的x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 圆点的y坐标</span></span><br><span class="line"><span class="comment"> * @param rx 椭圆形水平x方向的半径</span></span><br><span class="line"><span class="comment"> * @param ry 椭圆形竖直y方向的半径</span></span><br><span class="line"><span class="comment"> * @param opt 圆形选项</span></span><br><span class="line"><span class="comment"> *        U8G_DRAW_ALL 整个椭圆</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_RIGHT 右上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_UPPER_LEFT  左上部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_LEFT  左下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        U8G2_DRAW_LOWER_RIGHT 右下部分的圆弧</span></span><br><span class="line"><span class="comment"> *        选项可以通过 | 操作符来组合</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawCircle</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawFilledEllipse(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> rx, <span class="keyword">u8g2_uint_t</span> ry, <span class="keyword">uint8_t</span> opt)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>rx*ry 在8位模式的u8g2必须小于512</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawFrame-——-画空心方形"><a href="#u8g2-drawFrame-——-画空心方形" class="headerlink" title="u8g2.drawFrame() —— 画空心方形"></a>u8g2.drawFrame() —— 画空心方形</h4><ul>
 <li><strong>函数说明</strong>：</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 画空心方形，左上角坐标为(x,y),宽度为w，高度为h</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param w 方形的宽度</span></span><br><span class="line"><span class="comment"> * @param h 方形的高度</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawFrame(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawFrame(<span class="number">3</span>,<span class="number">7</span>,<span class="number">25</span>,<span class="number">15</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawGlyph-——-绘制字体字集的符号"><a href="#u8g2-drawGlyph-——-绘制字体字集的符号" class="headerlink" title="u8g2.drawGlyph() —— 绘制字体字集的符号"></a>u8g2.drawGlyph() —— 绘制字体字集的符号</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制字体字集里面定义的符号</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param encoding 字符的unicode值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setFont</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawGlyph(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">uint16_t</span> encoding)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>U8g2支持16位以内的unicode字符集，也就是说encoding的范围为0-65535，drawGlyph方法只能绘制存在于所使用的字体字集中的unicode值；</li>
 <li>这个绘制方法依赖于当前的字体模式和绘制颜色；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawHLine-——-绘制水平线"><a href="#u8g2-drawHLine-——-绘制水平线" class="headerlink" title="u8g2.drawHLine() —— 绘制水平线"></a>u8g2.drawHLine() —— 绘制水平线</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制水平线</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param w 水平线的长度</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">void</span> U8G2::drawHLine(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w)</span><br></pre></td></tr></table></figure>
+
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawLine-——-两点之间绘制线"><a href="#u8g2-drawLine-——-两点之间绘制线" class="headerlink" title="u8g2.drawLine() —— 两点之间绘制线"></a>u8g2.drawLine() —— 两点之间绘制线</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制线，从坐标(x0,y0) 到(x1,y1)</span></span><br><span class="line"><span class="comment"> * @param x0 端点0的x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 端点0的y坐标</span></span><br><span class="line"><span class="comment"> * @param x1 端点1的x坐标</span></span><br><span class="line"><span class="comment"> * @param y1 端点1的y坐标</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">void</span> U8G2::drawLine(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> x1, <span class="keyword">u8g2_uint_t</span> y1)</span><br></pre></td></tr></table></figure>
+
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawLine(<span class="number">20</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">32</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawPixel-——-绘制像素点"><a href="#u8g2-drawPixel-——-绘制像素点" class="headerlink" title="u8g2.drawPixel() —— 绘制像素点"></a>u8g2.drawPixel() —— 绘制像素点</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制像素点，坐标(x,y)</span></span><br><span class="line"><span class="comment"> * @param x 像素点的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 像素点的y坐标</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setDrawColor</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawPixel(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
 <li>你会发现很多绘制方法的底层都是调用drawPixel，毕竟像素属于最小颗粒度；</li>
 <li>我们可以利用这个绘制方法自定义自己的图形显示；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawRBox-——-绘制圆角实心方形"><a href="#u8g2-drawRBox-——-绘制圆角实心方形" class="headerlink" title="u8g2.drawRBox() —— 绘制圆角实心方形"></a>u8g2.drawRBox() —— 绘制圆角实心方形</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制圆角实心方形，左上角坐标为(x,y),宽度为w，高度为h，圆角半径为r</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param w 方形的宽度</span></span><br><span class="line"><span class="comment"> * @param h 方形的高度</span></span><br><span class="line"><span class="comment"> * @param r 圆角半径</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawRBox(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h, <span class="keyword">u8g2_uint_t</span> r)</span><br></pre></td></tr></table></figure>
+
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；</li>
 <li>要求，w &gt;= 2(r+1) 并且 h &gt;= 2(r+1)，这是显而易见的限制；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-drawRFrame-——-绘制圆角空心方形"><a href="#u8g2-drawRFrame-——-绘制圆角空心方形" class="headerlink" title="u8g2.drawRFrame() —— 绘制圆角空心方形"></a>u8g2.drawRFrame() —— 绘制圆角空心方形</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制圆角空心方形，左上角坐标为(x,y),宽度为w，高度为h，圆角半径为r</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param w 方形的宽度</span></span><br><span class="line"><span class="comment"> * @param h 方形的高度</span></span><br><span class="line"><span class="comment"> * @param r 圆角半径</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawRFrame(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h, <span class="keyword">u8g2_uint_t</span> r)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>如果支持绘制颜色（也就是不是单色显示器），那么由setDrawColor设置；<br>要求，w &gt;= 2(r+1) 并且 h &gt;= 2(r+1)，这是显而易见的限制</p>
 </blockquote>
@@ -250,235 +292,276 @@
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawRFrame(<span class="number">20</span>,<span class="number">15</span>,<span class="number">30</span>,<span class="number">22</span>,<span class="number">7</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawStr-——-绘制字符串"><a href="#u8g2-drawStr-——-绘制字符串" class="headerlink" title="u8g2.drawStr() —— 绘制字符串"></a>u8g2.drawStr() —— 绘制字符串</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制字符串</span></span><br><span class="line"><span class="comment"> * @param x 左上角的x坐标</span></span><br><span class="line"><span class="comment"> * @param y 左上角的y坐标</span></span><br><span class="line"><span class="comment"> * @param s 绘制字符串内容</span></span><br><span class="line"><span class="comment"> * @return 字符串的长度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> U8g2::drawStr(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">const</span> <span class="keyword">char</span> *s)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>需要先设置字体，调用setFont方法；</li>
-<li>这个方法不能绘制encoding超过256的，超过256需要用drawUTF8或者drawGlyph；说白了就是一般用来显示英文字符；</li>
-<li>x，y属于字符串左下角的坐标；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>需要先设置字体，调用setFont方法；</p>
+</li>
+<li><p>这个方法不能绘制encoding超过256的，超过256需要用drawUTF8或者drawGlyph；说白了就是一般用来显示英文字符；</p>
+</li>
+<li><p>x，y属于字符串左下角的坐标；</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">u8g2.drawStr(<span class="number">0</span>,<span class="number">15</span>,<span class="string">"Hello World!"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawTriangle-——-绘制实心三角形"><a href="#u8g2-drawTriangle-——-绘制实心三角形" class="headerlink" title="u8g2.drawTriangle() —— 绘制实心三角形"></a>u8g2.drawTriangle() —— 绘制实心三角形</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制实心三角形，定点坐标分别为(x0,y0),(x1,y1),(x2,y2)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawTriangle(<span class="keyword">int16_t</span> x0, <span class="keyword">int16_t</span> y0, <span class="keyword">int16_t</span> x1, <span class="keyword">int16_t</span> y1, <span class="keyword">int16_t</span> x2, <span class="keyword">int16_t</span> y2)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.drawTriangle(<span class="number">20</span>,<span class="number">5</span>, <span class="number">27</span>,<span class="number">50</span>, <span class="number">5</span>,<span class="number">32</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawUTF8-——-绘制UTF8编码的字符"><a href="#u8g2-drawUTF8-——-绘制UTF8编码的字符" class="headerlink" title="u8g2.drawUTF8() —— 绘制UTF8编码的字符"></a>u8g2.drawUTF8() —— 绘制UTF8编码的字符</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制UTF8编码的字符串</span></span><br><span class="line"><span class="comment"> * @param x 字符串在屏幕上的左下角x坐标</span></span><br><span class="line"><span class="comment"> * @param y 字符串在屏幕上的左下角y坐标</span></span><br><span class="line"><span class="comment"> * @param s 需要绘制的UTF-8编码字符串</span></span><br><span class="line"><span class="comment"> * @return 返回字符串的长度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> U8g2::drawUTF8(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">const</span> <span class="keyword">char</span> *s)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>使用该方法，有两个前提。首先是你的编译器需要支持UTF-8编码，对于绝大部分Arduino板子已经支持；其次，显示的字符串需要存为“UTF-8”编码，Arduino IDE上默认支持；</li>
-<li>该方法需要依赖于fontMode（setFont）以及drawing Color，也就是说如果你传进来的字符串编码必须在font定义里面；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>使用该方法，有两个前提。首先是你的编译器需要支持UTF-8编码，对于绝大部分Arduino板子已经支持；其次，显示的字符串需要存为“UTF-8”编码，Arduino IDE上默认支持；</p>
+</li>
+<li><p>该方法需要依赖于fontMode（setFont）以及drawing Color，也就是说如果你传进来的字符串编码必须在font定义里面；</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setFont(u8g2_font_unifont_t_symbols);</span><br><span class="line">u8g2.drawUTF8(<span class="number">5</span>, <span class="number">20</span>, <span class="string">"Snowman: ☃"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawVLine-——-绘制竖直线"><a href="#u8g2-drawVLine-——-绘制竖直线" class="headerlink" title="u8g2.drawVLine() —— 绘制竖直线"></a>u8g2.drawVLine() —— 绘制竖直线</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制竖直线</span></span><br><span class="line"><span class="comment"> * @param x 左上角坐标x</span></span><br><span class="line"><span class="comment"> * @param y 左上角坐标y</span></span><br><span class="line"><span class="comment"> * @param h 高度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawVLine(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> h)</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-drawXBM-drawXBMP-——-绘制图像"><a href="#u8g2-drawXBM-drawXBMP-——-绘制图像" class="headerlink" title="u8g2.drawXBM()/drawXBMP() —— 绘制图像"></a>u8g2.drawXBM()/drawXBMP() —— 绘制图像</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制图像</span></span><br><span class="line"><span class="comment"> * @param x 左上角坐标x</span></span><br><span class="line"><span class="comment"> * @param y 左上角坐标y</span></span><br><span class="line"><span class="comment"> * @param w 图形宽度</span></span><br><span class="line"><span class="comment"> * @param h 图形高度</span></span><br><span class="line"><span class="comment"> * @param bitmap 图形内容</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setBitmapMode</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::drawXBM(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h, <span class="keyword">const</span> <span class="keyword">uint8_t</span> *bitmap)</span><br><span class="line"><span class="keyword">void</span> U8G2::drawXBMP(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y, <span class="keyword">u8g2_uint_t</span> w, <span class="keyword">u8g2_uint_t</span> h, <span class="keyword">const</span> <span class="keyword">uint8_t</span> *bitmap)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>drawXBM和drawXBMP区别在于 XBMP支持PROGMEM；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-firstPage-nextPage-——-绘制命令"><a href="#u8g2-firstPage-nextPage-——-绘制命令" class="headerlink" title="u8g2.firstPage()/nextPage() —— 绘制命令"></a>u8g2.firstPage()/nextPage() —— 绘制命令</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制图像</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::firstPage(<span class="keyword">void</span>)</span><br><span class="line"><span class="keyword">uint8_t</span> U8G2::nextPage(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>firstPage方法会把当前页码位置变成0；</li>
-<li>修改内容处于firstPage和nextPage之间，每次都是重新渲染所有内容；</li>
-</ul>
 </blockquote>
 <ul>
+<li><p>firstPage方法会把当前页码位置变成0；</p>
+</li>
+<li><p>修改内容处于firstPage和nextPage之间，每次都是重新渲染所有内容；</p>
+</li>
 <li><p><strong>优势点：</strong><br>该方法消耗的ram空间，比sendBuffer消耗的ram空间要少；</p>
 </li>
 <li><p><strong>示例</strong></p>
 </li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">u8g2.firstPage();</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">/* all graphics commands have to appear within the loop body. */</span>    </span><br><span class="line">    u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">    u8g2.drawStr(<span class="number">0</span>,<span class="number">20</span>,<span class="string">"Hello World!"</span>);</span><br><span class="line">  &#125; <span class="keyword">while</span> ( u8g2.nextPage() );</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>源码解析</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">u8g2_FirstPage</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ( u8g2-&gt;is_auto_page_clear )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//清除缓冲区</span></span><br><span class="line">    u8g2_ClearBuffer(u8g2);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//设置当前缓冲区的Tile Row 一个Tile等于8个像素点的高度</span></span><br><span class="line">  u8g2_SetBufferCurrTileRow(u8g2, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">uint8_t</span> u8g2_NextPage(<span class="keyword">u8g2_t</span> *u8g2)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">uint8_t</span> row;</span><br><span class="line">  u8g2_send_buffer(u8g2);</span><br><span class="line">  row = u8g2-&gt;tile_curr_row;</span><br><span class="line">  row += u8g2-&gt;tile_buf_height;</span><br><span class="line">  <span class="keyword">if</span> ( row &gt;= u8g2_GetU8x8(u8g2)-&gt;display_info-&gt;tile_height )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//如果row已经到达最后一行，触发refreshDisplay调用，表示整个页面已经刷完了</span></span><br><span class="line">    u8x8_RefreshDisplay( u8g2_GetU8x8(u8g2) );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> ( u8g2-&gt;is_auto_page_clear )</span><br><span class="line">  &#123;</span><br><span class="line">     <span class="comment">//清除缓冲区</span></span><br><span class="line">    u8g2_ClearBuffer(u8g2);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//不断更新TileRow 这是非常关键的一步</span></span><br><span class="line">  u8g2_SetBufferCurrTileRow(u8g2, row);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-print-——-绘制内容"><a href="#u8g2-print-——-绘制内容" class="headerlink" title="u8g2.print() —— 绘制内容"></a>u8g2.print() —— 绘制内容</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制内容</span></span><br><span class="line"><span class="comment"> * @Note 关联方法  setFont setCursor enableUTF8Print</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::print(...)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">u8g2.setCursor(<span class="number">0</span>, <span class="number">15</span>);</span><br><span class="line">u8g2.print(<span class="string">"Hello World!"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-sendBuffer-——-绘制缓冲区的内容"><a href="#u8g2-sendBuffer-——-绘制缓冲区的内容" class="headerlink" title="u8g2.sendBuffer() —— 绘制缓冲区的内容"></a>u8g2.sendBuffer() —— 绘制缓冲区的内容</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 绘制缓冲区的内容</span></span><br><span class="line"><span class="comment"> * @Note 关联方法  clearBuffer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::sendBuffer(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>sendBuffer的RAM占用空间大，需要结合构造器的buffer选项（请继续往下看，先有个概念）使用；</li>
-<li>不管是fistPage、nextPage还是sendBuffer，都涉及到一个叫做 current page position的概念；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>源码解析</strong></li>
+<li><p>sendBuffer的RAM占用空间大，需要结合构造器的buffer选项（请继续往下看，先有个概念）使用；</p>
+</li>
+<li><p>不管是fistPage、nextPage还是sendBuffer，都涉及到一个叫做 current page position的概念；</p>
+</li>
+<li><p><strong>源码解析</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">u8g2_SendBuffer</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u8g2_send_buffer(u8g2);</span><br><span class="line">  u8x8_RefreshDisplay( u8g2_GetU8x8(u8g2) );  </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">u8g2_send_tile_row</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2, <span class="keyword">uint8_t</span> src_tile_row, <span class="keyword">uint8_t</span> dest_tile_row)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">uint8_t</span> *ptr;</span><br><span class="line">  <span class="keyword">uint16_t</span> offset;</span><br><span class="line">  <span class="keyword">uint8_t</span> w;</span><br><span class="line">  </span><br><span class="line">  w = u8g2_GetU8x8(u8g2)-&gt;display_info-&gt;tile_width;</span><br><span class="line">  offset = src_tile_row;</span><br><span class="line">  ptr = u8g2-&gt;tile_buf_ptr;</span><br><span class="line">  offset *= w;</span><br><span class="line">  offset *= <span class="number">8</span>;</span><br><span class="line">  ptr += offset;</span><br><span class="line">  u8x8_DrawTile(u8g2_GetU8x8(u8g2), <span class="number">0</span>, dest_tile_row, w, ptr);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">  write the buffer to the display RAM. </span></span><br><span class="line"><span class="comment">  For most displays, this will make the content visible to the user.</span></span><br><span class="line"><span class="comment">  Some displays (like the SSD1606) require a u8x8_RefreshDisplay()</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">u8g2_send_buffer</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2)</span> U8X8_NOINLINE</span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">u8g2_send_buffer</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">uint8_t</span> src_row;</span><br><span class="line">  <span class="keyword">uint8_t</span> src_max;</span><br><span class="line">  <span class="keyword">uint8_t</span> dest_row;</span><br><span class="line">  <span class="keyword">uint8_t</span> dest_max;</span><br><span class="line"> </span><br><span class="line">  src_row = <span class="number">0</span>;</span><br><span class="line">  src_max = u8g2-&gt;tile_buf_height;</span><br><span class="line">  dest_row = u8g2-&gt;tile_curr_row;</span><br><span class="line">  dest_max = u8g2_GetU8x8(u8g2)-&gt;display_info-&gt;tile_height;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    u8g2_send_tile_row(u8g2, src_row, dest_row);</span><br><span class="line">    src_row++;</span><br><span class="line">    dest_row++;</span><br><span class="line">  &#125; <span class="keyword">while</span>( src_row &lt; src_max &amp;&amp; dest_row &lt; dest_max );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.clearBuffer();</span><br><span class="line">  <span class="comment">// ... write something to the buffer </span></span><br><span class="line">  u8g2.sendBuffer();</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="显示配置相关函数"><a href="#显示配置相关函数" class="headerlink" title="显示配置相关函数"></a>显示配置相关函数</h3><h4 id="u8g2-getAscent-——-获取基准线以上的高度"><a href="#u8g2-getAscent-——-获取基准线以上的高度" class="headerlink" title="u8g2.getAscent() —— 获取基准线以上的高度"></a>u8g2.getAscent() —— 获取基准线以上的高度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取基准线以上的高度</span></span><br><span class="line"><span class="comment"> * @return 返回高度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法  setFont getDescent setFontRefHeightAll</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">int8_t</span> U8G2::getAscent(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>跟字体有关（setFont）；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getDescent-——-获取基准线以下的高度"><a href="#u8g2-getDescent-——-获取基准线以下的高度" class="headerlink" title="u8g2.getDescent() —— 获取基准线以下的高度"></a>u8g2.getDescent() —— 获取基准线以下的高度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取基准线以下的高度</span></span><br><span class="line"><span class="comment"> * @return 返回高度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法  setFont setFontRefHeightAll</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">int8_t</span> U8G2::getDescent(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>跟字体有关（setFont）；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getDisplayHeight-——-获取显示器的高度"><a href="#u8g2-getDisplayHeight-——-获取显示器的高度" class="headerlink" title="u8g2.getDisplayHeight() —— 获取显示器的高度"></a>u8g2.getDisplayHeight() —— 获取显示器的高度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取显示器的高度</span></span><br><span class="line"><span class="comment"> * @return 返回高度值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> getDisplayHeight(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-getDisplayWidth-——-获取显示器的宽度"><a href="#u8g2-getDisplayWidth-——-获取显示器的宽度" class="headerlink" title="u8g2.getDisplayWidth() —— 获取显示器的宽度"></a>u8g2.getDisplayWidth() —— 获取显示器的宽度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取显示器的宽度</span></span><br><span class="line"><span class="comment"> * @return 返回宽度值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> getDisplayWidth(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-getMaxCharHeight-——-获取当前字体里的最大字符的高度"><a href="#u8g2-getMaxCharHeight-——-获取当前字体里的最大字符的高度" class="headerlink" title="u8g2.getMaxCharHeight() —— 获取当前字体里的最大字符的高度"></a>u8g2.getMaxCharHeight() —— 获取当前字体里的最大字符的高度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取当前字体里的最大字符的高度</span></span><br><span class="line"><span class="comment"> * @return 返回高度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setFont</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> getMaxCharHeight(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>每一个字符在font字集中都是一个位图，位图有高度和宽度；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getMaxCharWidth-——-获取当前字体里的最大字符的宽度"><a href="#u8g2-getMaxCharWidth-——-获取当前字体里的最大字符的宽度" class="headerlink" title="u8g2.getMaxCharWidth() —— 获取当前字体里的最大字符的宽度"></a>u8g2.getMaxCharWidth() —— 获取当前字体里的最大字符的宽度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取当前字体里的最大字符的宽度</span></span><br><span class="line"><span class="comment"> * @return 返回宽度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setFont</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> getMaxCharWidth(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>每一个字符在font字集中都是一个位图，位图有高度和宽度；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getStrWidth-——-获取字符串的像素宽度"><a href="#u8g2-getStrWidth-——-获取字符串的像素宽度" class="headerlink" title="u8g2.getStrWidth() —— 获取字符串的像素宽度"></a>u8g2.getStrWidth() —— 获取字符串的像素宽度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取字符串的像素宽度</span></span><br><span class="line"><span class="comment"> * @param s 绘制字符串</span></span><br><span class="line"><span class="comment"> * @return 返回字符串的像素宽度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setFont drawStr</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> U8G2::getStrWidth(<span class="keyword">const</span> <span class="keyword">char</span> *s)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>像素宽度和当前font字体有关；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getUTF8Width-——-获取UTF-8字符串的像素宽度"><a href="#u8g2-getUTF8Width-——-获取UTF-8字符串的像素宽度" class="headerlink" title="u8g2.getUTF8Width() —— 获取UTF-8字符串的像素宽度"></a>u8g2.getUTF8Width() —— 获取UTF-8字符串的像素宽度</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取UTF-8字符串的像素宽度</span></span><br><span class="line"><span class="comment"> * @param s 绘制字符串</span></span><br><span class="line"><span class="comment"> * @return 返回字符串的像素宽度值</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 setFont drawStr</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">u8g2_uint_t</span> U8G2::getUTF8Width(<span class="keyword">const</span> <span class="keyword">char</span> *s)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>像素宽度和当前font字体有关；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-setAutoPageClear-——-设置自动清除缓冲区"><a href="#u8g2-setAutoPageClear-——-设置自动清除缓冲区" class="headerlink" title="u8g2.setAutoPageClear() —— 设置自动清除缓冲区"></a>u8g2.setAutoPageClear() —— 设置自动清除缓冲区</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 是否自动清除缓冲区</span></span><br><span class="line"><span class="comment"> * @param mode 0 表示关闭</span></span><br><span class="line"><span class="comment"> *             1 表示开启，默认是开启</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setAutoPageClear(<span class="keyword">uint8_t</span> mode)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>该方法用于 firstPage 和 nextPage（看上面的源码解析）；</li>
 <li>建议该方法保持默认就好，如果用户禁止了，那么需要自己维护缓冲区的状态或者手动调用clearBuffer；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-setBitmapMode-——-设置位图模式"><a href="#u8g2-setBitmapMode-——-设置位图模式" class="headerlink" title="u8g2.setBitmapMode() —— 设置位图模式"></a>u8g2.setBitmapMode() —— 设置位图模式</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置位图模式（定义drawXBM方法是否绘制背景颜色）</span></span><br><span class="line"><span class="comment"> * @param is_transparent</span></span><br><span class="line"><span class="comment"> *         0 绘制背景颜色，不透明，默认是该值</span></span><br><span class="line"><span class="comment"> *         1 不绘制背景颜色，透明</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 drawXBM</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setBitmapMode(<span class="keyword">uint8_t</span> is_transparent)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setDrawColor(<span class="number">1</span>);</span><br><span class="line">u8g2.setBitmapMode(<span class="number">0</span>);</span><br><span class="line">u8g2.drawXBM(<span class="number">4</span>,<span class="number">3</span>, u8g2_logo_97x51_width, u8g2_logo_97x51_height,  u8g2_logo_97x51_bits);</span><br><span class="line">u8g2.drawXBM(<span class="number">12</span>,<span class="number">11</span>, u8g2_logo_97x51_width, u8g2_logo_97x51_height,  u8g2_logo_97x51_bits);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-setBusClock-——-设置总线时钟"><a href="#u8g2-setBusClock-——-设置总线时钟" class="headerlink" title="u8g2.setBusClock() —— 设置总线时钟"></a>u8g2.setBusClock() —— 设置总线时钟</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置总线时钟(I2C SPI)</span></span><br><span class="line"><span class="comment"> * @param mode clock_speed 总线时钟频率(Hz)</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 begin</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setBusClock(<span class="keyword">uint32_t</span> clock_speed);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>仅仅Arduino平台支持；</li>
 <li>必须在u8g2.begin() 或者 u8g2.initDisplay()之前调用；</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-setClipWindow-——-设置采集窗口大小"><a href="#u8g2-setClipWindow-——-设置采集窗口大小" class="headerlink" title="u8g2.setClipWindow() —— 设置采集窗口大小"></a>u8g2.setClipWindow() —— 设置采集窗口大小</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置采集窗口，窗口范围从左上角(x0,y0)到右下角(x1,y1)</span></span><br><span class="line"><span class="comment"> * 也就是我们绘制的内容只能在规范范围内显示</span></span><br><span class="line"><span class="comment"> * @param x0 左上角x坐标</span></span><br><span class="line"><span class="comment"> * @param y0 左上角y坐标</span></span><br><span class="line"><span class="comment"> * @param x1 右上角x坐标</span></span><br><span class="line"><span class="comment"> * @param y1 右上角y坐标</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 begin</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setClipWindow(<span class="keyword">u8g2_uint_t</span> x0, <span class="keyword">u8g2_uint_t</span> y0, <span class="keyword">u8g2_uint_t</span> x1, <span class="keyword">u8g2_uint_t</span> y1 );</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>可以通过 setMaxClipWindow 去掉该限制</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> U8G2::setMaxClipWindow(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setClipWindow(<span class="number">10</span>, <span class="number">10</span>, <span class="number">85</span>, <span class="number">30</span>);</span><br><span class="line">u8g2.setDrawColor(<span class="number">1</span>);</span><br><span class="line">u8g2.drawStr(<span class="number">3</span>, <span class="number">32</span>, <span class="string">"U8g2"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-setCursor-——-设置绘制光标位置"><a href="#u8g2-setCursor-——-设置绘制光标位置" class="headerlink" title="u8g2.setCursor() —— 设置绘制光标位置"></a>u8g2.setCursor() —— 设置绘制光标位置</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置绘制光标位置(x,y)</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 print</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setCursor(<span class="keyword">u8g2_uint_t</span> x, <span class="keyword">u8g2_uint_t</span> y)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">u8g2.setCursor(<span class="number">0</span>, <span class="number">15</span>);</span><br><span class="line">u8g2.print(<span class="string">"Hello World!"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-setDisplayRotation-——-设置显示器的旋转角度"><a href="#u8g2-setDisplayRotation-——-设置显示器的旋转角度" class="headerlink" title="u8g2.setDisplayRotation() —— 设置显示器的旋转角度"></a>u8g2.setDisplayRotation() —— 设置显示器的旋转角度</h4><ul>
 <li><strong>函数说明</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置显示器的旋转角度</span></span><br><span class="line"><span class="comment"> * @param u8g2_cb 旋转选项</span></span><br><span class="line"><span class="comment"> *        U8G2_R0 不做旋转 水平</span></span><br><span class="line"><span class="comment"> *        U8G2_R1 旋转90度</span></span><br><span class="line"><span class="comment"> *        U8G2_R2 旋转180度</span></span><br><span class="line"><span class="comment"> *        U8G2_R3 旋转270度</span></span><br><span class="line"><span class="comment"> *        U8G2_MIRROR 不做旋转 水平，显示内容是镜像的，暂时不理解</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDisplayRotation</span><span class="params">(<span class="keyword">const</span> <span class="keyword">u8g2_cb_t</span> *u8g2_cb)</span></span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="u8g2-setDrawColor-——-设置绘制颜色"><a href="#u8g2-setDrawColor-——-设置绘制颜色" class="headerlink" title="u8g2.setDrawColor() —— 设置绘制颜色"></a>u8g2.setDrawColor() —— 设置绘制颜色</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置绘制颜色（暂时还没有具体去了解用法）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setDrawColor(<span class="keyword">uint8_t</span> color)</span><br></pre></td></tr></table></figure>
+
 <h4 id="u8g2-setFont-——-设置字体集"><a href="#u8g2-setFont-——-设置字体集" class="headerlink" title="u8g2.setFont() —— 设置字体集"></a><font color="red">u8g2.setFont() —— 设置字体集</font></h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置字体集（字体集用于字符串绘制方法或者glyph绘制方法）</span></span><br><span class="line"><span class="comment"> * @param font 具体的字体集</span></span><br><span class="line"><span class="comment"> * @Note 关联方法  drawUTF8 drawStr drawGlyph print</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setFont(<span class="keyword">const</span> <span class="keyword">uint8_t</span> *font)</span><br></pre></td></tr></table></figure>
+
 <p>Font会根据像素点高度做了很多区分，具体font请参考 wiki。<br>如果我们需要用到中文字符，可以在wiki里面搜索一下chinese，你就会发现很多中文font，比如：</p>
 <p>//支持UTF-8或者GB2312编码<br>u8g2_font_wqy15_t_chinese1<br>u8g2_font_wqy15_t_chinese2<br>u8g2_font_wqy15_t_chinese3<br>u8g2_font_wqy12_t_gb2312<br>u8g2_font_wqy12_t_gb2312a<br>……</p>
 <blockquote>
@@ -491,7 +574,6 @@
 <li>name 一般会挂钩上字符像素使用量，比如5X7</li>
 <li>purpose</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -499,8 +581,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>t</td>
 <td>Transparent font, Do not use a background color.</td>
 </tr>
@@ -516,13 +597,10 @@
 <td>8</td>
 <td>All glyphs fit into a 8x8 pixel box.</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>char set</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -530,8 +608,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>f</td>
 <td>The font includes up to 256 glyphs.</td>
 </tr>
@@ -551,28 +628,28 @@
 <td>…</td>
 <td>Other custom character list.</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong><br>U8G2库提供的font非常多，博主也暂时消化不了太多。如果我们使用中文的话，就去看看中文font就好；</p>
+</blockquote>
+<blockquote>
 <p><strong>示例字体</strong></p>
+</blockquote>
 <ul>
 <li>u8g2_font_5x7_tr</li>
 <li>u8g2_font_pressstart2p_8u</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-setFontDirection-——-设置字体方向"><a href="#u8g2-setFontDirection-——-设置字体方向" class="headerlink" title="u8g2.setFontDirection() —— 设置字体方向"></a>u8g2.setFontDirection() —— 设置字体方向</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义字符串绘制或者图形绘制的方向</span></span><br><span class="line"><span class="comment"> * @param dir 方向</span></span><br><span class="line"><span class="comment"> * @param 关联方法 drawStr</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setFontDirection(<span class="keyword">uint8_t</span> dir)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>dir参数</li>
 </ul>
-</blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -581,8 +658,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>0</td>
 <td>0 degree</td>
 <td>Left to right</td>
@@ -602,65 +678,70 @@
 <td>270 degree</td>
 <td>Down to top</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li><strong>示例</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setFont(u8g2_font_ncenB14_tf);</span><br><span class="line">u8g2.setFontDirection(<span class="number">0</span>);</span><br><span class="line">u8g2.drawStr(<span class="number">15</span>, <span class="number">20</span>, <span class="string">"Abc"</span>);</span><br><span class="line">u8g2.setFontDirection(<span class="number">1</span>);</span><br><span class="line">u8g2.drawStr(<span class="number">15</span>, <span class="number">20</span>, <span class="string">"Abc"</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="缓存相关函数"><a href="#缓存相关函数" class="headerlink" title="缓存相关函数"></a>缓存相关函数</h3><p>缓存相关函数，一般不会去操作，了解即可；</p>
 <h4 id="u8g2-getBufferPtr-——-获取缓存空间的地址"><a href="#u8g2-getBufferPtr-——-获取缓存空间的地址" class="headerlink" title="u8g2.getBufferPtr() —— 获取缓存空间的地址"></a>u8g2.getBufferPtr() —— 获取缓存空间的地址</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取缓存空间的地址</span></span><br><span class="line"><span class="comment"> * @return 返回缓存空间起始地址</span></span><br><span class="line"><span class="comment"> * @Note 关联方法 getBufferTileHeight, getBufferTileWidth, clearBuffer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">uint8_t</span> *U8G2::getBufferPtr(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>缓存大小等于 8 <em> u8g2.getBufferTileHeight() </em> u8g2.getBufferTileWidth().</li>
-</ul>
 </blockquote>
+<ul>
+<li>缓存大小等于 8 * u8g2.getBufferTileHeight() * u8g2.getBufferTileWidth().</li>
+</ul>
 <h4 id="u8g2-getBufferTileHeight-——-获取缓冲区的Tile高度"><a href="#u8g2-getBufferTileHeight-——-获取缓冲区的Tile高度" class="headerlink" title="u8g2.getBufferTileHeight() —— 获取缓冲区的Tile高度"></a>u8g2.getBufferTileHeight() —— 获取缓冲区的Tile高度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取缓冲区的Tile高度</span></span><br><span class="line"><span class="comment"> * @return 返回高度值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">uint8_t</span> U8G2::getBufferTileHeight(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>一个tile等于8个像素点.</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getBufferTileWidth-——-获取缓冲区的Tile宽度"><a href="#u8g2-getBufferTileWidth-——-获取缓冲区的Tile宽度" class="headerlink" title="u8g2.getBufferTileWidth() —— 获取缓冲区的Tile宽度"></a>u8g2.getBufferTileWidth() —— 获取缓冲区的Tile宽度</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取缓冲区的Tile宽度</span></span><br><span class="line"><span class="comment"> * @return 返回宽度值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">uint8_t</span> U8G2::getBufferTileWidth(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>一个tile等于8个像素点.</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-getBufferCurrTileRow-——-获取缓冲区的当前Tile-row"><a href="#u8g2-getBufferCurrTileRow-——-获取缓冲区的当前Tile-row" class="headerlink" title="u8g2.getBufferCurrTileRow() —— 获取缓冲区的当前Tile row"></a>u8g2.getBufferCurrTileRow() —— 获取缓冲区的当前Tile row</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取缓冲区的当前Tile row行数</span></span><br><span class="line"><span class="comment"> * @return 返回当前的tilerow</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">uint8_t</span> U8G2::getBufferCurrTileRow(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>这个方法跟我们上面说到的page position相关.</li>
 </ul>
-</blockquote>
 <h4 id="u8g2-setBufferCurrTileRow-——-设置缓冲区的当前Tile-row"><a href="#u8g2-setBufferCurrTileRow-——-设置缓冲区的当前Tile-row" class="headerlink" title="u8g2.setBufferCurrTileRow() —— 设置缓冲区的当前Tile row"></a>u8g2.setBufferCurrTileRow() —— 设置缓冲区的当前Tile row</h4><ul>
 <li><strong>函数说明</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置缓冲区的当前Tile row</span></span><br><span class="line"><span class="comment"> * @param 当前的tilerow</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">void</span> U8G2::setBufferCurrTileRow(<span class="keyword">uint8_t</span>  row)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
-<ul>
-<li>在 firstPage/nextPage 循环时，由于底层调用了setBufferCurrTileRow，所以尽量不要自己手动调用该方法；</li>
-</ul>
 </blockquote>
 <ul>
-<li><strong>示例</strong></li>
+<li><p>在 firstPage/nextPage 循环时，由于底层调用了setBufferCurrTileRow，所以尽量不要自己手动调用该方法；</p>
+</li>
+<li><p><strong>示例</strong></p>
+</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setBufferCurrTileRow(<span class="number">0</span>);       <span class="comment">// let y=0 be the topmost row of the buffer</span></span><br><span class="line">u8g2.clearBuffer();</span><br><span class="line">u8g2.setFont(u8g2_font_helvB08_tr);</span><br><span class="line">u8g2.drawStr(<span class="number">2</span>, <span class="number">8</span>, <span class="string">"abcdefg"</span>);</span><br><span class="line"> </span><br><span class="line">u8g2.setBufferCurrTileRow(<span class="number">2</span>);   <span class="comment">// write the buffer to tile row 2 (y=16) on the display</span></span><br><span class="line">u8g2.sendBuffer();</span><br><span class="line">u8g2.setBufferCurrTileRow(<span class="number">4</span>);   <span class="comment">// write the same buffer to tile row 4 (y=32) on the display</span></span><br><span class="line">u8g2.sendBuffer();</span><br></pre></td></tr></table></figure>
+
 <h2 id="如何运用U8G2库"><a href="#如何运用U8G2库" class="headerlink" title="如何运用U8G2库"></a>如何运用U8G2库</h2><p>构建具体的OLED驱动可分为以下几个顺序步骤：</p>
 <ol>
 <li>区分显示器</li>
@@ -681,8 +762,8 @@
 <h3 id="区分数字连线"><a href="#区分数字连线" class="headerlink" title="区分数字连线"></a>区分数字连线</h3><p>知道了物理连线模式之后，我们一般都是把OLED连接到Arduino Board的输出引脚，也就是软件模拟具体总线协议。当然，如果有现成的物理总线端口那就更好了。</p>
 <h3 id="U8g2初始化"><a href="#U8g2初始化" class="headerlink" title="U8g2初始化"></a>U8g2初始化</h3><p>经历以上三步之后，我们就可以开始初始化出具体的OLED驱动了。比如，博主的IIC SSD1306 128X64 的OLED，就可以用以下初始化构造器（Builder设计模式，有空可以去了解一下）：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">U8G2_SSD1306_128X64_NONAME_1_SW_I2C <span class="title">u8g2</span><span class="params">(U8G2_R0, <span class="comment">/* clock=*/</span> SCL, <span class="comment">/* data=*/</span> SDA, <span class="comment">/* reset=*/</span> U8X8_PIN_NONE)</span></span>;   <span class="comment">// All Boards without Reset of the Display</span></span><br></pre></td></tr></table></figure>
+
 <p>当然SSD1306还有其他构造器（具体可以参考<a href="https://github.com/olikraus/u8g2/wiki/u8g2setupcpp" target="_blank" rel="noopener">wiki</a>）：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -690,8 +771,7 @@
 <th>Display “128x64_noname”    Descirption</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>U8G2_SSD1306_128X64_NONAME_1_4W_SW_SPI(rotation, clock, data, cs, dc [, reset])</td>
 <td>page buffer, size = 128 bytes</td>
 </tr>
@@ -707,11 +787,8 @@
 <td>U8G2_SSD1306_128X64_NONAME_1_4W_HW_SPI(rotation, cs, dc [, reset])</td>
 <td>page buffer, size = 128 bytes</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p> 那么，我们这里就需要重点讲述一下构造器的规则。<br> 构造器的名字包括以下几方面：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -720,8 +797,7 @@
 <th>Example</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
 <td>Prefix</td>
 <td>U8G2</td>
@@ -746,14 +822,11 @@
 <td>Communication</td>
 <td>4W_SW_SPI</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>它们之间使用”_”连接起来。其中：</p>
 <ul>
 <li>BufferSize，缓存大小</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -761,8 +834,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
 <td>保持一页的缓冲区，用于firstPage/nextPage的PageMode.</td>
 </tr>
@@ -774,9 +846,7 @@
 <td>F</td>
 <td>获取整个屏幕的缓冲区，ram消耗大，一般用在ram空间比较大的arduino板子.</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>Communication，通信协议</li>
 </ul>
@@ -787,19 +857,24 @@
 <p>| Rotation/Mirror |    Description |<br>| U8G2_R0    | No rotation, landscape |<br>| U8G2_R1    | 90 degree clockwise rotation |<br>| U8G2_R2    | 180 degree clockwise rotation |<br>| U8G2_R3    | 270 degree clockwise rotation |<br>| U8G2_MIRROR    | No rotation, landscape, display content is mirrored (v2.6.x) |</p>
 <p>一个完整的例子:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;U8g2lib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Wire.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function">U8G2_ST7920_128X64_1_SW_SPI <span class="title">u8g2</span><span class="params">(U8G2_R0, <span class="number">13</span>, <span class="number">11</span>, <span class="number">10</span>, <span class="number">8</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.begin();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.firstPage();</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">    u8g2.drawStr(<span class="number">0</span>,<span class="number">24</span>,<span class="string">"Hello World!"</span>);</span><br><span class="line">  &#125; <span class="keyword">while</span> ( u8g2.nextPage() );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>那么，我们来看看到底构造器里面做了什么操作？还是以博主使用的SSD1306 128X64为例子：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SSD1306 4线软件模拟SPI</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">U8G2_SSD1306_128X64_NONAME_1_4W_SW_SPI(.....)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>类定义：</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SSD1306构造器，继承U8G2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">U8G2_SSD1306_128X64_NONAME_1_4W_SW_SPI</span> :</span> <span class="keyword">public</span> U8G2 &#123;</span><br><span class="line">  <span class="keyword">public</span>: U8G2_SSD1306_128X64_NONAME_1_4W_SW_SPI(<span class="keyword">const</span> <span class="keyword">u8g2_cb_t</span> *rotation, <span class="keyword">uint8_t</span> clock, <span class="keyword">uint8_t</span> data, <span class="keyword">uint8_t</span> cs, <span class="keyword">uint8_t</span> dc, <span class="keyword">uint8_t</span> reset = U8X8_PIN_NONE) : U8G2() &#123;</span><br><span class="line">    <span class="comment">//配置SSD1306</span></span><br><span class="line">    u8g2_Setup_ssd1306_128x64_noname_1(&amp;u8g2, rotation, u8x8_byte_arduino_4wire_sw_spi, u8x8_gpio_and_delay_arduino);</span><br><span class="line">    <span class="comment">//设置通信协议</span></span><br><span class="line">    u8x8_SetPin_4Wire_SW_SPI(getU8x8(), clock, data, cs, dc, reset);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>从上面代码看出，默认调用了父类U8G2的构造函数，我们看看它里面做了什么：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">U8G2</span> :</span> <span class="keyword">public</span> Print</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">u8g2_t</span> u8g2;</span><br><span class="line">    u8x8_char_cb cpp_next_cb; <span class="comment">/*  the cpp interface has its own decoding function for the Arduino print command */</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">u8g2_uint_t</span> tx, ty;</span><br><span class="line">  </span><br><span class="line">    U8G2(<span class="keyword">void</span>) &#123; </span><br><span class="line">          <span class="comment">//设置Arduino print函数的解码方法，这里是ASCII，当然也有UTF-8</span></span><br><span class="line">          cpp_next_cb = u8x8_ascii_next; </span><br><span class="line">          <span class="comment">//屏幕初始化</span></span><br><span class="line">          home(); </span><br><span class="line">    &#125;</span><br><span class="line">    .......</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>U8G2类构造函数主要是定义好解码方法以及初始化屏幕（包括重置原点）；</li>
 </ul>
 <p>    然后我们看看，u8g2_Setup_ssd1306_128x64_noname_1做了什么：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">u8g2_Setup_ssd1306_128x64_noname_1</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2, <span class="keyword">const</span> <span class="keyword">u8g2_cb_t</span> *rotation, u8x8_msg_cb byte_cb, u8x8_msg_cb gpio_and_delay_cb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">uint8_t</span> tile_buf_height;</span><br><span class="line">  <span class="comment">//定义好缓存空间 记住 这里是 1 page mode</span></span><br><span class="line">  <span class="keyword">uint8_t</span> *buf;</span><br><span class="line">  <span class="comment">//配置屏幕</span></span><br><span class="line">  u8g2_SetupDisplay(u8g2, u8x8_d_ssd1306_128x64_noname, u8x8_cad_001, byte_cb, gpio_and_delay_cb);</span><br><span class="line">  <span class="comment">//生成buf 这里是128 bytes</span></span><br><span class="line">  buf = u8g2_m_16_8_1(&amp;tile_buf_height);</span><br><span class="line">  <span class="comment">//初始化buf</span></span><br><span class="line">  u8g2_SetupBuffer(u8g2, buf, tile_buf_height, u8g2_ll_hvline_vertical_top_lsb, rotation);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/*============================================*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  This procedure is called after setting up the display (u8x8 structure).</span></span><br><span class="line"><span class="comment">  --&gt; This is the central init procedure for u8g2 object</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">u8g2_SetupBuffer</span><span class="params">(<span class="keyword">u8g2_t</span> *u8g2, <span class="keyword">uint8_t</span> *buf, <span class="keyword">uint8_t</span> tile_buf_height, u8g2_draw_ll_hvline_cb ll_hvline_cb, <span class="keyword">const</span> <span class="keyword">u8g2_cb_t</span> *u8g2_cb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u8g2-&gt;font = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="comment">//u8g2-&gt;kerning = NULL;</span></span><br><span class="line">  <span class="comment">//u8g2-&gt;get_kerning_cb = u8g2_GetNullKerning;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//u8g2-&gt;ll_hvline = u8g2_ll_hvline_vertical_top_lsb;</span></span><br><span class="line">  u8g2-&gt;ll_hvline = ll_hvline_cb;</span><br><span class="line">  </span><br><span class="line">  u8g2-&gt;tile_buf_ptr = buf;</span><br><span class="line">  u8g2-&gt;tile_buf_height = tile_buf_height;</span><br><span class="line">  </span><br><span class="line">  u8g2-&gt;tile_curr_row = <span class="number">0</span>;<span class="comment">//页码 这是一个很重要的参数</span></span><br><span class="line">  </span><br><span class="line">  u8g2-&gt;font_decode.is_transparent = <span class="number">0</span>; <span class="comment">/* issue 443 */</span></span><br><span class="line">  u8g2-&gt;bitmap_transparency = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  u8g2-&gt;draw_color = <span class="number">1</span>;</span><br><span class="line">  u8g2-&gt;is_auto_page_clear = <span class="number">1</span>;<span class="comment">//自动清除</span></span><br><span class="line">  </span><br><span class="line">  u8g2-&gt;cb = u8g2_cb;</span><br><span class="line">  u8g2-&gt;cb-&gt;update_dimension(u8g2);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> U8G2_WITH_CLIP_WINDOW_SUPPORT</span></span><br><span class="line">  u8g2_SetMaxClipWindow(u8g2);      <span class="comment">/* assign a clip window and call the update() procedure */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  u8g2-&gt;cb-&gt;update_page_win(u8g2);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line">  u8g2_SetFontPosBaseline(u8g2);  <span class="comment">/* issue 195 */</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> U8G2_WITH_FONT_ROTATION  </span></span><br><span class="line">  u8g2-&gt;font_decode.dir = <span class="number">0</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>可以总结几点：</p>
 <ul>
 <li>配置初始化屏幕</li>
@@ -807,10 +882,10 @@
 </ul>
 <blockquote>
 <p><strong><font color="red">注意点:</font></strong></p>
+</blockquote>
 <ul>
 <li>上面讲解涉及到了绘制模式，请参考下一节；</li>
 </ul>
-</blockquote>
 <h3 id="U8g2绘制模式"><a href="#U8g2绘制模式" class="headerlink" title="U8g2绘制模式"></a>U8g2绘制模式</h3><h3 id="U8g2支持三种绘制模式："><a href="#U8g2支持三种绘制模式：" class="headerlink" title="U8g2支持三种绘制模式："></a>U8g2支持三种绘制模式：</h3><ul>
 <li>Full screen buffer mode，全屏缓存模式</li>
 <li>Page mode (This is the U8glib picture loop) 分页模式</li>
@@ -836,6 +911,7 @@
 <li><strong>示例代码</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.begin();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.clearBuffer();</span><br><span class="line">  u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">  u8g2.drawStr(<span class="number">0</span>,<span class="number">20</span>,<span class="string">"Hello World!"</span>);</span><br><span class="line">  u8g2.sendBuffer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="Page-mode"><a href="#Page-mode" class="headerlink" title="Page mode"></a>Page mode</h3><ul>
 <li><strong>特点：</strong></li>
 </ul>
@@ -843,7 +919,7 @@
 <ul>
 <li><p><strong>构造器：</strong></p>
 </li>
-<li><p>构造器必须带有“1”或者2，比如：<br>U8G2<em>ST7920_128X64</em> 1 _SW_SPI(rotation, clock, data, cs [, reset])</p>
+<li><p>构造器必须带有“1”或者2，比如：<br>U8G2_ST7920_128X64_ 1 _SW_SPI(rotation, clock, data, cs [, reset])</p>
 </li>
 <li><p><strong>用法：</strong></p>
 </li>
@@ -858,13 +934,16 @@
 <li><strong>示例代码</strong></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.begin();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g2.firstPage();</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    u8g2.setFont(u8g2_font_ncenB14_tr);</span><br><span class="line">    u8g2.drawStr(<span class="number">0</span>,<span class="number">24</span>,<span class="string">"Hello World!"</span>);</span><br><span class="line">  &#125; <span class="keyword">while</span> ( u8g2.nextPage() );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="U8x8-character-mode"><a href="#U8x8-character-mode" class="headerlink" title="U8x8 character mode"></a>U8x8 character mode</h3><ul>
 <li><p><strong>特点：</strong></p>
 </li>
 <li><p>绘制速度快</p>
 </li>
-<li>并不是对所有的显示器都有效</li>
-<li>图形绘制不可用</li>
+<li><p>并不是对所有的显示器都有效</p>
+</li>
+<li><p>图形绘制不可用</p>
+</li>
 <li><p>不需要ram空间</p>
 </li>
 <li><p><strong>构造器：</strong></p>
