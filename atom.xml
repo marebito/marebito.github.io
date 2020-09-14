@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaolilong.com/"/>
-  <updated>2020-09-14T03:33:28.375Z</updated>
+  <updated>2020-09-14T06:51:00.152Z</updated>
   <id>https://zhaolilong.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS开机自动启动Redis</title>
+    <link href="https://zhaolilong.com/2020/09/14/CentOS%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8Redis/"/>
+    <id>https://zhaolilong.com/2020/09/14/CentOS开机自动启动Redis/</id>
+    <published>2020-09-14T06:44:34.000Z</published>
+    <updated>2020-09-14T06:51:00.152Z</updated>
+    
+    <content type="html"><![CDATA[<p>修改redis.conf，打开后台运行选项：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.</span><br><span class="line"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure><p>编写脚本，vim /etc/init.d/redis:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">##!/bin/bash</span><br><span class="line"></span><br><span class="line"># chkconfig: 2345 10 90</span><br><span class="line"># description: Start and Stop redis</span><br><span class="line"> </span><br><span class="line">PATH=/usr/local/bin:/sbin:/usr/bin:/bin</span><br><span class="line"> </span><br><span class="line">REDISPORT=6379 #实际环境而定</span><br><span class="line">REDISPSWD=redis #实际环境而定</span><br><span class="line">EXEC=/usr/local/redis/src/redis-server #实际环境而定</span><br><span class="line">REDIS_CLI=/usr/local/redis/src/redis-cli #实际环境而定</span><br><span class="line"> </span><br><span class="line">PIDFILE=/var/run/redis.pid</span><br><span class="line">CONF=&quot;/usr/local/redis/redis.conf&quot; #实际环境而定</span><br><span class="line"> </span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">        start)</span><br><span class="line">                if [ -f $PIDFILE ]</span><br><span class="line">                then</span><br><span class="line">                        echo &quot;$PIDFILE exists, process is already running or crashed.&quot;</span><br><span class="line">                else</span><br><span class="line">                        echo &quot;Starting Redis server...&quot;</span><br><span class="line">                        $EXEC $CONF</span><br><span class="line">                fi</span><br><span class="line">                if [ &quot;$?&quot;=&quot;0&quot; ]</span><br><span class="line">                then</span><br><span class="line">                        echo &quot;Redis is running...&quot;</span><br><span class="line">                fi</span><br><span class="line">                ;;</span><br><span class="line">        stop)</span><br><span class="line">                if [ ! -f $PIDFILE ]</span><br><span class="line">                then</span><br><span class="line">                        echo &quot;$PIDFILE exists, process is not running.&quot;</span><br><span class="line">                else</span><br><span class="line">                        PID=$(cat $PIDFILE)</span><br><span class="line">                        echo &quot;Stopping...&quot;</span><br><span class="line">                        $REDIS_CLI -a $REDISPSWD -p $REDISPORT SHUTDOWN 2&gt;/dev/null</span><br><span class="line">                        while [ -x $PIDFILE ]</span><br><span class="line">                        do</span><br><span class="line">                                echo &quot;Waiting for Redis to shutdown...&quot;</span><br><span class="line">                                sleep 1</span><br><span class="line">                        done</span><br><span class="line">                        echo &quot;Redis stopped&quot;</span><br><span class="line">                fi</span><br><span class="line">                ;;</span><br><span class="line">        restart|force-reload)</span><br><span class="line">                $&#123;0&#125; stop</span><br><span class="line">                $&#123;0&#125; start</span><br><span class="line">                ;;</span><br><span class="line">        *)</span><br><span class="line">                echo &quot;Usage: /etc/init.d/redis &#123;start|stop|restart|force-reload&#125;&quot; &gt;&amp;2</span><br><span class="line">                exit 1</span><br><span class="line">esac</span><br></pre></td></tr></table></figure><p>设置执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/redis</span><br></pre></td></tr></table></figure><p>开机自动启动设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 尝试启动或停止redis</span><br><span class="line">service redis start</span><br><span class="line">service redis stop</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 开启服务自启动</span><br><span class="line">chkconfig redis on</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;修改redis.conf，打开后台运行选项：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>linux查看redis安装目录_查看redis端口占用</title>
@@ -473,27 +495,6 @@
       
         &lt;p&gt;linux查看日志： &lt;/p&gt;
 &lt;h1 id=&quot;cd-var-log&quot;&gt;&lt;a href=&quot;#cd-var-log&quot; class=&quot;headerlink&quot; title=&quot;cd /var/log&quot;&gt;&lt;/a&gt;cd /var/log&lt;/h1&gt;&lt;h1 id=&quot;less-secure&quot;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>是谁没事儿尝试来我家开锁？</title>
-    <link href="https://zhaolilong.com/2020/05/28/%E6%98%AF%E8%B0%81%E6%B2%A1%E4%BA%8B%E5%84%BF%E5%B0%9D%E8%AF%95%E6%9D%A5%E6%88%91%E5%AE%B6%E5%BC%80%E9%94%81%EF%BC%9F/"/>
-    <id>https://zhaolilong.com/2020/05/28/是谁没事儿尝试来我家开锁？/</id>
-    <published>2020-05-28T02:23:41.000Z</published>
-    <updated>2020-05-29T03:13:46.789Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;Failed password for invalid user&quot; /var/log/secure | awk &apos;&#123;print $13&#125;&apos; | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla
       
     
     </summary>
