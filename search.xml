@@ -107,6 +107,19 @@
     
     
     <entry>
+      <title>MP4启用-movflags_faststart</title>
+      <link href="/2020/09/03/MP4%E5%90%AF%E7%94%A8-movflags-faststart/"/>
+      <url>/2020/09/03/MP4%E5%90%AF%E7%94%A8-movflags-faststart/</url>
+      
+        <content type="html"><![CDATA[<p>你的命令缺少一个加号,它应该让你在输出中“将moov原子移动到文件的开头”.正确的命令是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i C:\vidtests\Wildlife.mp4 -movflags +faststart C:\vidtests\Wildlife_fs.mp4</span><br></pre></td></tr></table></figure><p>作为经验法则,当不编码/转码时,我建议使用“-vcodec copy -acodec copy”参数,如下所示：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i C:\vidtests\Wildlife.mp4 -vcodec copy -acodec copy -movflags +faststart C:\vidtests\Wildlife_fs.mp4</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Modbus寄存器种类说明</title>
       <link href="/2020/09/03/Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%8D%E7%B1%BB%E8%AF%B4%E6%98%8E/"/>
       <url>/2020/09/03/Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%8D%E7%B1%BB%E8%AF%B4%E6%98%8E/</url>

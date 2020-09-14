@@ -180,6 +180,28 @@
   </entry>
   
   <entry>
+    <title>MP4启用-movflags_faststart</title>
+    <link href="https://zhaolilong.com/2020/09/03/MP4%E5%90%AF%E7%94%A8-movflags-faststart/"/>
+    <id>https://zhaolilong.com/2020/09/03/MP4启用-movflags-faststart/</id>
+    <published>2020-09-03T06:10:58.000Z</published>
+    <updated>2020-09-14T03:23:55.137Z</updated>
+    
+    <content type="html"><![CDATA[<p>你的命令缺少一个加号,它应该让你在输出中“将moov原子移动到文件的开头”.正确的命令是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i C:\vidtests\Wildlife.mp4 -movflags +faststart C:\vidtests\Wildlife_fs.mp4</span><br></pre></td></tr></table></figure><p>作为经验法则,当不编码/转码时,我建议使用“-vcodec copy -acodec copy”参数,如下所示：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i C:\vidtests\Wildlife.mp4 -vcodec copy -acodec copy -movflags +faststart C:\vidtests\Wildlife_fs.mp4</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你的命令缺少一个加号,它应该让你在输出中“将moov原子移动到文件的开头”.正确的命令是：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Modbus寄存器种类说明</title>
     <link href="https://zhaolilong.com/2020/09/03/Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E7%A7%8D%E7%B1%BB%E8%AF%B4%E6%98%8E/"/>
     <id>https://zhaolilong.com/2020/09/03/Modbus寄存器种类说明/</id>
@@ -485,30 +507,6 @@
       <category term="阿里云ECS" scheme="https://zhaolilong.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91ECS/"/>
     
       <category term="Linux" scheme="https://zhaolilong.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实例学习Metal-参考书目</title>
-    <link href="https://zhaolilong.com/2020/04/12/%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0Metal-%E5%8F%82%E8%80%83%E4%B9%A6%E7%9B%AE/"/>
-    <id>https://zhaolilong.com/2020/04/12/实例学习Metal-参考书目/</id>
-    <published>2020-04-11T16:00:00.000Z</published>
-    <updated>2020-03-13T04:56:02.207Z</updated>
-    
-    <content type="html"><![CDATA[<p>Barrett, Sean. 2014. “stb Single-File Public Domain Libraries for C/C++.” <a href="https://github" target="_blank" rel="noopener">https://github</a>. com/nothings/stb.<br><br><br>Blinn, James F. 1977. “Models of Light Reflection for Computer Synthesized Pictures.” In Proceedings of the 4th Annual Conference on Computer Graphics and Interactive Techniques, 192–98. SIGGRAPH ’77. New York, NY, USA: ACM. doi:10.1145/563858.563893.<br><br></p><a id="more"></a><p>Barrett, Sean. 2014. “stb Single-File Public Domain Libraries for C/C++.” <a href="https://github" target="_blank" rel="noopener">https://github</a>. com/nothings/stb.<br><br><br>Blinn, James F. 1977. “Models of Light Reflection for Computer Synthesized Pictures.” In Proceedings of the 4th Annual Conference on Computer Graphics and Interactive Techniques, 192–98. SIGGRAPH ’77. New York, NY, USA: ACM. doi:10.1145/563858.563893.<br><br><br>Boxley, Paul. 2011. “Terrain Generation with the Diamond Square Algorithm.” http: //<a href="http://www.paulboxley.com/blog/2011/03/terrain-generation-mark-one" target="_blank" rel="noopener">www.paulboxley.com/blog/2011/03/terrain-generation-mark-one</a>.<br><br><br>Carpenter, Loren. 1984. “The A-Buffer, an Antialiased Hidden Surface Method.” In Pro- ceedings of the 11th Annual Conference on Computer Graphics and Interactive Techniques, 103–8. SIGGRAPH ’84. New York, NY, USA: ACM. doi:10.1145/800031.808585.<br><br><br>Esfahbod, Behdad. 2014. “GLyphy.” <a href="https://github.com/behdad/glyphy" target="_blank" rel="noopener">https://github.com/behdad/glyphy</a>.<br><br><br>Giesen, Fabien. 2011. “A Trip Through the Graphics Pipeline 2011, Part 7,” July. https:// fgiesen.wordpress.com/2011/07/08/a-trip-through-the-graphics-pipeline-2011-part-7/.<br><br><br>Glassner, Andrew. 2015. “Interpreting Alpha.” Journal of Computer Graphics Techniques (JCGT) 4 (2): 30–44. <a href="http://jcgt.org/published/0004/02/03/" target="_blank" rel="noopener">http://jcgt.org/published/0004/02/03/</a>.<br><br><br>Gortler, Steven J. 2012. Foundations of 3D Computer Graphics. The MIT Press.<br><br><br>Green, Chris. 2007. “Improved Alpha-Tested Magnification for Vector Textures and Spe- cial Effects.” In ACM SIGGRAPH 2007 Courses, 9–18. SIGGRAPH ’07. New York, NY, USA: ACM. doi:10.1145/1281500.1281665.<br><br><br>Grevera, George J. 2004. “The ‘Dead Reckoning’ Signed Distance Transform.” Com- put. Vis. Image Underst. 95 (3). New York, NY, USA: Elsevier Science Inc.: 317–33. doi:10.1016/j.cviu.2004.05.002.<br><br><br>Gustavson, Stefan. 2012. “2D Shape Rendering by Distance Fields.” In OpenGL Insights, edited by Patrick Cozzi and Christophe Riccio, 173–82. CRC Press.<br><br><br>Hughes, J.F., A. Van Dam, J.D. Foley, and S.K. Feiner. 2013. Computer Graphics: Principles<br>and Practice. 3rd ed. Addison-Wesley.<br><br><br>International Telecom Union. 2011. RECOMMENDATION ITU-R BT.601-7. https://<br><a href="http://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-7-201103-I!!PDF-E.pdf" target="_blank" rel="noopener">www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-7-201103-I!!PDF-E.pdf</a>.<br><br><br>Jargstorff, Frank. 2004. “A Framework for Image Processing.” In GPU Gems, edited by Randima Fernando. Addison-Wesley Professional. <a href="http://http.developer.nvidia.com/" target="_blank" rel="noopener">http://http.developer.nvidia.com/</a> GPUGems/gpugems_ch27.html.<br><br><br>Khronos Group. 2013. “KTX File Format Specification.” Edited by Mark Callow, Georg Kolling, and Jacob Ström. <a href="https://www.khronos.org/opengles/sdk/tools/KTX/file" target="_blank" rel="noopener">https://www.khronos.org/opengles/sdk/tools/KTX/file</a>_ format_spec/.<br><br><br>Lengyel, Eric. 2011. Mathematics for 3D Game Programming and Computer Graphics. 3rd ed. Boston, MA, United States: Course Technology Press.<br><br><br>McGuire, Morgan, and Louis Bavoil. 2013. “Weighted Blended Order-Independent Transparency.” Journal of Computer Graphics Techniques (JCGT) 2 (2): 122–41. <a href="http://jcgt" target="_blank" rel="noopener">http://jcgt</a>. org/published/0002/02/09/.<br><br><br>Miller, Gavin S P. 1986. “The Definition and Rendering of Terrain Maps.” In Proceedings of the 13th Annual Conference on Computer Graphics and Interactive Techniques, 39–48. SIG- GRAPH ’86. New York, NY, USA: ACM. doi:10.1145/15922.15890.<br><br><br>Wavefront Technologies. 1991. “Appendix B1. Object Files.” In Programmer’s Reference Manual for the Advanced Visualizer. <a href="http://www.cs.utah.edu/~boulos/cs3505/obj_spec" target="_blank" rel="noopener">http://www.cs.utah.edu/~boulos/cs3505/obj_spec</a>. pdf.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Barrett, Sean. 2014. “stb Single-File Public Domain Libraries for C/C++.” &lt;a href=&quot;https://github&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github&lt;/a&gt;. com/nothings/stb.&lt;br&gt;&lt;br&gt;&lt;br&gt;Blinn, James F. 1977. “Models of Light Reflection for Computer Synthesized Pictures.” In Proceedings of the 4th Annual Conference on Computer Graphics and Interactive Techniques, 192–98. SIGGRAPH ’77. New York, NY, USA: ACM. doi:10.1145/563858.563893.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="iOS/Mac" scheme="https://zhaolilong.com/tags/iOS-Mac/"/>
-    
-      <category term="图形学" scheme="https://zhaolilong.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-      <category term="Metal" scheme="https://zhaolilong.com/tags/Metal/"/>
     
   </entry>
   
