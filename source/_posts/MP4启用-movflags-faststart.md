@@ -1,8 +1,7 @@
 ---
 title: MP4启用-movflags_faststart
 date: 2020-09-03 14:10:58
-tags: - ffmpeg
-	  - mp4
+tags: 
 ---
 
 
