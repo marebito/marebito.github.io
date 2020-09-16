@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaolilong.com/"/>
-  <updated>2020-09-16T02:07:26.454Z</updated>
+  <updated>2020-09-16T02:22:38.648Z</updated>
   <id>https://zhaolilong.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下启动ssh服务</title>
+    <link href="https://zhaolilong.com/2020/09/16/Mac%E4%B8%8B%E5%90%AF%E5%8A%A8ssh%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://zhaolilong.com/2020/09/16/Mac下启动ssh服务/</id>
+    <published>2020-09-16T02:22:03.000Z</published>
+    <updated>2020-09-16T02:22:38.648Z</updated>
+    
+    <content type="html"><![CDATA[<p>mac本身安装了ssh服务，默认情况下不会开机自启</p><p>1、启动sshd服务：</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist</span><br></pre></td></tr></table></figure><p>2、停止sshd服务：</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</span><br></pre></td></tr></table></figure><p>3、查看是否启动：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl <span class="built_in">list</span> | grep ssh</span><br></pre></td></tr></table></figure><p>如果看到下面的输出表示成功启动了：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> 0  <span class="selector-tag">com</span><span class="selector-class">.openssh</span><span class="selector-class">.sshd</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;mac本身安装了ssh服务，默认情况下不会开机自启&lt;/p&gt;
+&lt;p&gt;1、启动sshd服务：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CentOS7下利用init.d启动脚本实现tomcat开机自启动</title>
@@ -461,41 +484,6 @@
     
     
       <category term="ModbusTCP" scheme="https://zhaolilong.com/tags/ModbusTCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Modbus常用功能码备查</title>
-    <link href="https://zhaolilong.com/2020/09/03/Modbus%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E7%A0%81%E5%A4%87%E6%9F%A5/"/>
-    <id>https://zhaolilong.com/2020/09/03/Modbus常用功能码备查/</id>
-    <published>2020-09-03T01:48:13.000Z</published>
-    <updated>2020-09-03T03:42:50.327Z</updated>
-    
-    <content type="html"><![CDATA[<p>Modbus功能码</p><table><thead><tr><th>功能码</th><th>名称</th><th>寄存器PLC地址</th><th>位操作/字操作</th><th>作用</th><th>操作数量</th></tr></thead><tbody><tr><td>01</td><td>读线圈状态</td><td>00001-09999</td><td>位</td><td>取得一组逻辑线圈的当前状态（ON/OFF）</td><td>单个或多个</td></tr><tr><td>02</td><td>读离散输入状态</td><td>10001-19999</td><td>位</td><td>取得一组开关输入的当前状态（ON/OFF）</td><td>单个或多个</td></tr><tr><td>03</td><td>读保持寄存器</td><td>40001-49999</td><td>整型、字符型、状态字、浮点型</td><td>在一个或多个保持寄存器中取得当前的二进制值</td><td>单个或多个</td></tr><tr><td>04</td><td>读输入寄存器</td><td>30001-39999</td><td>整型、状态字、浮点型</td><td>在一个或多个输入寄存器中取得当前的二进制值</td><td>单个或多个</td></tr><tr><td>05</td><td>写单个线圈</td><td>00001-09999</td><td>位</td><td>强置一个逻辑线圈的通断状态</td><td>单个</td></tr><tr><td>06</td><td>写单个寄存器</td><td>40001-49999</td><td>整型、字符型、状态字、浮点型</td><td>把二进制值装入一个保持寄存器</td><td>单个</td></tr><tr><td>15</td><td>写多个线圈</td><td>00001-09999</td><td>位</td><td>强置一串连续逻辑线圈的通断</td><td>多个</td></tr><tr><td>16</td><td>写多个保持寄存器</td><td>40001-49999</td><td>整型、字符型、状态字、浮点型</td><td>把具体的二进制值装入一串连续的保持寄存器</td><td>多个</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Modbus功能码&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;功能码&lt;/th&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;寄存器PLC地址&lt;/th&gt;
-&lt;th&gt;位操作/字操作&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;th&gt;操作数量&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="Modbus" scheme="https://zhaolilong.com/tags/Modbus/"/>
     
   </entry>
   

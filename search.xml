@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Mac下启动ssh服务</title>
+      <link href="/2020/09/16/Mac%E4%B8%8B%E5%90%AF%E5%8A%A8ssh%E6%9C%8D%E5%8A%A1/"/>
+      <url>/2020/09/16/Mac%E4%B8%8B%E5%90%AF%E5%8A%A8ssh%E6%9C%8D%E5%8A%A1/</url>
+      
+        <content type="html"><![CDATA[<p>mac本身安装了ssh服务，默认情况下不会开机自启</p><p>1、启动sshd服务：</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist</span><br></pre></td></tr></table></figure><p>2、停止sshd服务：</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</span><br></pre></td></tr></table></figure><p>3、查看是否启动：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo launchctl <span class="built_in">list</span> | grep ssh</span><br></pre></td></tr></table></figure><p>如果看到下面的输出表示成功启动了：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> 0  <span class="selector-tag">com</span><span class="selector-class">.openssh</span><span class="selector-class">.sshd</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS7下利用init.d启动脚本实现tomcat开机自启动</title>
       <link href="/2020/09/16/CentOS7%E4%B8%8B%E5%88%A9%E7%94%A8init-d%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0tomcat%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
       <url>/2020/09/16/CentOS7%E4%B8%8B%E5%88%A9%E7%94%A8init-d%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0tomcat%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</url>
