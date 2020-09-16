@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>brew切换国内的源</title>
+      <link href="/2020/09/16/brew%E5%88%87%E6%8D%A2%E5%9B%BD%E5%86%85%E7%9A%84%E6%BA%90/"/>
+      <url>/2020/09/16/brew%E5%88%87%E6%8D%A2%E5%9B%BD%E5%86%85%E7%9A%84%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>切换到国内的源</p><h1 id="替换brew-git"><a href="#替换brew-git" class="headerlink" title="替换brew.git:"></a>替换brew.git:</h1><p> cd “$(brew –repo)”</p><h1 id="中国科大"><a href="#中国科大" class="headerlink" title="中国科大:"></a>中国科大:</h1><p> git remote set-url origin <a href="https://mirrors.ustc.edu.cn/brew.git" target="_blank" rel="noopener">https://mirrors.ustc.edu.cn/brew.git</a></p><h1 id="清华大学"><a href="#清华大学" class="headerlink" title="清华大学:"></a>清华大学:</h1><p> git remote set-url origin <a href="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</a></p><h1 id="替换homebrew-core-git"><a href="#替换homebrew-core-git" class="headerlink" title="替换homebrew-core.git:"></a>替换homebrew-core.git:</h1><p> cd “$(brew –repo)/Library/Taps/homebrew/homebrew-core”</p><h1 id="中国科大-1"><a href="#中国科大-1" class="headerlink" title="中国科大:"></a>中国科大:</h1><p> git remote set-url origin <a href="https://mirrors.ustc.edu.cn/homebrew-core.git" target="_blank" rel="noopener">https://mirrors.ustc.edu.cn/homebrew-core.git</a></p><h1 id="清华大学-1"><a href="#清华大学-1" class="headerlink" title="清华大学:"></a>清华大学:</h1><p> git remote set-url origin <a href="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</a></p><h1 id="替换homebrew-bottles"><a href="#替换homebrew-bottles" class="headerlink" title="替换homebrew-bottles:"></a>替换homebrew-bottles:</h1><h1 id="中国科大-2"><a href="#中国科大-2" class="headerlink" title="中国科大:"></a>中国科大:</h1><p> echo ‘export HOMEBREW_BOTTLE_DOMAIN=<a href="https://mirrors.ustc.edu.cn/homebrew-bottles&#39;" target="_blank" rel="noopener">https://mirrors.ustc.edu.cn/homebrew-bottles&#39;</a> &gt;&gt; ~/.bash_profile<br> source ~/.bash_profile</p><h1 id="清华大学-2"><a href="#清华大学-2" class="headerlink" title="清华大学:"></a>清华大学:</h1><p> echo ‘export HOMEBREW_BOTTLE_DOMAIN=<a href="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&#39;" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&#39;</a> &gt;&gt; ~/.bash_profile<br> source ~/.bash_profile</p><h1 id="应用生效"><a href="#应用生效" class="headerlink" title="应用生效:"></a>应用生效:</h1><p> brew update</p></blockquote><p>切换到官方源</p><h1 id="重置brew-git"><a href="#重置brew-git" class="headerlink" title="重置brew.git:"></a>重置brew.git:</h1><p> cd “$(brew –repo)”<br> git remote set-url origin <a href="https://github.com/Homebrew/brew.git" target="_blank" rel="noopener">https://github.com/Homebrew/brew.git</a></p><h1 id="重置homebrew-core-git"><a href="#重置homebrew-core-git" class="headerlink" title="重置homebrew-core.git:"></a>重置homebrew-core.git:</h1><p> cd “$(brew –repo)/Library/Taps/homebrew/homebrew-core”<br> git remote set-url origin <a href="https://github.com/Homebrew/homebrew-core.git" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-core.git</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS开机自动启动Redis</title>
       <link href="/2020/09/14/CentOS%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8Redis/"/>
       <url>/2020/09/14/CentOS%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8Redis/</url>
