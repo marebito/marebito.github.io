@@ -268,7 +268,7 @@ sidebar_display: all
 
 links_title: 学习链接
 links:
-  数 据 结 构 与 算 法 >>: https://data.biancheng.net
+  数 据 结 构 与 算 法 >>: http://data.biancheng.net
   U n i t y 学 习 指 南 >>: https://catlikecoding.com/unity/tutorials
   游 戏 设 计 模 式 >>: https://gameprogrammingpatterns.com/
   神 经 网 络 与 深 度 学 习 >>: http://neuralnetworksanddeeplearning.com/
